@@ -1,0 +1,824 @@
+(.venv) srajput@asgard:~/flipflop/cuda_kernel_energy_empirical/experiments$ python3 gemm_optimizer.py 
+/home/srajput/flipflop/.venv/lib/python3.11/site-packages/pytools/persistent_dict.py:63: RecommendedHashNotFoundWarning: Unable to import recommended hash 'siphash24.siphash13', falling back to 'hashlib.sha256'. Run 'python3 -m pip install siphash24' to install the recommended hash.
+  warn("Unable to import recommended hash 'siphash24.siphash13', "
+
+=== Tuning float16 precision ===
+Using power limits: [100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250]
+Using: NVIDIA RTX 5000 Ada Generation
+Searchspace has 25575 configurations after restrictions.
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 250.00 W.
+All done.
+block_size_x=32, block_size_y=16, tile_size_x=2, tile_size_y=4, nvml_pwr_limit=245, time=34.449ms, edp=295.385, throughput_penalty=1000000.000, objective=1000295.385
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 245.00 W.
+All done.
+block_size_x=1, block_size_y=512, tile_size_x=16, tile_size_y=4, nvml_pwr_limit=110, time=20.463ms, edp=47.301, throughput_penalty=1000000.000, objective=1000047.301
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 110.00 W.
+All done.
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=195, time=9.199ms, edp=15.632, throughput_penalty=1000000.000, objective=1000015.632
+Power limit for GPU 00000000:41:00.0 was set to 170.00 W from 195.00 W.
+All done.
+block_size_x=8, block_size_y=64, tile_size_x=4, tile_size_y=32, nvml_pwr_limit=170, time=51.813ms, edp=463.788, throughput_penalty=1000000.000, objective=1000463.788
+Power limit for GPU 00000000:41:00.0 was set to 165.00 W from 170.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=165, time=10.392ms, edp=17.411, throughput_penalty=1000000.000, objective=1000017.411
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 165.00 W.
+All done.
+block_size_x=64, block_size_y=8, tile_size_x=4, tile_size_y=2, nvml_pwr_limit=145, time=48.796ms, edp=352.552, throughput_penalty=1000000.000, objective=1000352.552
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 145.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=2, tile_size_y=32, nvml_pwr_limit=205, time=140.155ms, edp=3192.146, throughput_penalty=1000000.000, objective=1003192.146
+Power limit for GPU 00000000:41:00.0 was set to 135.00 W from 205.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=135, time=10.515ms, edp=14.940, throughput_penalty=1000000.000, objective=1000014.940
+Power limit for GPU 00000000:41:00.0 was set to 100.00 W from 135.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=4, tile_size_y=32, nvml_pwr_limit=100, time=117.913ms, edp=1374.324, throughput_penalty=1000000.000, objective=1001374.324
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 100.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=8, tile_size_y=2, nvml_pwr_limit=240, time=35.142ms, edp=196.796, throughput_penalty=1000000.000, objective=1000196.796
+Power limit for GPU 00000000:41:00.0 was set to 125.00 W from 240.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=125, time=10.792ms, edp=14.988, throughput_penalty=1000000.000, objective=1000014.988
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 125.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=195, time=9.330ms, edp=13.494, throughput_penalty=1000000.000, objective=1000013.494
+Power limit for GPU 00000000:41:00.0 was set to 215.00 W from 195.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=215, time=10.930ms, edp=26.519, throughput_penalty=1000000.000, objective=1000026.519
+Power limit for GPU 00000000:41:00.0 was set to 100.00 W from 215.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=4, tile_size_y=32, nvml_pwr_limit=100, time=103.838ms, edp=1079.373, throughput_penalty=1000000.000, objective=1001079.373
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 100.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=225, time=9.311ms, edp=13.485, throughput_penalty=1000000.000, objective=1000013.485
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 225.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=245, time=9.563ms, edp=14.894, throughput_penalty=1000000.000, objective=1000014.894
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 245.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=4, tile_size_y=2, nvml_pwr_limit=130, time=81.095ms, edp=870.056, throughput_penalty=1000000.000, objective=1000870.056
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 130.00 W.
+All done.
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=240, time=9.715ms, edp=14.793, throughput_penalty=1000000.000, objective=1000014.793
+Power limit for GPU 00000000:41:00.0 was set to 165.00 W from 240.00 W.
+All done.
+block_size_x=8, block_size_y=16, tile_size_x=8, tile_size_y=2, nvml_pwr_limit=165, time=56.159ms, edp=531.528, throughput_penalty=1000000.000, objective=1000531.528
+Power limit for GPU 00000000:41:00.0 was set to 135.00 W from 165.00 W.
+All done.
+block_size_x=8, block_size_y=32, tile_size_x=4, tile_size_y=4, nvml_pwr_limit=135, time=64.891ms, edp=576.638, throughput_penalty=1000000.000, objective=1000576.638
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 135.00 W.
+All done.
+block_size_x=512, block_size_y=2, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=250, time=36.887ms, edp=343.085, throughput_penalty=1000000.000, objective=1000343.085
+Power limit for GPU 00000000:41:00.0 was set to 170.00 W from 250.00 W.
+All done.
+block_size_x=16, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=170, time=19.629ms, edp=66.581, throughput_penalty=1000000.000, objective=1000066.581
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 170.00 W.
+All done.
+block_size_x=512, block_size_y=2, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=245, time=37.712ms, edp=354.611, throughput_penalty=1000000.000, objective=1000354.611
+block_size_x=4, block_size_y=8, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=245, time=9.731ms, edp=22.330, throughput_penalty=1000000.000, objective=1000022.330
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 245.00 W.
+All done.
+block_size_x=1, block_size_y=512, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=110, time=10.715ms, edp=13.021, throughput_penalty=1000000.000, objective=1000013.021
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 110.00 W.
+All done.
+block_size_x=4, block_size_y=8, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=240, time=9.706ms, edp=21.806, throughput_penalty=1000000.000, objective=1000021.806
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 240.00 W.
+All done.
+block_size_x=4, block_size_y=64, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=190, time=10.019ms, edp=19.414, throughput_penalty=1000000.000, objective=1000019.414
+block_size_x=4, block_size_y=32, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=190, time=10.012ms, edp=19.473, throughput_penalty=1000000.000, objective=1000019.473
+block_size_x=4, block_size_y=32, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=190, time=10.002ms, edp=19.412, throughput_penalty=1000000.000, objective=1000019.412
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 190.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=240, time=8.895ms, edp=12.078, throughput_penalty=1000000.000, objective=1000012.078
+Power limit for GPU 00000000:41:00.0 was set to 105.00 W from 240.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=105, time=12.951ms, edp=17.995, throughput_penalty=1000000.000, objective=1000017.995
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 105.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=225, time=9.811ms, edp=18.458, throughput_penalty=1000000.000, objective=1000018.458
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 225.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=110, time=10.916ms, edp=13.527, throughput_penalty=1000000.000, objective=1000013.527
+Power limit for GPU 00000000:41:00.0 was set to 175.00 W from 110.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=175, time=9.706ms, edp=14.658, throughput_penalty=1000000.000, objective=1000014.658
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 175.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=250, time=9.706ms, edp=14.889, throughput_penalty=1000000.000, objective=1000014.889
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 250.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=195, time=9.822ms, edp=18.595, throughput_penalty=1000000.000, objective=1000018.595
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=195, time=9.176ms, edp=15.638, throughput_penalty=1000000.000, objective=1000015.638
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 195.00 W.
+All done.
+block_size_x=8, block_size_y=32, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=250, time=23.018ms, edp=134.493, throughput_penalty=1000000.000, objective=1000134.493
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 250.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=240, time=9.574ms, edp=16.002, throughput_penalty=1000000.000, objective=1000016.002
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 240.00 W.
+All done.
+block_size_x=8, block_size_y=64, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=250, time=11.752ms, edp=33.387, throughput_penalty=1000000.000, objective=1000033.387
+block_size_x=1, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=250, time=9.502ms, edp=15.264, throughput_penalty=1000000.000, objective=1000015.264
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 250.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=245, time=9.435ms, edp=14.973, throughput_penalty=1000000.000, objective=1000014.973
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 245.00 W.
+All done.
+block_size_x=1, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=250, time=9.586ms, edp=15.134, throughput_penalty=1000000.000, objective=1000015.134
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 250.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=150, time=12.773ms, edp=25.378, throughput_penalty=1000000.000, objective=1000025.378
+Power limit for GPU 00000000:41:00.0 was set to 160.00 W from 150.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=160, time=10.169ms, edp=17.001, throughput_penalty=1000000.000, objective=1000017.001
+Power limit for GPU 00000000:41:00.0 was set to 155.00 W from 160.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=155, time=12.327ms, edp=24.257, throughput_penalty=1000000.000, objective=1000024.257
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 155.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=250, time=8.888ms, edp=12.394, throughput_penalty=1000000.000, objective=1000012.394
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 250.00 W.
+All done.
+block_size_x=4, block_size_y=16, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=190, time=10.204ms, edp=20.183, throughput_penalty=1000000.000, objective=1000020.183
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 190.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=225, time=9.704ms, edp=15.296, throughput_penalty=1000000.000, objective=1000015.296
+Power limit for GPU 00000000:41:00.0 was set to 230.00 W from 225.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=230, time=9.711ms, edp=15.353, throughput_penalty=1000000.000, objective=1000015.353
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 230.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=180, time=9.553ms, edp=16.116, throughput_penalty=1000000.000, objective=1000016.116
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 180.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=190, time=9.312ms, edp=14.582, throughput_penalty=1000000.000, objective=1000014.582
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=190, time=9.554ms, edp=16.096, throughput_penalty=1000000.000, objective=1000016.096
+Power limit for GPU 00000000:41:00.0 was set to 115.00 W from 190.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=115, time=10.791ms, edp=13.734, throughput_penalty=1000000.000, objective=1000013.734
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 115.00 W.
+All done.
+block_size_x=4, block_size_y=32, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=195, time=9.922ms, edp=19.656, throughput_penalty=1000000.000, objective=1000019.656
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 195.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=250, time=10.847ms, edp=29.991, throughput_penalty=1000000.000, objective=1000029.991
+Power limit for GPU 00000000:41:00.0 was set to 170.00 W from 250.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=170, time=10.411ms, edp=18.708, throughput_penalty=1000000.000, objective=1000018.708
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 170.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=190, time=9.714ms, edp=15.324, throughput_penalty=1000000.000, objective=1000015.324
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 190.00 W.
+All done.
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=240, time=9.145ms, edp=15.445, throughput_penalty=1000000.000, objective=1000015.445
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 240.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=190, time=9.476ms, edp=16.699, throughput_penalty=1000000.000, objective=1000016.699
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 190.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=250, time=9.303ms, edp=14.689, throughput_penalty=1000000.000, objective=1000014.689
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 250.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=245, time=8.894ms, edp=12.702, throughput_penalty=1000000.000, objective=1000012.702
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 245.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=250, time=9.712ms, edp=15.488, throughput_penalty=1000000.000, objective=1000015.488
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 250.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=245, time=9.495ms, edp=16.880, throughput_penalty=1000000.000, objective=1000016.880
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 245.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=130, time=11.137ms, edp=16.444, throughput_penalty=1000000.000, objective=1000016.444
+Power limit for GPU 00000000:41:00.0 was set to 230.00 W from 130.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=230, time=9.703ms, edp=15.444, throughput_penalty=1000000.000, objective=1000015.444
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=230, time=9.310ms, edp=14.731, throughput_penalty=1000000.000, objective=1000014.731
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=230, time=9.822ms, edp=19.157, throughput_penalty=1000000.000, objective=1000019.157
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 230.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=110, time=11.061ms, edp=13.688, throughput_penalty=1000000.000, objective=1000013.688
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 110.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=225, time=9.319ms, edp=14.554, throughput_penalty=1000000.000, objective=1000014.554
+Power limit for GPU 00000000:41:00.0 was set to 230.00 W from 225.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=230, time=9.326ms, edp=14.642, throughput_penalty=1000000.000, objective=1000014.642
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 230.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=200, time=9.714ms, edp=15.349, throughput_penalty=1000000.000, objective=1000015.349
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 200.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=195, time=9.712ms, edp=15.335, throughput_penalty=1000000.000, objective=1000015.335
+Power limit for GPU 00000000:41:00.0 was set to 215.00 W from 195.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=215, time=9.833ms, edp=19.206, throughput_penalty=1000000.000, objective=1000019.206
+Power limit for GPU 00000000:41:00.0 was set to 135.00 W from 215.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=135, time=14.452ms, edp=29.208, throughput_penalty=1000000.000, objective=1000029.208
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 135.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=190, time=9.304ms, edp=14.751, throughput_penalty=1000000.000, objective=1000014.751
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 190.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=245, time=8.894ms, edp=12.845, throughput_penalty=1000000.000, objective=1000012.845
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 245.00 W.
+All done.
+block_size_x=1, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=240, time=9.501ms, edp=15.515, throughput_penalty=1000000.000, objective=1000015.515
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 240.00 W.
+All done.
+block_size_x=1, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=245, time=9.497ms, edp=15.502, throughput_penalty=1000000.000, objective=1000015.502
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 245.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=110, time=12.649ms, edp=18.043, throughput_penalty=1000000.000, objective=1000018.043
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 110.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=250, time=8.897ms, edp=12.573, throughput_penalty=1000000.000, objective=1000012.573
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 250.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=195, time=9.318ms, edp=14.601, throughput_penalty=1000000.000, objective=1000014.601
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 195.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=250, time=10.385ms, edp=19.042, throughput_penalty=1000000.000, objective=1000019.042
+Power limit for GPU 00000000:41:00.0 was set to 235.00 W from 250.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=235, time=8.893ms, edp=12.619, throughput_penalty=1000000.000, objective=1000012.619
+Power limit for GPU 00000000:41:00.0 was set to 175.00 W from 235.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=175, time=9.713ms, edp=15.398, throughput_penalty=1000000.000, objective=1000015.398
+Power limit for GPU 00000000:41:00.0 was set to 170.00 W from 175.00 W.
+All done.
+block_size_x=4, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=170, time=10.377ms, edp=18.738, throughput_penalty=1000000.000, objective=1000018.738
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 170.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=195, time=9.830ms, edp=19.241, throughput_penalty=1000000.000, objective=1000019.241
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 195.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=225, time=9.715ms, edp=15.606, throughput_penalty=1000000.000, objective=1000015.606
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 225.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=250, time=9.434ms, edp=15.265, throughput_penalty=1000000.000, objective=1000015.265
+Power limit for GPU 00000000:41:00.0 was set to 235.00 W from 250.00 W.
+All done.
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=235, time=9.147ms, edp=15.721, throughput_penalty=1000000.000, objective=1000015.721
+best performing configuration:
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=240, time=8.895ms, edp=12.078, throughput_penalty=1000000.000, objective=1000012.078
+
+=== Tuning float32 precision ===
+Using power limits: [100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250]
+Using: NVIDIA RTX 5000 Ada Generation
+Searchspace has 25575 configurations after restrictions.
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 235.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=145, time=10.521ms, edp=16.440, throughput_penalty=1000000.000, objective=1000016.440
+Power limit for GPU 00000000:41:00.0 was set to 160.00 W from 145.00 W.
+All done.
+block_size_x=32, block_size_y=16, tile_size_x=16, tile_size_y=4, nvml_pwr_limit=160, time=48.380ms, edp=380.154, throughput_penalty=1000000.000, objective=1000380.154
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 160.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=16, tile_size_y=4, nvml_pwr_limit=185, time=17.965ms, edp=60.664, throughput_penalty=1000000.000, objective=1000060.664
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 185.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=16, tile_size_y=8, nvml_pwr_limit=200, time=19.913ms, edp=81.470, throughput_penalty=1000000.000, objective=1000081.470
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 200.00 W.
+All done.
+block_size_x=128, block_size_y=8, tile_size_x=2, tile_size_y=2, nvml_pwr_limit=150, time=52.556ms, edp=418.345, throughput_penalty=1000000.000, objective=1000418.345
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 150.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=8, tile_size_y=2, nvml_pwr_limit=185, time=40.611ms, edp=309.806, throughput_penalty=1000000.000, objective=1000309.806
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 185.00 W.
+All done.
+block_size_x=4, block_size_y=128, tile_size_x=16, tile_size_y=32, nvml_pwr_limit=150, time=26.112ms, edp=104.919, throughput_penalty=1000000.000, objective=1000104.919
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 150.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=16, tile_size_y=16, nvml_pwr_limit=185, time=19.223ms, edp=69.810, throughput_penalty=1000000.000, objective=1000069.810
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 185.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=4, tile_size_y=8, nvml_pwr_limit=205, time=71.563ms, edp=1062.508, throughput_penalty=1000000.000, objective=1001062.508
+Power limit for GPU 00000000:41:00.0 was set to 155.00 W from 205.00 W.
+All done.
+block_size_x=32, block_size_y=4, tile_size_x=2, tile_size_y=4, nvml_pwr_limit=155, time=83.249ms, edp=1080.868, throughput_penalty=1000000.000, objective=1001080.868
+Power limit for GPU 00000000:41:00.0 was set to 235.00 W from 155.00 W.
+All done.
+block_size_x=128, block_size_y=8, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=235, time=37.431ms, edp=328.462, throughput_penalty=1000000.000, objective=1000328.462
+Power limit for GPU 00000000:41:00.0 was set to 120.00 W from 235.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=120, time=13.520ms, edp=22.525, throughput_penalty=1000000.000, objective=1000022.525
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 120.00 W.
+All done.
+block_size_x=64, block_size_y=8, tile_size_x=2, tile_size_y=4, nvml_pwr_limit=130, time=67.548ms, edp=598.892, throughput_penalty=1000000.000, objective=1000598.892
+Power limit for GPU 00000000:41:00.0 was set to 120.00 W from 130.00 W.
+All done.
+block_size_x=8, block_size_y=64, tile_size_x=2, tile_size_y=8, nvml_pwr_limit=120, time=90.420ms, edp=989.324, throughput_penalty=1000000.000, objective=1000989.324
+Power limit for GPU 00000000:41:00.0 was set to 105.00 W from 120.00 W.
+All done.
+block_size_x=1, block_size_y=512, tile_size_x=4, tile_size_y=16, nvml_pwr_limit=105, time=122.442ms, edp=1561.571, throughput_penalty=1000000.000, objective=1001561.571
+Power limit for GPU 00000000:41:00.0 was set to 170.00 W from 105.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=4, tile_size_y=4, nvml_pwr_limit=170, time=85.667ms, edp=1262.147, throughput_penalty=1000000.000, objective=1001262.147
+Power limit for GPU 00000000:41:00.0 was set to 230.00 W from 170.00 W.
+All done.
+block_size_x=4, block_size_y=32, tile_size_x=8, tile_size_y=4, nvml_pwr_limit=230, time=41.567ms, edp=403.009, throughput_penalty=1000000.000, objective=1000403.009
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 230.00 W.
+All done.
+block_size_x=1, block_size_y=256, tile_size_x=2, tile_size_y=8, nvml_pwr_limit=190, time=150.890ms, edp=4378.772, throughput_penalty=1000000.000, objective=1004378.772
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 190.00 W.
+All done.
+block_size_x=16, block_size_y=8, tile_size_x=8, tile_size_y=8, nvml_pwr_limit=130, time=83.191ms, edp=907.109, throughput_penalty=1000000.000, objective=1000907.109
+Power limit for GPU 00000000:41:00.0 was set to 135.00 W from 130.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=16, tile_size_y=16, nvml_pwr_limit=135, time=28.404ms, edp=111.602, throughput_penalty=1000000.000, objective=1000111.602
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 135.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=200, time=12.173ms, edp=30.472, throughput_penalty=1000000.000, objective=1000030.472
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 200.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=205, time=11.980ms, edp=30.148, throughput_penalty=1000000.000, objective=1000030.148
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 205.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=225, time=8.947ms, edp=18.277, throughput_penalty=1000000.000, objective=1000018.277
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 225.00 W.
+All done.
+block_size_x=1, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=185, time=10.257ms, edp=19.941, throughput_penalty=1000000.000, objective=1000019.941
+Power limit for GPU 00000000:41:00.0 was set to 220.00 W from 185.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=220, time=8.919ms, edp=17.906, throughput_penalty=1000000.000, objective=1000017.906
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 220.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=180, time=10.537ms, edp=20.617, throughput_penalty=1000000.000, objective=1000020.617
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 180.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=195, time=10.830ms, edp=23.181, throughput_penalty=1000000.000, objective=1000023.181
+Power limit for GPU 00000000:41:00.0 was set to 175.00 W from 195.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=175, time=10.659ms, edp=20.340, throughput_penalty=1000000.000, objective=1000020.340
+Power limit for GPU 00000000:41:00.0 was set to 215.00 W from 175.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=215, time=10.658ms, edp=24.785, throughput_penalty=1000000.000, objective=1000024.785
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 215.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=185, time=9.897ms, edp=18.274, throughput_penalty=1000000.000, objective=1000018.274
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 185.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=130, time=13.366ms, edp=24.059, throughput_penalty=1000000.000, objective=1000024.059
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 130.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=185, time=19.900ms, edp=75.110, throughput_penalty=1000000.000, objective=1000075.110
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 185.00 W.
+All done.
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=205, time=9.247ms, edp=17.956, throughput_penalty=1000000.000, objective=1000017.956
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=205, time=9.710ms, edp=19.784, throughput_penalty=1000000.000, objective=1000019.784
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 205.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=200, time=10.725ms, edp=23.343, throughput_penalty=1000000.000, objective=1000023.343
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 200.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=205, time=9.711ms, edp=19.799, throughput_penalty=1000000.000, objective=1000019.799
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 205.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=140, time=11.726ms, edp=19.903, throughput_penalty=1000000.000, objective=1000019.903
+Power limit for GPU 00000000:41:00.0 was set to 135.00 W from 140.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=135, time=12.095ms, edp=20.367, throughput_penalty=1000000.000, objective=1000020.367
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 135.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=150, time=11.560ms, edp=20.587, throughput_penalty=1000000.000, objective=1000020.587
+Power limit for GPU 00000000:41:00.0 was set to 125.00 W from 150.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=125, time=14.676ms, edp=27.868, throughput_penalty=1000000.000, objective=1000027.868
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 125.00 W.
+All done.
+block_size_x=2, block_size_y=16, tile_size_x=16, tile_size_y=4, nvml_pwr_limit=205, time=18.427ms, edp=71.471, throughput_penalty=1000000.000, objective=1000071.471
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 205.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=130, time=13.713ms, edp=25.118, throughput_penalty=1000000.000, objective=1000025.118
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 130.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=185, time=11.085ms, edp=23.026, throughput_penalty=1000000.000, objective=1000023.026
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 185.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=180, time=11.216ms, edp=22.950, throughput_penalty=1000000.000, objective=1000022.950
+Power limit for GPU 00000000:41:00.0 was set to 175.00 W from 180.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=175, time=21.819ms, edp=85.339, throughput_penalty=1000000.000, objective=1000085.339
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 175.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=180, time=21.694ms, edp=86.658, throughput_penalty=1000000.000, objective=1000086.658
+Power limit for GPU 00000000:41:00.0 was set to 210.00 W from 180.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=210, time=8.967ms, edp=16.660, throughput_penalty=1000000.000, objective=1000016.660
+Power limit for GPU 00000000:41:00.0 was set to 215.00 W from 210.00 W.
+All done.
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=215, time=9.388ms, edp=19.548, throughput_penalty=1000000.000, objective=1000019.548
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 215.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=180, time=10.654ms, edp=20.901, throughput_penalty=1000000.000, objective=1000020.901
+Power limit for GPU 00000000:41:00.0 was set to 220.00 W from 180.00 W.
+All done.
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=220, time=9.335ms, edp=19.508, throughput_penalty=1000000.000, objective=1000019.508
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 220.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=180, time=10.007ms, edp=18.425, throughput_penalty=1000000.000, objective=1000018.425
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 180.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=185, time=9.968ms, edp=18.655, throughput_penalty=1000000.000, objective=1000018.655
+Power limit for GPU 00000000:41:00.0 was set to 125.00 W from 185.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=125, time=13.125ms, edp=22.202, throughput_penalty=1000000.000, objective=1000022.202
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 125.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=195, time=8.951ms, edp=15.451, throughput_penalty=1000000.000, objective=1000015.451
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 195.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=200, time=8.950ms, edp=15.484, throughput_penalty=1000000.000, objective=1000015.484
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 200.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=195, time=20.802ms, edp=86.789, throughput_penalty=1000000.000, objective=1000086.789
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 195.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=200, time=9.750ms, edp=19.529, throughput_penalty=1000000.000, objective=1000019.529
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=200, time=10.882ms, edp=24.258, throughput_penalty=1000000.000, objective=1000024.258
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 200.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=185, time=20.050ms, edp=75.764, throughput_penalty=1000000.000, objective=1000075.764
+Power limit for GPU 00000000:41:00.0 was set to 220.00 W from 185.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=220, time=8.993ms, edp=17.616, throughput_penalty=1000000.000, objective=1000017.616
+Power limit for GPU 00000000:41:00.0 was set to 125.00 W from 220.00 W.
+All done.
+block_size_x=4, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=125, time=15.000ms, edp=28.881, throughput_penalty=1000000.000, objective=1000028.881
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 125.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=130, time=12.459ms, edp=20.746, throughput_penalty=1000000.000, objective=1000020.746
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=130, time=12.101ms, edp=19.509, throughput_penalty=1000000.000, objective=1000019.509
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 130.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=190, time=9.838ms, edp=18.871, throughput_penalty=1000000.000, objective=1000018.871
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 190.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=205, time=8.983ms, edp=16.056, throughput_penalty=1000000.000, objective=1000016.056
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 205.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=195, time=9.802ms, edp=19.263, throughput_penalty=1000000.000, objective=1000019.263
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 195.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=145, time=12.056ms, edp=21.838, throughput_penalty=1000000.000, objective=1000021.838
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 145.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=190, time=8.966ms, edp=15.374, throughput_penalty=1000000.000, objective=1000015.374
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 190.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=180, time=10.484ms, edp=20.191, throughput_penalty=1000000.000, objective=1000020.191
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 180.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=205, time=10.691ms, edp=23.872, throughput_penalty=1000000.000, objective=1000023.872
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 205.00 W.
+All done.
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=180, time=9.929ms, edp=17.910, throughput_penalty=1000000.000, objective=1000017.910
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 180.00 W.
+All done.
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=205, time=9.349ms, edp=18.347, throughput_penalty=1000000.000, objective=1000018.347
+Power limit for GPU 00000000:41:00.0 was set to 210.00 W from 205.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=210, time=8.977ms, edp=16.143, throughput_penalty=1000000.000, objective=1000016.143
+block_size_x=2, block_size_y=16, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=210, time=9.284ms, edp=18.421, throughput_penalty=1000000.000, objective=1000018.421
+Power limit for GPU 00000000:41:00.0 was set to 125.00 W from 210.00 W.
+All done.
+block_size_x=512, block_size_y=2, tile_size_x=4, tile_size_y=2, nvml_pwr_limit=125, time=116.733ms, edp=1690.845, throughput_penalty=1000000.000, objective=1001690.845
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 125.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=205, time=8.951ms, edp=15.574, throughput_penalty=1000000.000, objective=1000015.574
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 205.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=145, time=36.112ms, edp=195.337, throughput_penalty=1000000.000, objective=1000195.337
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 145.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=140, time=38.209ms, edp=206.728, throughput_penalty=1000000.000, objective=1000206.728
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 140.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=16, tile_size_y=4, nvml_pwr_limit=145, time=35.545ms, edp=185.966, throughput_penalty=1000000.000, objective=1000185.966
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 145.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=150, time=10.725ms, edp=17.638, throughput_penalty=1000000.000, objective=1000017.638
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 150.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=145, time=10.674ms, edp=16.966, throughput_penalty=1000000.000, objective=1000016.966
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=145, time=10.993ms, edp=17.758, throughput_penalty=1000000.000, objective=1000017.758
+Power limit for GPU 00000000:41:00.0 was set to 125.00 W from 145.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=125, time=13.094ms, edp=21.863, throughput_penalty=1000000.000, objective=1000021.863
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=125, time=13.261ms, edp=22.646, throughput_penalty=1000000.000, objective=1000022.646
+Power limit for GPU 00000000:41:00.0 was set to 155.00 W from 125.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=155, time=11.336ms, edp=20.477, throughput_penalty=1000000.000, objective=1000020.477
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 155.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=145, time=11.288ms, edp=18.556, throughput_penalty=1000000.000, objective=1000018.556
+Power limit for GPU 00000000:41:00.0 was set to 135.00 W from 145.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=135, time=12.144ms, edp=20.463, throughput_penalty=1000000.000, objective=1000020.463
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 135.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=140, time=11.244ms, edp=17.954, throughput_penalty=1000000.000, objective=1000017.954
+Power limit for GPU 00000000:41:00.0 was set to 165.00 W from 140.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=165, time=10.270ms, edp=17.734, throughput_penalty=1000000.000, objective=1000017.734
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 165.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=150, time=10.434ms, edp=16.523, throughput_penalty=1000000.000, objective=1000016.523
+Power limit for GPU 00000000:41:00.0 was set to 160.00 W from 150.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=160, time=11.126ms, edp=20.214, throughput_penalty=1000000.000, objective=1000020.214
+Power limit for GPU 00000000:41:00.0 was set to 155.00 W from 160.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=155, time=11.237ms, edp=20.068, throughput_penalty=1000000.000, objective=1000020.068
+best performing configuration:
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=185, time=8.994ms, edp=15.238, throughput_penalty=1000000.000, objective=1000015.238
+
+=== Tuning float64 precision ===
+Using power limits: [100, 105, 110, 115, 120, 125, 130, 135, 140, 145, 150, 155, 160, 165, 170, 175, 180, 185, 190, 195, 200, 205, 210, 215, 220, 225, 230, 235, 240, 245, 250]
+Using: NVIDIA RTX 5000 Ada Generation
+Searchspace has 25575 configurations after restrictions.
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 155.00 W.
+All done.
+block_size_x=16, block_size_y=64, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=140, time=81.248ms, edp=927.694, throughput_penalty=1000000.000, objective=1000927.694
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 140.00 W.
+All done.
+block_size_x=4, block_size_y=64, tile_size_x=8, tile_size_y=4, nvml_pwr_limit=195, time=81.284ms, edp=1308.113, throughput_penalty=1000000.000, objective=1001308.113
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 195.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=110, time=32.183ms, edp=115.094, throughput_penalty=1000000.000, objective=1000115.094
+Power limit for GPU 00000000:41:00.0 was set to 165.00 W from 110.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=165, time=34.206ms, edp=196.738, throughput_penalty=1000000.000, objective=1000196.738
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 165.00 W.
+All done.
+block_size_x=32, block_size_y=16, tile_size_x=2, tile_size_y=4, nvml_pwr_limit=250, time=138.191ms, edp=3773.849, throughput_penalty=1000000.000, objective=1003773.849
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 250.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=4, tile_size_y=32, nvml_pwr_limit=205, time=119.526ms, edp=2948.868, throughput_penalty=1000000.000, objective=1002948.868
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 205.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=8, tile_size_y=8, nvml_pwr_limit=150, time=91.095ms, edp=1258.845, throughput_penalty=1000000.000, objective=1001258.845
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 150.00 W.
+All done.
+block_size_x=128, block_size_y=8, tile_size_x=8, tile_size_y=2, nvml_pwr_limit=130, time=209.078ms, edp=5690.675, throughput_penalty=1000000.000, objective=1005690.675
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 130.00 W.
+All done.
+block_size_x=8, block_size_y=64, tile_size_x=2, tile_size_y=2, nvml_pwr_limit=240, time=138.086ms, edp=4006.479, throughput_penalty=1000000.000, objective=1004006.479
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 240.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=16, tile_size_y=4, nvml_pwr_limit=200, time=26.236ms, edp=141.857, throughput_penalty=1000000.000, objective=1000141.857
+Power limit for GPU 00000000:41:00.0 was set to 165.00 W from 200.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=4, tile_size_y=32, nvml_pwr_limit=165, time=129.578ms, edp=2751.705, throughput_penalty=1000000.000, objective=1002751.705
+Power limit for GPU 00000000:41:00.0 was set to 115.00 W from 165.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=8, tile_size_y=16, nvml_pwr_limit=115, time=150.206ms, edp=2563.030, throughput_penalty=1000000.000, objective=1002563.030
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 115.00 W.
+All done.
+block_size_x=128, block_size_y=8, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=185, time=153.843ms, edp=4359.912, throughput_penalty=1000000.000, objective=1004359.912
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 185.00 W.
+All done.
+block_size_x=4, block_size_y=32, tile_size_x=8, tile_size_y=2, nvml_pwr_limit=145, time=143.841ms, edp=2952.515, throughput_penalty=1000000.000, objective=1002952.515
+Power limit for GPU 00000000:41:00.0 was set to 100.00 W from 145.00 W.
+All done.
+block_size_x=64, block_size_y=4, tile_size_x=4, tile_size_y=4, nvml_pwr_limit=100, time=336.604ms, edp=11353.238, throughput_penalty=1000000.000, objective=1011353.238
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 100.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=16, tile_size_y=4, nvml_pwr_limit=110, time=61.678ms, edp=425.262, throughput_penalty=1000000.000, objective=1000425.262
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 110.00 W.
+All done.
+block_size_x=32, block_size_y=4, tile_size_x=8, tile_size_y=2, nvml_pwr_limit=150, time=190.697ms, edp=5453.873, throughput_penalty=1000000.000, objective=1005453.873
+Power limit for GPU 00000000:41:00.0 was set to 155.00 W from 150.00 W.
+All done.
+block_size_x=8, block_size_y=16, tile_size_x=8, tile_size_y=8, nvml_pwr_limit=155, time=235.544ms, edp=8523.191, throughput_penalty=1000000.000, objective=1008523.191
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 155.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=240, time=17.140ms, edp=70.647, throughput_penalty=1000000.000, objective=1000070.647
+Power limit for GPU 00000000:41:00.0 was set to 210.00 W from 240.00 W.
+All done.
+block_size_x=4, block_size_y=128, tile_size_x=8, tile_size_y=32, nvml_pwr_limit=210, time=76.377ms, edp=1247.102, throughput_penalty=1000000.000, objective=1001247.102
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 210.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=140, time=18.819ms, edp=50.827, throughput_penalty=1000000.000, objective=1000050.827
+Power limit for GPU 00000000:41:00.0 was set to 155.00 W from 140.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=155, time=14.234ms, edp=32.051, throughput_penalty=1000000.000, objective=1000032.051
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 155.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=145, time=17.922ms, edp=48.006, throughput_penalty=1000000.000, objective=1000048.006
+Power limit for GPU 00000000:41:00.0 was set to 115.00 W from 145.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=115, time=22.176ms, edp=57.815, throughput_penalty=1000000.000, objective=1000057.815
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 115.00 W.
+All done.
+block_size_x=1, block_size_y=256, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=110, time=22.987ms, edp=59.064, throughput_penalty=1000000.000, objective=1000059.064
+Power limit for GPU 00000000:41:00.0 was set to 115.00 W from 110.00 W.
+All done.
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=115, time=21.251ms, edp=52.740, throughput_penalty=1000000.000, objective=1000052.740
+Power limit for GPU 00000000:41:00.0 was set to 180.00 W from 115.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=180, time=12.429ms, edp=28.498, throughput_penalty=1000000.000, objective=1000028.498
+Power limit for GPU 00000000:41:00.0 was set to 185.00 W from 180.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=185, time=12.035ms, edp=27.448, throughput_penalty=1000000.000, objective=1000027.448
+Power limit for GPU 00000000:41:00.0 was set to 130.00 W from 185.00 W.
+All done.
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=130, time=45.187ms, edp=265.464, throughput_penalty=1000000.000, objective=1000265.464
+Power limit for GPU 00000000:41:00.0 was set to 135.00 W from 130.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=135, time=25.194ms, edp=88.494, throughput_penalty=1000000.000, objective=1000088.494
+block_size_x=8, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=135, time=42.971ms, edp=253.656, throughput_penalty=1000000.000, objective=1000253.656
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 135.00 W.
+All done.
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=205, time=15.112ms, edp=47.875, throughput_penalty=1000000.000, objective=1000047.875
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 205.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=200, time=12.089ms, edp=29.801, throughput_penalty=1000000.000, objective=1000029.801
+Power limit for GPU 00000000:41:00.0 was set to 210.00 W from 200.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=210, time=9.448ms, edp=19.162, throughput_penalty=1000000.000, objective=1000019.162
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 210.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=145, time=18.307ms, edp=50.264, throughput_penalty=1000000.000, objective=1000050.264
+Power limit for GPU 00000000:41:00.0 was set to 165.00 W from 145.00 W.
+All done.
+block_size_x=1, block_size_y=256, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=165, time=31.923ms, edp=173.472, throughput_penalty=1000000.000, objective=1000173.472
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 165.00 W.
+All done.
+block_size_x=1, block_size_y=1024, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=140, time=18.812ms, edp=51.085, throughput_penalty=1000000.000, objective=1000051.085
+Power limit for GPU 00000000:41:00.0 was set to 235.00 W from 140.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=235, time=10.774ms, edp=27.109, throughput_penalty=1000000.000, objective=1000027.109
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 235.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=110, time=24.643ms, edp=68.497, throughput_penalty=1000000.000, objective=1000068.497
+Power limit for GPU 00000000:41:00.0 was set to 230.00 W from 110.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=230, time=10.698ms, edp=26.300, throughput_penalty=1000000.000, objective=1000026.300
+Power limit for GPU 00000000:41:00.0 was set to 215.00 W from 230.00 W.
+All done.
+block_size_x=4, block_size_y=128, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=215, time=18.170ms, edp=71.481, throughput_penalty=1000000.000, objective=1000071.481
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 215.00 W.
+All done.
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=110, time=28.377ms, edp=89.502, throughput_penalty=1000000.000, objective=1000089.502
+Power limit for GPU 00000000:41:00.0 was set to 210.00 W from 110.00 W.
+All done.
+block_size_x=4, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=210, time=18.297ms, edp=71.695, throughput_penalty=1000000.000, objective=1000071.695
+Power limit for GPU 00000000:41:00.0 was set to 165.00 W from 210.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=165, time=20.744ms, edp=72.625, throughput_penalty=1000000.000, objective=1000072.625
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 165.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=145, time=16.304ms, edp=39.517, throughput_penalty=1000000.000, objective=1000039.517
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 145.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=140, time=17.175ms, edp=42.394, throughput_penalty=1000000.000, objective=1000042.394
+Power limit for GPU 00000000:41:00.0 was set to 190.00 W from 140.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=190, time=12.164ms, edp=28.898, throughput_penalty=1000000.000, objective=1000028.898
+Power limit for GPU 00000000:41:00.0 was set to 105.00 W from 190.00 W.
+All done.
+block_size_x=1, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=105, time=25.202ms, edp=67.073, throughput_penalty=1000000.000, objective=1000067.073
+Power limit for GPU 00000000:41:00.0 was set to 160.00 W from 105.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=160, time=29.473ms, edp=141.118, throughput_penalty=1000000.000, objective=1000141.118
+Power limit for GPU 00000000:41:00.0 was set to 155.00 W from 160.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=16, tile_size_y=2, nvml_pwr_limit=155, time=31.115ms, edp=152.999, throughput_penalty=1000000.000, objective=1000152.999
+Power limit for GPU 00000000:41:00.0 was set to 160.00 W from 155.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=8, tile_size_y=2, nvml_pwr_limit=160, time=57.082ms, edp=526.872, throughput_penalty=1000000.000, objective=1000526.872
+Power limit for GPU 00000000:41:00.0 was set to 205.00 W from 160.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=205, time=11.895ms, edp=29.469, throughput_penalty=1000000.000, objective=1000029.469
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 205.00 W.
+All done.
+block_size_x=2, block_size_y=128, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=200, time=12.056ms, edp=29.386, throughput_penalty=1000000.000, objective=1000029.386
+Power limit for GPU 00000000:41:00.0 was set to 230.00 W from 200.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=230, time=11.540ms, edp=30.716, throughput_penalty=1000000.000, objective=1000030.716
+Power limit for GPU 00000000:41:00.0 was set to 235.00 W from 230.00 W.
+All done.
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=235, time=16.426ms, edp=63.872, throughput_penalty=1000000.000, objective=1000063.872
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 235.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=225, time=11.478ms, edp=29.801, throughput_penalty=1000000.000, objective=1000029.801
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 225.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=250, time=10.605ms, edp=28.101, throughput_penalty=1000000.000, objective=1000028.101
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 250.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=245, time=10.669ms, edp=28.062, throughput_penalty=1000000.000, objective=1000028.062
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 245.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=250, time=11.061ms, edp=30.634, throughput_penalty=1000000.000, objective=1000030.634
+Power limit for GPU 00000000:41:00.0 was set to 215.00 W from 250.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=215, time=11.796ms, edp=30.458, throughput_penalty=1000000.000, objective=1000030.458
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=215, time=9.484ms, edp=19.944, throughput_penalty=1000000.000, objective=1000019.944
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 215.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=145, time=16.232ms, edp=39.378, throughput_penalty=1000000.000, objective=1000039.378
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 145.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=245, time=11.306ms, edp=31.372, throughput_penalty=1000000.000, objective=1000031.372
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 245.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=150, time=15.371ms, edp=36.570, throughput_penalty=1000000.000, objective=1000036.570
+Power limit for GPU 00000000:41:00.0 was set to 105.00 W from 150.00 W.
+All done.
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=105, time=35.178ms, edp=129.847, throughput_penalty=1000000.000, objective=1000129.847
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 105.00 W.
+All done.
+block_size_x=1, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=110, time=23.086ms, edp=59.297, throughput_penalty=1000000.000, objective=1000059.297
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 110.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=140, time=16.385ms, edp=38.506, throughput_penalty=1000000.000, objective=1000038.506
+Power limit for GPU 00000000:41:00.0 was set to 135.00 W from 140.00 W.
+All done.
+block_size_x=4, block_size_y=256, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=135, time=25.020ms, edp=87.121, throughput_penalty=1000000.000, objective=1000087.121
+Power limit for GPU 00000000:41:00.0 was set to 215.00 W from 135.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=215, time=9.445ms, edp=19.553, throughput_penalty=1000000.000, objective=1000019.553
+Power limit for GPU 00000000:41:00.0 was set to 220.00 W from 215.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=220, time=9.536ms, edp=20.565, throughput_penalty=1000000.000, objective=1000020.565
+Power limit for GPU 00000000:41:00.0 was set to 160.00 W from 220.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=160, time=13.965ms, edp=32.294, throughput_penalty=1000000.000, objective=1000032.294
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 160.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=240, time=11.299ms, edp=30.690, throughput_penalty=1000000.000, objective=1000030.690
+block_size_x=2, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=240, time=11.245ms, edp=30.363, throughput_penalty=1000000.000, objective=1000030.363
+Power limit for GPU 00000000:41:00.0 was set to 245.00 W from 240.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=245, time=11.161ms, edp=30.717, throughput_penalty=1000000.000, objective=1000030.717
+Power limit for GPU 00000000:41:00.0 was set to 215.00 W from 245.00 W.
+All done.
+block_size_x=1, block_size_y=64, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=215, time=15.606ms, edp=53.000, throughput_penalty=1000000.000, objective=1000053.000
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 215.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=225, time=10.073ms, edp=23.242, throughput_penalty=1000000.000, objective=1000023.242
+Power limit for GPU 00000000:41:00.0 was set to 220.00 W from 225.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=220, time=11.466ms, edp=29.551, throughput_penalty=1000000.000, objective=1000029.551
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 220.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=195, time=16.743ms, edp=55.733, throughput_penalty=1000000.000, objective=1000055.733
+Power limit for GPU 00000000:41:00.0 was set to 145.00 W from 195.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=145, time=15.710ms, edp=36.922, throughput_penalty=1000000.000, objective=1000036.922
+Power limit for GPU 00000000:41:00.0 was set to 240.00 W from 145.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=240, time=10.713ms, edp=27.637, throughput_penalty=1000000.000, objective=1000027.637
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 240.00 W.
+All done.
+block_size_x=1, block_size_y=128, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=110, time=24.397ms, edp=65.835, throughput_penalty=1000000.000, objective=1000065.835
+Power limit for GPU 00000000:41:00.0 was set to 230.00 W from 110.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=230, time=11.274ms, edp=29.252, throughput_penalty=1000000.000, objective=1000029.252
+Power limit for GPU 00000000:41:00.0 was set to 175.00 W from 230.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=175, time=12.976ms, edp=30.525, throughput_penalty=1000000.000, objective=1000030.525
+Power limit for GPU 00000000:41:00.0 was set to 110.00 W from 175.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=110, time=26.127ms, edp=76.830, throughput_penalty=1000000.000, objective=1000076.830
+Power limit for GPU 00000000:41:00.0 was set to 150.00 W from 110.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=150, time=15.058ms, edp=35.137, throughput_penalty=1000000.000, objective=1000035.137
+Power limit for GPU 00000000:41:00.0 was set to 235.00 W from 150.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=235, time=11.319ms, edp=30.245, throughput_penalty=1000000.000, objective=1000030.245
+Power limit for GPU 00000000:41:00.0 was set to 220.00 W from 235.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=220, time=9.440ms, edp=20.045, throughput_penalty=1000000.000, objective=1000020.045
+Power limit for GPU 00000000:41:00.0 was set to 195.00 W from 220.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=195, time=12.049ms, edp=28.898, throughput_penalty=1000000.000, objective=1000028.898
+Power limit for GPU 00000000:41:00.0 was set to 140.00 W from 195.00 W.
+All done.
+block_size_x=2, block_size_y=512, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=140, time=16.635ms, edp=39.871, throughput_penalty=1000000.000, objective=1000039.871
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 140.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=8, nvml_pwr_limit=225, time=9.480ms, edp=20.690, throughput_penalty=1000000.000, objective=1000020.690
+Power limit for GPU 00000000:41:00.0 was set to 230.00 W from 225.00 W.
+All done.
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=230, time=10.049ms, edp=23.693, throughput_penalty=1000000.000, objective=1000023.693
+Power limit for GPU 00000000:41:00.0 was set to 235.00 W from 230.00 W.
+All done.
+block_size_x=2, block_size_y=64, tile_size_x=32, tile_size_y=32, nvml_pwr_limit=235, time=11.388ms, edp=30.911, throughput_penalty=1000000.000, objective=1000030.911
+Power limit for GPU 00000000:41:00.0 was set to 225.00 W from 235.00 W.
+All done.
+block_size_x=2, block_size_y=32, tile_size_x=32, tile_size_y=16, nvml_pwr_limit=225, time=11.234ms, edp=28.550, throughput_penalty=1000000.000, objective=1000028.550
+Power limit for GPU 00000000:41:00.0 was set to 200.00 W from 225.00 W.
+All done.
+block_size_x=2, block_size_y=256, tile_size_x=32, tile_size_y=4, nvml_pwr_limit=200, time=11.952ms, edp=29.119, throughput_penalty=1000000.000, objective=1000029.119
+best performing configuration:
+block_size_x=1, block_size_y=32, tile_size_x=32, tile_size_y=2, nvml_pwr_limit=210, time=9.448ms, edp=19.162, throughput_penalty=1000000.000, objective=1000019.162
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 200.00 W.
+All done.
+Power limit for GPU 00000000:41:00.0 was set to 235.00 W from 250.00 W.
+All done.
+Power limit for GPU 00000000:41:00.0 was set to 155.00 W from 235.00 W.
+All done.
