@@ -13,6 +13,12 @@ import time
 from typing import Dict, Tuple, Optional
 from dataclasses import dataclass
 
+try:
+    from pynvml import *
+    NVML_ENABLED = True
+except ImportError:
+    NVML_ENABLED = False
+
 #############################################################################
 # 1) Constants & JSON storage
 #############################################################################
@@ -20,24 +26,32 @@ from dataclasses import dataclass
 CALIBRATION_FILE = "calibration.json"
 
 #############################################################################
-# 2) GPUArchitecture: loads device attributes, calibration data
+# 1) GPUArchitecture
+#    - loads device attributes, calibration data (both time & power parameters)
+#    - can run microbenchmarks for time-latency, and for power stress tests
 #############################################################################
 
 class GPUArchitecture:
     """
-    Stores GPU device info and all hardware calibration parameters.
-    If missing from the JSON, optionally runs microbenchmarks to fill them.
+    Represents a single GPU device’s attributes plus any calibration data
+    used by the time and power models.
     """
 
     def __init__(self, device_id=0):
         self.device = cuda.Device(device_id)
         self.name = self.device.name()
-        self.compute_capability = self.device.compute_capability()
+        self.compute_capability = self.device.compute_capability()  # e.g. (8, 6)
         self.attrs = self._fetch_device_attributes()
 
         # Attempt load calibration from file:
         self.arch_key = f"sm_{self.compute_capability[0]}{self.compute_capability[1]}"
         self.calibration_data = self._load_calibration(CALIBRATION_FILE)
+
+        # For NVML-based power measurement (optional)
+        self.nvml_handle = None
+        if NVML_ENABLED:
+            nvmlInit()
+            self.nvml_handle = nvmlDeviceGetHandleByIndex(device_id)
 
     def _fetch_device_attributes(self) -> Dict:
         """
@@ -116,39 +130,62 @@ class GPUArchitecture:
           - Local/Uncoalesced DRAM latency
           - Shared memory latency
           - Basic arithmetic issue cycles
+          - GPU power calibration (idle and stress measurements)
         Then store them in calibration.json as an average.
-
-        Real HPC usage can refine this approach further.
         """
         print(f"[INFO] Starting calibration for {self.name} (compute cap {self.compute_capability}) ...")
         arch_key = self.arch_key
 
-        # 0) measure kernel launch overhead
-        # We'll measure a "null" kernel overhead
+        # 0) Measure kernel launch overhead
         overhead_ns = self._measure_kernel_launch_overhead()
 
-        # 1) measure coalesced global DRAM latency (single warp pointer-chasing)
+        # 1) Measure coalesced global DRAM latency (using pointer chasing)
         lat_coal_ns = self._measure_global_latency(uncoalesced=False)
 
-        # 2) measure uncoalesced global DRAM latency
+        # 2) Measure uncoalesced global DRAM latency
         lat_uncoal_ns = self._measure_global_latency(uncoalesced=True)
 
-        # 3) measure shared memory latency
+        # 3) Measure shared memory latency
         lat_shared_ns = self._measure_shared_latency()
 
-        # 4) measure basic issue throughput
+        # 4) Measure basic arithmetic issue throughput (cycles per instruction)
         measure_issue_cycles = self._measure_issue_cycles()
-        if measure_issue_cycles<1.0:
-            measure_issue_cycles=4.0
+        if measure_issue_cycles < 1.0:
+            measure_issue_cycles = 4.0
 
-        # We'll guess partial-lat = halfway between coalesced & uncoalesced
-        lat_partial_ns = 0.5*(lat_coal_ns + lat_uncoal_ns)
+        # Compute a partial (average) latency as midpoint between coalesced and uncoalesced
+        lat_partial_ns = 0.5 * (lat_coal_ns + lat_uncoal_ns)
 
-        # We'll define departure delays as fraction of each
-        # This is still a rough approach, but better than concurrency-based:
-        dep_del_coal_s   = (lat_coal_ns*1e-9)/4.0
-        dep_del_uncoal_s = (lat_uncoal_ns*1e-9)/2.0
+        # Define departure delays as fractions of the measured latencies
+        dep_del_coal_s = (lat_coal_ns * 1e-9) / 4.0
+        dep_del_uncoal_s = (lat_uncoal_ns * 1e-9) / 2.0
 
+        # ----- POWER CALIBRATION -----
+        # If NVML is available, run the stress microbenchmarks to measure real power
+        if NVML_ENABLED:
+            self.run_power_calibration()  # this method updates self.calibration_data with measured power values
+            idle_power = self.calibration_data.get("idle_power", 50.0)
+            max_power_fp = self.calibration_data.get("max_power_fp", 20.0)
+            max_power_int = self.calibration_data.get("max_power_int", 10.0)
+            max_power_sfu = self.calibration_data.get("max_power_sfu", 5.0)
+            max_power_reg = self.calibration_data.get("max_power_reg", 5.0)
+            max_power_mem = self.calibration_data.get("max_power_mem", 30.0)
+            const_sm_power = self.calibration_data.get("const_sm_power", 20.0)
+            power_log_alpha = self.calibration_data.get("power_log_alpha", 0.1)
+            power_log_beta = self.calibration_data.get("power_log_beta", 1.1)
+        else:
+            # Fallback values if NVML is not available
+            idle_power = 50.0
+            max_power_fp = 20.0
+            max_power_int = 10.0
+            max_power_sfu = 5.0
+            max_power_reg = 5.0
+            max_power_mem = 30.0
+            const_sm_power = 20.0
+            power_log_alpha = 0.1
+            power_log_beta = 1.1
+
+        # Construct the new calibration info using measured values
         new_info = {
             arch_key: {
                 "baseline_kernel_overhead_ns": overhead_ns,
@@ -159,11 +196,20 @@ class GPUArchitecture:
                 "Departure_del_coal_s": dep_del_coal_s,
                 "Departure_del_uncoal_s": dep_del_uncoal_s,
                 "Mem_LD_shared_ns": lat_shared_ns,
-                "coalesced_bytes": 128
+                "coalesced_bytes": 128,
+                "idle_power": idle_power,
+                "max_power_fp": max_power_fp,
+                "max_power_int": max_power_int,
+                "max_power_sfu": max_power_sfu,
+                "max_power_reg": max_power_reg,
+                "max_power_mem": max_power_mem,
+                "const_sm_power": const_sm_power,
+                "power_log_alpha": power_log_alpha,
+                "power_log_beta": power_log_beta
             }
         }
 
-        # Write into the calibration file
+        # Write the updated calibration info to file
         full_data = {}
         if os.path.isfile(CALIBRATION_FILE):
             with open(CALIBRATION_FILE, 'r') as cf:
@@ -177,6 +223,155 @@ class GPUArchitecture:
         self.calibration_data = new_info[arch_key]
         print(f"[INFO] Wrote updated calibration to {CALIBRATION_FILE} for {arch_key}.")
         print(f"[INFO] Calibration finished: {self.calibration_data}")
+
+    def run_power_calibration(self):
+        """
+        Uses NVML and stress kernels to measure device power usage.
+        This function measures:
+          1) Idle power: using NVML over a 3-second interval when no kernel runs.
+          2) Memory stress power: launch a memory-bound kernel repeatedly and measure average power.
+          3) FP stress power: launch a floating-point–intensive kernel repeatedly.
+        Then it computes power constants (max_power values) as the difference between stressed and idle measurements.
+        """
+        if not NVML_ENABLED or not self.nvml_handle:
+            print("[WARNING] NVML not available; skipping power calibration.")
+            return
+
+        print(f"[CAL] Starting power calibration for {self.arch_key} using NVML...")
+
+        # 1) Measure idle power
+        idle_samples = []
+        idle_duration = 3.0  # seconds
+        print("[CAL] Measuring idle power for 3 seconds...")
+        start_time = time.time()
+        while time.time() - start_time < idle_duration:
+            p = nvmlDeviceGetPowerUsage(self.nvml_handle)  # in milliwatts
+            idle_samples.append(p)
+            time.sleep(0.05)
+        idle_power_W = np.mean(idle_samples) / 1000.0
+        print(f"[CAL] Measured idle power = {idle_power_W:.2f} W")
+
+        # 2) Measure memory-stress power using a memory-bound kernel
+        mem_stress_power = self._measure_stress_power(kernel_type="memory", measure_time_sec=3)
+        # 3) Measure FP-stress power using an FP-bound kernel
+        fp_stress_power = self._measure_stress_power(kernel_type="fp", measure_time_sec=3)
+
+        # Compute the additional power for memory and FP stresses
+        max_power_mem = max(mem_stress_power - idle_power_W, 0.0)
+        max_power_fp  = max(fp_stress_power - idle_power_W, 0.0)
+        # For demonstration, set the other units as fractions of FP stress power
+        max_power_int = max_power_fp * 0.5
+        max_power_sfu = max_power_fp * 0.3
+        max_power_reg = max_power_fp * 0.4
+        const_sm_power = max_power_fp * 0.5
+
+        # Set log scaling parameters (you might want to refine these via experiments)
+        power_log_alpha = 0.1
+        power_log_beta  = 1.1
+
+        new_data = {
+            self.arch_key: {
+                "idle_power": idle_power_W,
+                "max_power_fp": max_power_fp,
+                "max_power_int": max_power_int,
+                "max_power_sfu": max_power_sfu,
+                "max_power_reg": max_power_reg,
+                "max_power_mem": max_power_mem,
+                "const_sm_power": const_sm_power,
+                "power_log_alpha": power_log_alpha,
+                "power_log_beta": power_log_beta
+            }
+        }
+
+        # Merge new power calibration with existing calibration file data.
+        all_data = {}
+        if os.path.isfile(CALIBRATION_FILE):
+            with open(CALIBRATION_FILE, 'r') as f:
+                try:
+                    all_data = json.load(f)
+                except:
+                    all_data = {}
+        all_data.update(new_data)
+        with open(CALIBRATION_FILE, 'w') as f:
+            json.dump(all_data, f, indent=2)
+
+        # Update local calibration data.
+        self.calibration_data.update(new_data[self.arch_key])
+        print(f"[CAL] Updated power calibration in {CALIBRATION_FILE} for {self.arch_key}.")
+        print(f"[CAL] Power calibration results: {self.calibration_data}")
+        
+    def _measure_stress_power(self, kernel_type:str, measure_time_sec:int=3) -> float:
+        """
+        Launch a stress kernel (memory-bound or FP-bound) repeatedly,
+        while measuring GPU power via NVML. Return the average measured power in W.
+        """
+        if kernel_type == "memory":
+            kernel_source = r'''
+            __global__ void mem_stress(float *A, float *B, int N)
+            {
+                int idx = threadIdx.x + blockIdx.x * blockDim.x;
+                for(int i = 0; i < 10000; i++){
+                    if(idx < N){
+                        float tmp = A[idx];
+                        B[idx] = tmp + 1.0f;
+                    }
+                }
+            }
+            '''
+            kernel_name = "mem_stress"
+        else:  
+            kernel_source = r'''
+            __global__ void fp_stress(float *A, float *B, int N)
+            {
+                int idx = threadIdx.x + blockIdx.x * blockDim.x;
+                float val = 0.0f;
+                for(int i = 0; i < 10000; i++){
+                    val = val * 1.0001f + 1.0f;
+                }
+                if(idx < N){
+                    B[idx] = val;
+                }
+            }
+            '''
+            kernel_name = "fp_stress"
+
+        arch_opt = f"-arch=sm_{self.compute_capability[0]}{self.compute_capability[1]}"
+        mod = SourceModule(kernel_source, options=[arch_opt])
+        stress_kernel = mod.get_function(kernel_name)
+
+        N = 1024 * 1024
+        host_A = np.random.rand(N).astype(np.float32)
+        host_B = np.zeros_like(host_A)
+        d_A = cuda.mem_alloc(host_A.nbytes)
+        d_B = cuda.mem_alloc(host_B.nbytes)
+        cuda.memcpy_htod(d_A, host_A)
+        cuda.memcpy_htod(d_B, host_B)
+
+        block = (256, 1, 1)
+        grid = ((N + block[0] - 1) // block[0], 1)
+
+        # Warm up the kernel
+        for _ in range(5):
+            stress_kernel(d_A, d_B, np.int32(N), block=block, grid=grid)
+        cuda.Context.synchronize()
+
+        # Measure power with NVML over measure_time_sec seconds
+        power_samples = []
+        start_time = time.time()
+        print(f"[CAL] Stressing kernel '{kernel_type}' for {measure_time_sec} seconds ...")
+        while time.time() - start_time < measure_time_sec:
+            # Launch the stress kernel
+            stress_kernel(d_A, d_B, np.int32(N), block=block, grid=grid)
+            cuda.Context.synchronize()
+            # Read power (in milliwatts)
+            p_mW = nvmlDeviceGetPowerUsage(self.nvml_handle)
+            power_samples.append(p_mW)
+            time.sleep(0.05)
+        avg_power_mW = np.mean(power_samples)
+        avg_power_W = avg_power_mW / 1000.0
+        print(f"[CAL] Average {kernel_type} stress power = {avg_power_W:.2f} W")
+        return avg_power_W
+
 
     def _measure_kernel_launch_overhead(self)->float:
         """
@@ -581,6 +776,27 @@ class ExecutionTimeEstimator:
         self.clock_rate = self.arch.clock_rate_hz
         self.sm_count   = self.arch.sm_count
 
+    def get_concurrency_info(self) -> Tuple[float, float]:
+        """
+        Returns (active_warps_per_sm, total_exec_cycles_for_1_sm) as a helper
+        for computing power. 
+        We'll convert the predicted time (ns) -> cycles for that single SM.
+        """
+        # Re-run the same occupancy logic:
+        warps_per_block = math.ceil((self.block[0]*self.block[1]) / float(self.warp_size))
+        blocks_per_sm = self._calc_blocks_per_sm()
+        active_warps = warps_per_block * blocks_per_sm
+
+        # The total predicted kernel time in ns:
+        total_ns = self.estimate_time_ns()
+
+        # Approx cycles that one SM effectively experiences:
+        # (We just convert the total kernel time -> cycles, ignoring partial idle time.)
+        sm_cycles = total_ns * (self.clock_rate / 1e9)
+
+        return (float(active_warps), float(sm_cycles))
+
+
     def estimate_time_ns(self) -> float:
         """
         Estimate the total kernel runtime in nanoseconds.
@@ -664,7 +880,7 @@ class ExecutionTimeEstimator:
 
         # For local and shared, assume minimal departure delay:
         local_dep = dd_uncoal
-        shared_dep = 1.0 / self.clock_rate_hz  # about one cycle
+        shared_dep = 1.0 / self.clock_rate  # about one cycle
         mem_dep = global_dep * frac_global + local_dep * frac_local + shared_dep * frac_shared
 
         # === Compute Memory Warp Parallelism (MWP) ===
@@ -684,13 +900,13 @@ class ExecutionTimeEstimator:
         MWP = min(MWP_woBW, MWP_bw, active_warps)
 
         # === Compute memory cycles (for global, local, shared separately) ===
-        mem_cycles_coal   = lat_coal_s   * self.clock_rate_hz * n_coal
-        mem_cycles_uncoal = lat_uncoal_s * self.clock_rate_hz * n_uncoal
-        mem_cycles_part   = lat_part_s   * self.clock_rate_hz * n_part
+        mem_cycles_coal   = lat_coal_s   * self.clock_rate * n_coal
+        mem_cycles_uncoal = lat_uncoal_s * self.clock_rate * n_uncoal
+        mem_cycles_part   = lat_part_s   * self.clock_rate * n_part
         mem_global_cy = mem_cycles_coal + mem_cycles_uncoal + mem_cycles_part
 
-        mem_local_cy  = local_lat_s * self.clock_rate_hz * self.analysis.local_insts
-        mem_shared_cy = shared_lat_s * self.clock_rate_hz * self.analysis.shared_insts
+        mem_local_cy  = local_lat_s * self.clock_rate * self.analysis.local_insts
+        mem_shared_cy = shared_lat_s * self.clock_rate * self.analysis.shared_insts
         mem_total_cy  = mem_global_cy + mem_local_cy + mem_shared_cy
 
         # === Compute Computation Warp Parallelism (CWP) ===
@@ -709,19 +925,19 @@ class ExecutionTimeEstimator:
             comp_p = comp_cycles / float(mem_insts)
             time_per_rep_cy = mem_total_cy * (N / MWP) + comp_p * (MWP - 1)
         else:
-            time_per_rep_cy = (Mem_L * self.clock_rate_hz) + comp_cycles * N
+            time_per_rep_cy = (Mem_L * self.clock_rate) + comp_cycles * N
 
         # Synchronization overhead:
         synch_cost_cy = 0.0
         if self.analysis.synch_insts > 0:
-            dep_delay_cy = mem_dep * self.clock_rate_hz
+            dep_delay_cy = mem_dep * self.clock_rate
             blocks_per_sm = math.floor(self._calc_blocks_per_sm())
             synch_cost_cy = dep_delay_cy * (MWP - 1) * self.analysis.synch_insts * blocks_per_sm * reps
 
         total_cycles = time_per_rep_cy * reps + synch_cost_cy
 
         # Finally add the baseline overhead measured for short kernels.
-        total_ns = total_cycles / self.clock_rate_hz * 1e9 + self.baseline_ns
+        total_ns = total_cycles / self.clock_rate * 1e9 + self.baseline_ns
         return total_ns
 
 
@@ -761,6 +977,76 @@ class ExecutionTimeEstimator:
         return blocks_possible
 
 #############################################################################
+# 4) PowerEstimator
+#############################################################################
+
+class PowerEstimator:
+    """
+    Summation of dynamic usage across GPU units, plus idle & log-based factor
+    (inspired by the "Integrated GPU Power/Performance" approach).
+    """
+    def __init__(self, arch: GPUArchitecture, analysis: KernelAnalysis):
+        self.arch = arch
+        self.analysis = analysis
+        cdata = arch.calibration_data
+        self.idle_power   = cdata.get("idle_power",50.0)
+        self.max_power_fp = cdata.get("max_power_fp",20.0)
+        self.max_power_int= cdata.get("max_power_int",10.0)
+        self.max_power_sfu= cdata.get("max_power_sfu",5.0)
+        self.max_power_reg= cdata.get("max_power_reg",5.0)
+        self.max_power_mem= cdata.get("max_power_mem",30.0)
+        self.const_sm_power= cdata.get("const_sm_power",20.0)
+        self.log_alpha    = cdata.get("power_log_alpha",0.1)
+        self.log_beta     = cdata.get("power_log_beta",1.1)
+
+        self.clock_rate   = arch.clock_rate_hz
+
+    def estimate_power(self, exec_cycles: float, warps_per_sm: float, active_sms: int) -> float:
+        """
+        exec_cycles: total cycles on an SM for the kernel
+        warps_per_sm: concurrency
+        active_sms: how many SMs used (e.g. if partial usage)
+        """
+        if exec_cycles<1.0: exec_cycles=1.0
+        # classify instructions:
+        # you can parse ptx in detail for exact FP/INT/SFU, or guess
+        fp_instr  = self._count_fp_insts()
+        int_instr = self._count_int_insts()
+        sfu_instr = self._count_sfu_insts()
+        reg_instr = (self.analysis.comp_insts - (fp_instr+int_instr+sfu_instr))
+        mem_instr = (self.analysis.mem_coal + self.analysis.mem_uncoal + self.analysis.mem_partial)
+
+        # AccessRate for each unit
+        #   = (# instructions_of_type * warps_per_sm) / (exec_cycles/4)
+        factor = warps_per_sm / (exec_cycles/4.0)  # = 4*warps_per_sm / exec_cycles
+        rp_fp   = fp_instr*factor*self.max_power_fp
+        rp_int  = int_instr*factor*self.max_power_int
+        rp_sfu  = sfu_instr*factor*self.max_power_sfu
+        rp_reg  = reg_instr*factor*self.max_power_reg
+        rp_mem  = mem_instr*factor*self.max_power_mem
+
+        base_sm_dynamic = rp_fp+rp_int+rp_sfu+rp_reg+rp_mem + self.const_sm_power
+        from math import log10
+        # If you want partial SM approach: power_x = base_sm_dynamic * log10(...(active_sms)...)
+        # For a typical "full usage" scenario:
+        full_power = base_sm_dynamic*log10(self.log_alpha*active_sms+self.log_beta)
+        # Then add idle
+        total_gpu_power = self.idle_power + full_power
+        return total_gpu_power
+
+    def _count_fp_insts(self)->int:
+        # naive guess => half of comp_insts
+        return int(self.analysis.comp_insts*0.5)
+
+    def _count_int_insts(self)->int:
+        # naive guess => quarter
+        return int(self.analysis.comp_insts*0.25)
+
+    def _count_sfu_insts(self)->int:
+        # naive guess => 10% 
+        return int(self.analysis.comp_insts*0.1)
+
+#############################################################################
 # 5) Utility compile & benchmark
 #############################################################################
 
@@ -786,6 +1072,39 @@ def compile_kernel(kernel_path:str, arch:GPUArchitecture):
     with open(kernel_path+".ptx","w") as ff:
         ff.write(ptx_str)
     return mod, ptx_str, log_str ,kernel_name
+
+def benchmark_kernel_with_power(kernel_func, args, grid: Tuple[int,int], block: Tuple[int,int], runs=50, nvml_handle=None) -> Tuple[float, float]:
+    """
+    Run the kernel repeatedly while sampling NVML power usage.
+    Returns a tuple (median_kernel_time_us, average_power_W).
+    If nvml_handle is None, then average_power_W is returned as 0.
+    """
+    start = cuda.Event(); end = cuda.Event()
+    # Warmup runs
+    for _ in range(10):
+        kernel_func(*args, block=(block[0], block[1], 1), grid=(grid[0], grid[1], 1))
+    cuda.Context.synchronize()
+
+    times = []
+    power_samples = []
+    for _ in range(runs):
+        start.record()
+        kernel_func(*args, block=(block[0], block[1], 1), grid=(grid[0], grid[1], 1))
+        end.record()
+        end.synchronize()
+        t_ms = start.time_till(end)
+        times.append(t_ms * 1e3)  # convert ms -> microseconds
+
+        if nvml_handle is not None:
+            # Immediately sample power after each kernel run (in milliwatts)
+            p_mW = nvmlDeviceGetPowerUsage(nvml_handle)
+            power_samples.append(p_mW)
+    median_time_us = float(np.median(times))
+    if power_samples:
+        avg_power_W = float(np.mean(power_samples)) / 1000.0
+    else:
+        avg_power_W = 0.0
+    return median_time_us, avg_power_W
 
 def benchmark_kernel(kernel_func, args, grid:Tuple[int,int], block:Tuple[int,int], runs=50):
     """
@@ -861,16 +1180,35 @@ def main():
 
         # actual
         kernel_args = [d_a, d_b, d_c, np.int32(data_size)]
-        actual_us = benchmark_kernel(kernel_func, kernel_args, (gx,1), (bx,1), runs=runs)
-        actual_ns = actual_us*1e3
+
+        # Actual benchmark: measure time and actual power concurrently if NVML is available
+        if NVML_ENABLED and arch.nvml_handle is not None:
+            actual_time_us, actual_power_W = benchmark_kernel_with_power(
+                kernel_func, kernel_args,
+                (gx,1), (bx,1), runs=runs, nvml_handle=arch.nvml_handle)
+        else:
+            actual_time_us = benchmark_kernel(kernel_func, kernel_args,
+                                              (gx,1), (bx,1), runs=runs)
+            actual_power_W = 0.0
+
+        actual_ns = actual_time_us*1e3
 
         diff = abs(est_ns - actual_ns)/max(actual_ns,1e-9)*100.0
+
+        warps_per_sm, sm_cycles = estimator.get_concurrency_info()
+        exec_cy = est_ns*(arch.clock_rate_hz/1e9)
+        power_estimator = PowerEstimator(arch, analysis)
+        p_est = power_estimator.estimate_power(exec_cy, warps_per_sm, arch.sm_count)
+
 
         print(f"[RESULT] Kernel = {kname}")
         print(f"  PTX Analysis: {analysis}")
         print(f"  Estimated Time (ns)  : {est_ns:0.2f}")
         print(f"  Actual Median (ns)   : {actual_ns:0.2f}")
         print(f"  Diff (%)             : {diff:0.2f}")
+        print(f"  Approx Power (W)     : {p_est:0.2f}")
+        print(f"  Actual Power (W)     : {actual_power_W:0.2f}")
+
 
     else:
         print(f"Unknown mode: {mode}")
