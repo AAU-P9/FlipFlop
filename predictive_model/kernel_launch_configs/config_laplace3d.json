@@ -1,0 +1,40 @@
+{
+    "kernel_name": "laplace3d",
+    "dimensions": {
+      "nx": 128,
+      "ny": 128,
+      "nz": 128
+    },
+    "kernel_args": [
+      {
+        "name": "in",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["nz", "ny", "nx"],
+        "init": "random"
+      },
+      {
+        "name": "out",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["nz", "ny", "nx"],
+        "init": "zeros"
+      },
+      {
+        "name": "nx",
+        "type": "int",
+        "value": "nx"
+      },
+      {
+        "name": "ny",
+        "type": "int",
+        "value": "ny"
+      },
+      {
+        "name": "nz",
+        "type": "int",
+        "value": "nz"
+      }
+    ]
+  }
+  

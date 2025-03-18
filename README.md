@@ -1,6 +1,8 @@
 # Optimizing Energy Efficiency in Transformer-based Models  
 *Auto-tuning GPU Kernels for Sustainable AI Inference*  
 
+<!-- pgrep -f 'runner.sh' | xargs kill -9 -->
+
 ---
 
 ## Overview  

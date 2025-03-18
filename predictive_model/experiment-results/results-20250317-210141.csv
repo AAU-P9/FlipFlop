@@ -1,0 +1,3 @@
+Kernel,BlockX,BlockY,ThreadCount,GridX,GridY,DataSize,EstTime(ns),ActTime(ns),DiffTime(%),WarpsPerSM,PredictedPower(W),ActualPower(W),MemCoal,MemUncoal,MemPartial,LocalInsts,SharedInsts,SynchInsts,FpInsts,IntInsts,SfuInsts,AluInsts,TotalInsts,RegsPerThread,SharedMemBytes
+convolution.cu,1,32,32,256,1,131072,11724614.46,27648.00,42306.74,1.00,191.96,22.40,50,0,0,0,0,0,0,0,0,3,53,32,0
+convolution.cu,2,16,32,256,1,131072,11480826.23,49152.00,23257.80,1.00,191.97,42.17,50,0,0,0,0,0,0,0,0,3,53,32,0

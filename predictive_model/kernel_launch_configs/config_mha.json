@@ -1,0 +1,56 @@
+{
+  "kernel_name": "mha",
+  "dimensions": {
+    "beamsize": 4,
+    "nhead": 16,
+    "dim_feature": 4096,
+    "qk_col": 4096,
+    "v_col": 4096,
+    "n_steps": 9,
+    "repeat": 20
+  },
+  "kernel_args": [
+    {
+      "name": "q",
+      "type": "array",
+      "dtype": "float32",
+      "shape": ["beamsize", "dim_feature"],
+      "init": "random"
+    },
+    {
+      "name": "k",
+      "type": "array",
+      "dtype": "float32",
+      "shape": ["beamsize", "qk_col", "n_steps"],
+      "init": "random"
+    },
+    {
+      "name": "v",
+      "type": "array",
+      "dtype": "float32",
+      "shape": ["beamsize", "v_col", "n_steps"],
+      "init": "random"
+    },
+    {
+      "name": "dst",
+      "type": "array",
+      "dtype": "float32",
+      "shape": ["beamsize", "dim_feature"],
+      "init": "zeros"
+    },
+    { "name": "beam_size", "type": "int", "value": "beamsize" },
+    { "name": "n_steps", "type": "int", "value": "n_steps" },
+    { "name": "qk_col", "type": "int", "value": "qk_col" },
+    { "name": "v_col", "type": "int", "value": "v_col" },
+    { "name": "nhead", "type": "int", "value": "nhead" },
+    { "name": "scale", "type": "float", "value": "1.0" },
+    { "name": "THRESHOLD", "type": "int", "value": 64 }
+  ],
+  "launch_config": {
+    "grid_x": 64,
+    "grid_y": 1,
+    "block_x": 256,
+    "block_y": 1,
+    "shared_mem_bytes": 1060
+  }
+}

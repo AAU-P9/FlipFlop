@@ -1,93 +1,113 @@
 #!/bin/bash
 # runner.sh
-# Run multiple kernel experiments with the new integrated time and power estimation model.
-# 1) Calibrate the GPU once.
-# 2) Run for each combination of (kernel, grid, block, data).
+# This runner executes kernel experiments using the integrated time and power models.
+# It automatically loads a configuration file (if available) from the CONFIG_DIR.
+# CSV columns:
+# Kernel,BlockX,BlockY,ThreadCount,GridX,GridY,DataSize,EstTime(ns),ActTime(ns),
+# DiffTime(%),WarpsPerSM,PredictedPower(W),ActualPower(W),MemCoal,MemUncoal,MemPartial,
+# LocalInsts,SharedInsts,SynchInsts,FpInsts,IntInsts,SfuInsts,AluInsts,TotalInsts,RegsPerThread,SharedMemBytes
 #
-# The script collects:
-#  - Estimated Time (ns)
-#  - Actual Median Time (ns)
-#  - Difference (%)
-#  - Estimated Power (W)
-#  - Actual Power (W)
-#
-# Results are stored in a CSV file.
+# Kill all child processes on exit
+trap "kill 0" EXIT
 
-# Configuration
-OUTPUT_DIR="experiment-results-$(date +%Y%m%d-%H%M%S)"
-PY_SCRIPT="power_model.py"
-KERNEL_DIR="kernels"
-RUNS=100  # Number of runs per configuration
+# Directories and parameters
+OUTPUT_DIR="experiment-results"
+PREDICT_SCRIPT="energy_model.py"
+KERNEL_DIR="kernels_test"
+CONFIG_DIR="kernel_launch_configs"
+RUNS=20               # Number of runs per configuration
+SLEEP_TIME=2          # Seconds to sleep between experiments
 
-# Create output directory
+# Total threads per block to test
+THREAD_COUNTS=(32 64 128 256 512 1024)
+# Grid sizes (using 1D grid for simplicity)
+GRID_SIZES=(256)
+# All kernel source files in KERNEL_DIR
+KERNELS=($(ls ${KERNEL_DIR}/*.cu))
+
+# Create output directory and CSV file
 mkdir -p "$OUTPUT_DIR"
-CSV_FILE="$OUTPUT_DIR/results.csv"
+CSV_FILE="$OUTPUT_DIR/results-$(date +%Y%m%d-%H%M%S).csv"
 
-# 1) Calibrate once:
-echo "=== Step 1: Calibrating GPU with time_model.py calibrate ==="
-python3 "$PY_SCRIPT" calibrate
-if [ $? -ne 0 ]; then
-    echo "[ERROR] Calibration failed! Exiting."
-    exit 1
-fi
-echo "Calibration done."
+# Write CSV header.
+echo "Kernel,BlockX,BlockY,ThreadCount,GridX,GridY,DataSize,EstTime(ns),ActTime(ns),DiffTime(%),WarpsPerSM,PredictedPower(W),ActualPower(W),MemCoal,MemUncoal,MemPartial,LocalInsts,SharedInsts,SynchInsts,FpInsts,IntInsts,SfuInsts,AluInsts,TotalInsts,RegsPerThread,SharedMemBytes" > "$CSV_FILE"
 
-# 2) Prepare CSV output with additional columns for power
-echo "Kernel,GridX,BlockX,DataSize,EstimatedTime(ns),ActualTime(ns),Difference(%),EstimatedPower(W),ActualPower(W)" > "$CSV_FILE"
+# Function to generate factor pairs for a given total T
+get_factor_pairs() {
+    local T=$1
+    python3 <<EOF
+T = $T
+pairs = []
+for bx in range(1, T+1):
+    if T % bx == 0:
+        by = T // bx
+        pairs.append(f"{bx} {by}")
+for pair in pairs:
+    print(pair)
+EOF
+}
 
-# 3) Define experiment parameters
-GRID_SIZES=(256 512 1024)
-BLOCK_SIZES=(128 256 512)
-DATA_SIZES=(65536 131072 262144 524288 1048576)
-KERNELS=("vecAdd.cu" "matMul.cu" "laplace3d.cu")
-
-# 4) Loop over all combinations
+# Loop over each kernel.
 for kernel in "${KERNELS[@]}"; do
+    base=$(basename "$kernel")
+    # Expected config file: config_<kernelNameWithoutExtension>.json
+    config_file="$CONFIG_DIR/config_${base%.*}.json"
+    if [ ! -f "$config_file" ]; then
+        echo "[WARNING] No config file found for $base, using default."
+        config_file=""
+    fi
+
     for grid_size in "${GRID_SIZES[@]}"; do
-        for block_size in "${BLOCK_SIZES[@]}"; do
-            for data_size in "${DATA_SIZES[@]}"; do
-                echo "--------------------------------------------------"
-                echo "Running experiment with:"
-                echo "  Kernel:    $kernel"
-                echo "  Grid:      $grid_size"
-                echo "  Block:     $block_size"
-                echo "  DataSize:  $data_size"
-                echo "  Runs:      $RUNS"
-                echo "--------------------------------------------------"
+        gx=$grid_size
+        gy=1
+        for thread_count in "${THREAD_COUNTS[@]}"; do
+            mapfile -t pairs < <(get_factor_pairs $thread_count)
+            for pair in "${pairs[@]}"; do
+                bx=$(echo "$pair" | awk '{print $1}')
+                by=$(echo "$pair" | awk '{print $2}')
+                total_threads=$((bx * by))
+                for data_size in 131072; do  # You can add more data sizes if needed.
+                    echo "--------------------------------------------------"
+                    echo "Kernel:       $base"
+                    echo "Config:       $config_file"
+                    echo "Block shape:  ($bx, $by) => total threads = $total_threads"
+                    echo "Grid:         ($gx, $gy)"
+                    echo "DataSize:     $data_size"
+                    echo "Runs:         $RUNS"
+                    echo "--------------------------------------------------"
+                    
+                    output=$(python3 "$PREDICT_SCRIPT" "$kernel" "$gx" "$gy" "$bx" "$by" "$data_size" --runs "$RUNS" --config "$config_file" 2>&1)
+                    if [ $? -ne 0 ]; then
+                        echo "[ERROR] energy_model.py failed for $base with block=($bx,$by) grid=($gx,$gy) data=$data_size"
+                        echo "$output"
+                        continue
+                    fi
+                    
+                    est_time=$(echo "$output" | grep -i "Estimated Time (ns)" | awk -F= '{print $2}' | xargs)
+                    act_time=$(echo "$output" | grep -i "Actual Time" | awk -F= '{print $2}' | head -n1 | xargs)
+                    diff_time=$(echo "$output" | grep -i "diff (%)" | awk -F= '{print $2}' | xargs)
+                    warps=$(echo "$output" | grep -i "WarpsPerSM" | awk -F= '{print $2}' | xargs)
+                    pred_power=$(echo "$output" | grep -i "Predicted Power (W)" | awk -F= '{print $2}' | xargs)
+                    act_power=$(echo "$output" | grep -i "Actual Power (W)" | awk -F= '{print $2}' | head -n1 | xargs)
+                    
+                    mem_coal=$(echo "$output" | grep -i "MemCoal=" | awk -F= '{print $2}' | xargs)
+                    mem_uncoal=$(echo "$output" | grep -i "MemUncoal=" | awk -F= '{print $2}' | xargs)
+                    mem_partial=$(echo "$output" | grep -i "MemPartial=" | awk -F= '{print $2}' | xargs)
+                    local_insts=$(echo "$output" | grep -i "LocalInsts=" | awk -F= '{print $2}' | xargs)
+                    shared_insts=$(echo "$output" | grep -i "SharedInsts=" | awk -F= '{print $2}' | xargs)
+                    synch_insts=$(echo "$output" | grep -i "SynchInsts=" | awk -F= '{print $2}' | xargs)
+                    fp_insts=$(echo "$output" | grep -i "FpInsts=" | awk -F= '{print $2}' | xargs)
+                    int_insts=$(echo "$output" | grep -i "IntInsts=" | awk -F= '{print $2}' | xargs)
+                    sfu_insts=$(echo "$output" | grep -i "SfuInsts=" | awk -F= '{print $2}' | xargs)
+                    alu_insts=$(echo "$output" | grep -i "AluInsts=" | awk -F= '{print $2}' | xargs)
+                    total_insts=$(echo "$output" | grep -i "TotalInsts=" | awk -F= '{print $2}' | xargs)
+                    regs_pt=$(echo "$output" | grep -i "RegsPerThread=" | awk -F= '{print $2}' | xargs)
+                    shared_mem_bytes=$(echo "$output" | grep -i "SharedMemBytes=" | awk -F= '{print $2}' | xargs)
 
-                output=$(python3 "$PY_SCRIPT" run "$KERNEL_DIR/$kernel" \
-                    "$grid_size" \
-                    "$block_size" \
-                    "$data_size" \
-                    "$RUNS" 2>&1)
-
-                if [ $? -ne 0 ]; then
-                    echo "[ERROR] Error running $kernel with Grid=$grid_size, Block=$block_size, DataSize=$data_size"
-                    echo "$output"
-                    continue
-                fi
-
-                # Extract the required values from output:
-                # Expected output lines:
-                #   Estimated Time (ns)  : <value>
-                #   Actual Median (ns)   : <value>
-                #   Diff (%)             : <value>
-                #   Approx Power (W)     : <value>
-                #   Actual Power (W)     : <value>
-                estimated=$(echo "$output" | grep "Estimated Time (ns)" | awk '{print $5}')
-                actual=$(echo "$output" | grep "Actual Median (ns)" | awk '{print $5}')
-                diff_pct=$(echo "$output" | grep "Diff (%)" | awk '{print $4}')
-                est_power=$(echo "$output" | grep "Approx Power (W)" | awk '{print $5}')
-                act_power=$(echo "$output" | grep "Actual Power (W)" | awk '{print $5}')
-
-                if [ -z "$estimated" ] || [ -z "$actual" ] || [ -z "$diff_pct" ] || [ -z "$est_power" ] || [ -z "$act_power" ]; then
-                    echo "[WARNING] Could not parse output for $kernel (Grid=$grid_size, Block=$block_size, DataSize=$data_size)."
-                    echo "$output"
-                    continue
-                fi
-
-                echo "$kernel,$grid_size,$block_size,$data_size,$estimated,$actual,$diff_pct,$est_power,$act_power" >> "$CSV_FILE"
-                echo "Done -> $kernel, GridX=$grid_size, BlockX=$block_size, DataSize=$data_size"
+                    echo "$base,$bx,$by,$total_threads,$gx,$gy,$data_size,$est_time,$act_time,$diff_time,$warps,$pred_power,$act_power,$mem_coal,$mem_uncoal,$mem_partial,$local_insts,$shared_insts,$synch_insts,$fp_insts,$int_insts,$sfu_insts,$alu_insts,$total_insts,$regs_pt,$shared_mem_bytes" >> "$CSV_FILE"
+                    echo "Experiment completed: Kernel=$base, block=($bx,$by), grid=($gx,$gy), DataSize=$data_size"
+                    sleep $SLEEP_TIME
+                done
             done
         done
     done

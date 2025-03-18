@@ -1,0 +1,35 @@
+{
+    "kernel_name": "vecAdd",
+    "dimensions": {
+      "n": 1048576
+    },
+    "kernel_args": [
+      {
+        "name": "a",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["n"],
+        "init": "random"
+      },
+      {
+        "name": "b",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["n"],
+        "init": "random"
+      },
+      {
+        "name": "c",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["n"],
+        "init": "zeros"
+      },
+      {
+        "name": "n",
+        "type": "int",
+        "value": "n"
+      }
+    ]
+  }
+  

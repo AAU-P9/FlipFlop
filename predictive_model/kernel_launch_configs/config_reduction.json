@@ -1,0 +1,28 @@
+{
+    "kernel_name": "reduction",
+    "dimensions": {
+      "N": 1048576
+    },
+    "kernel_args": [
+      {
+        "name": "input",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["N"],
+        "init": "random"
+      },
+      {
+        "name": "output",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["1"],
+        "init": "zeros"
+      },
+      {
+        "name": "N",
+        "type": "int",
+        "value": "N"
+      }
+    ]
+  }
+  
