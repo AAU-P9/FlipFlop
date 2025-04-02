@@ -1,0 +1,34 @@
+{
+    "kernel_name": "transpose",
+    "dimensions": {
+      "width": 1024,
+      "height": 1024
+    },
+    "kernel_args": [
+      {
+        "name": "input",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["height", "width"],
+        "init": "random"
+      },
+      {
+        "name": "output",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["width", "height"],
+        "init": "zeros"
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "value": "width"
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "value": "height"
+      }
+    ]
+  }
+  

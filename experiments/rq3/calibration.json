@@ -1,0 +1,30 @@
+{
+  "sm_89": {
+    "baseline_kernel_overhead_ns": 9372.8001229465,
+    "Mem_LD_coal_ns": 50.78604793548584,
+    "Mem_LD_uncoal_ns": 50.77888011932373,
+    "Mem_LD_partial_ns": 50.7819037437439,
+    "partial_coalesce_slope": 1.3945931641501375e-05,
+    "partial_coalesce_intercept": 50.77939987182617,
+    "Mem_LD_shared_ns": 3.1034015655517577,
+    "Mem_LD_local_ns": 1.9241023778915405,
+    "issue_cycles": 2.2221532516479496,
+    "Departure_del_coal_s": 3.1741279959678654e-09,
+    "Departure_del_uncoal_s": 6.347360014915466e-09,
+    "effective_mem_bw_gbps": 238.1454370492369,
+    "idle_power": 54.708499999999994,
+    "max_power_mem": 0.0,
+    "max_power_fp": 0.0,
+    "max_power_int": 5.0,
+    "max_power_sfu": 2.0,
+    "max_power_alu": 2.0,
+    "max_power_fds": 2.0,
+    "max_power_reg": 2.0,
+    "max_power_shm": 1.0,
+    "const_sm_power": 1.0,
+    "power_log_alpha": 0.1,
+    "power_log_beta": 1.1,
+    "max_power_total": 300.0,
+    "shape_occupancy_factor": 0.2
+  }
+}

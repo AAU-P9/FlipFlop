@@ -1,0 +1,5 @@
+Kernel,BlockX,BlockY,ThreadCount,GridX,GridY,DataSize,EstTime(ns),ActTime(ns),DiffTime(%),WarpsPerSM,PredictedPower(W),ActualPower(W),MemCoal,MemUncoal,MemPartial,LocalInsts,SharedInsts,SynchInsts,FpInsts,IntInsts,SfuInsts,AluInsts,TotalInsts,RegsPerThread,SharedMemBytes
+mha.cu,,,32,,,131072,,,,,,,,,,,,,,,,,,,
+mha.cu,,,32,,,131072,,,,,,,,,,,,,,,,,,,
+mha.cu,,,32,,,131072,,,,,,,,,,,,,,,,,,,
+mha.cu,,,32,,,131072,,,,,,,,,,,,,,,,,,,

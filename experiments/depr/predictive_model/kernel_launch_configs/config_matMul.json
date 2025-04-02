@@ -1,0 +1,47 @@
+{
+    "kernel_name": "matMul",
+    "dimensions": {
+      "M": 512,
+      "N": 512,
+      "K": 512
+    },
+    "kernel_args": [
+      {
+        "name": "A",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["M", "N"],
+        "init": "random"
+      },
+      {
+        "name": "B",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["N", "K"],
+        "init": "random"
+      },
+      {
+        "name": "C",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["M", "K"],
+        "init": "zeros"
+      },
+      {
+        "name": "M",
+        "type": "int",
+        "value": "M"
+      },
+      {
+        "name": "N",
+        "type": "int",
+        "value": "N"
+      },
+      {
+        "name": "K",
+        "type": "int",
+        "value": "K"
+      }
+    ]
+  }
+  

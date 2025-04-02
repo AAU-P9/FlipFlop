@@ -1,0 +1,88 @@
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (1, 32) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Traceback (most recent call last):
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 195, in <module>
+    main()
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 123, in main
+    analysis = analyzer.analyze()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/PTXAnalyzer.py", line 78, in analyze
+    (mem_coal, mem_un, mem_part) = self._coalescing_breakdown(effective_block_x, base_global)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/PTXAnalyzer.py", line 433, in _coalescing_breakdown
+    coalesce_factor = self._calculate_coalesce_factor(stride_analysis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PTXAnalyzer' object has no attribute '_calculate_coalesce_factor'
+Experiment completed: Kernel=mha.cu, block=(1,32), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (2, 16) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Traceback (most recent call last):
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 195, in <module>
+    main()
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 123, in main
+    analysis = analyzer.analyze()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/PTXAnalyzer.py", line 78, in analyze
+    (mem_coal, mem_un, mem_part) = self._coalescing_breakdown(effective_block_x, base_global)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/PTXAnalyzer.py", line 433, in _coalescing_breakdown
+    coalesce_factor = self._calculate_coalesce_factor(stride_analysis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PTXAnalyzer' object has no attribute '_calculate_coalesce_factor'
+Experiment completed: Kernel=mha.cu, block=(2,16), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (4, 8) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Traceback (most recent call last):
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 195, in <module>
+    main()
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 123, in main
+    analysis = analyzer.analyze()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/PTXAnalyzer.py", line 78, in analyze
+    (mem_coal, mem_un, mem_part) = self._coalescing_breakdown(effective_block_x, base_global)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/PTXAnalyzer.py", line 433, in _coalescing_breakdown
+    coalesce_factor = self._calculate_coalesce_factor(stride_analysis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PTXAnalyzer' object has no attribute '_calculate_coalesce_factor'
+Experiment completed: Kernel=mha.cu, block=(4,8), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (8, 4) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Traceback (most recent call last):
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 195, in <module>
+    main()
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 123, in main
+    analysis = analyzer.analyze()
+               ^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/PTXAnalyzer.py", line 78, in analyze
+    (mem_coal, mem_un, mem_part) = self._coalescing_breakdown(effective_block_x, base_global)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/PTXAnalyzer.py", line 433, in _coalescing_breakdown
+    coalesce_factor = self._calculate_coalesce_factor(stride_analysis)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'PTXAnalyzer' object has no attribute '_calculate_coalesce_factor'
+Experiment completed: Kernel=mha.cu, block=(8,4), grid=(256,1), DataSize=131072

@@ -1,0 +1,34 @@
+{
+    "kernel_name": "convolution",
+    "dimensions": {
+      "width": 512,
+      "height": 512
+    },
+    "kernel_args": [
+      {
+        "name": "input",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["height", "width"],
+        "init": "random"
+      },
+      {
+        "name": "output",
+        "type": "array",
+        "dtype": "float32",
+        "shape": ["height", "width"],
+        "init": "zeros"
+      },
+      {
+        "name": "width",
+        "type": "int",
+        "value": "width"
+      },
+      {
+        "name": "height",
+        "type": "int",
+        "value": "height"
+      }
+    ]
+  }
+  

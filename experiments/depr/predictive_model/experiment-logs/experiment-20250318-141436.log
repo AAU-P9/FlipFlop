@@ -1,0 +1,1781 @@
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (1, 32) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 1x32
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=1, block_y=32)
+Estimated Time (ns) = 2845165.13
+Actual Time   (ns) = 52368.00
+-> Diff (%) = 5333.02
+WarpsPerSM = 1.00
+Predicted Power (W) = 193.10
+Actual Power (W) = 86.93
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=1
+BlockY=32
+Experiment completed: Kernel=mha.cu, block=(1,32), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (2, 16) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 2x16
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=2, block_y=16)
+Estimated Time (ns) = 2786662.08
+Actual Time   (ns) = 63488.00
+-> Diff (%) = 4289.27
+WarpsPerSM = 1.00
+Predicted Power (W) = 193.11
+Actual Power (W) = 63.13
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=2
+BlockY=16
+Experiment completed: Kernel=mha.cu, block=(2,16), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (4, 8) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 4x8
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=4, block_y=8)
+Estimated Time (ns) = 2669655.96
+Actual Time   (ns) = 62464.00
+-> Diff (%) = 4173.91
+WarpsPerSM = 1.00
+Predicted Power (W) = 193.12
+Actual Power (W) = 60.49
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=4
+BlockY=8
+Experiment completed: Kernel=mha.cu, block=(4,8), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (8, 4) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 8x4
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=8, block_y=4)
+Estimated Time (ns) = 2435643.74
+Actual Time   (ns) = 62464.00
+-> Diff (%) = 3799.28
+WarpsPerSM = 1.00
+Predicted Power (W) = 193.17
+Actual Power (W) = 59.93
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=8
+BlockY=4
+Experiment completed: Kernel=mha.cu, block=(8,4), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (16, 2) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 16x2
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=16, block_y=2)
+Estimated Time (ns) = 1967619.29
+Actual Time   (ns) = 49152.00
+-> Diff (%) = 3903.13
+WarpsPerSM = 1.00
+Predicted Power (W) = 193.29
+Actual Power (W) = 59.34
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=16
+BlockY=2
+Experiment completed: Kernel=mha.cu, block=(16,2), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (32, 1) => total threads = 32
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 32x1
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=32, block_y=1)
+Estimated Time (ns) = 874815.36
+Actual Time   (ns) = 63040.00
+-> Diff (%) = 1287.71
+WarpsPerSM = 1.00
+Predicted Power (W) = 177.88
+Actual Power (W) = 59.23
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=32
+BlockY=1
+Experiment completed: Kernel=mha.cu, block=(32,1), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (1, 64) => total threads = 64
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 1x64
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=1, block_y=64)
+Estimated Time (ns) = 5680482.94
+Actual Time   (ns) = 33792.00
+-> Diff (%) = 16710.14
+WarpsPerSM = 2.00
+Predicted Power (W) = 193.10
+Actual Power (W) = 58.72
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=1
+BlockY=64
+Experiment completed: Kernel=mha.cu, block=(1,64), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (2, 32) => total threads = 64
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 2x32
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=2, block_y=32)
+Estimated Time (ns) = 5563476.83
+Actual Time   (ns) = 63488.00
+-> Diff (%) = 8663.04
+WarpsPerSM = 2.00
+Predicted Power (W) = 193.11
+Actual Power (W) = 58.01
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=2
+BlockY=32
+Experiment completed: Kernel=mha.cu, block=(2,32), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (4, 16) => total threads = 64
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 4x16
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=4, block_y=16)
+Estimated Time (ns) = 5329464.61
+Actual Time   (ns) = 62464.00
+-> Diff (%) = 8432.06
+WarpsPerSM = 2.00
+Predicted Power (W) = 193.13
+Actual Power (W) = 57.95
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=4
+BlockY=16
+Experiment completed: Kernel=mha.cu, block=(4,16), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (8, 8) => total threads = 64
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 8x8
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=8, block_y=8)
+Estimated Time (ns) = 4861440.16
+Actual Time   (ns) = 64512.00
+-> Diff (%) = 7435.71
+WarpsPerSM = 2.00
+Predicted Power (W) = 193.17
+Actual Power (W) = 57.73
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=8
+BlockY=8
+Experiment completed: Kernel=mha.cu, block=(8,8), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (16, 4) => total threads = 64
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 16x4
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=16, block_y=4)
+Estimated Time (ns) = 3925391.25
+Actual Time   (ns) = 62512.00
+-> Diff (%) = 6179.42
+WarpsPerSM = 2.00
+Predicted Power (W) = 193.29
+Actual Power (W) = 57.60
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=16
+BlockY=4
+Experiment completed: Kernel=mha.cu, block=(16,4), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (32, 2) => total threads = 64
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 32x2
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=32, block_y=2)
+Estimated Time (ns) = 1598140.16
+Actual Time   (ns) = 53248.00
+-> Diff (%) = 2901.31
+WarpsPerSM = 2.00
+Predicted Power (W) = 170.69
+Actual Power (W) = 57.80
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=32
+BlockY=2
+Experiment completed: Kernel=mha.cu, block=(32,2), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (64, 1) => total threads = 64
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 64x1
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=64, block_y=1)
+Estimated Time (ns) = 1881418.08
+Actual Time   (ns) = 53328.00
+-> Diff (%) = 3428.01
+WarpsPerSM = 2.00
+Predicted Power (W) = 185.10
+Actual Power (W) = 57.90
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=64
+BlockY=1
+Experiment completed: Kernel=mha.cu, block=(64,1), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (1, 128) => total threads = 128
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 1x128
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=1, block_y=128)
+Estimated Time (ns) = 11351118.57
+Actual Time   (ns) = 62464.00
+-> Diff (%) = 18072.26
+WarpsPerSM = 4.00
+Predicted Power (W) = 193.10
+Actual Power (W) = 57.51
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=1
+BlockY=128
+Experiment completed: Kernel=mha.cu, block=(1,128), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (2, 64) => total threads = 128
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 2x64
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=2, block_y=64)
+Estimated Time (ns) = 11117106.34
+Actual Time   (ns) = 54272.00
+-> Diff (%) = 20384.06
+WarpsPerSM = 4.00
+Predicted Power (W) = 193.11
+Actual Power (W) = 57.40
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=2
+BlockY=64
+Experiment completed: Kernel=mha.cu, block=(2,64), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (4, 32) => total threads = 128
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 4x32
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=4, block_y=32)
+Estimated Time (ns) = 10649081.89
+Actual Time   (ns) = 36944.00
+-> Diff (%) = 28724.93
+WarpsPerSM = 4.00
+Predicted Power (W) = 193.13
+Actual Power (W) = 57.21
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=4
+BlockY=32
+Experiment completed: Kernel=mha.cu, block=(4,32), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (8, 16) => total threads = 128
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 8x16
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=8, block_y=16)
+Estimated Time (ns) = 9713032.99
+Actual Time   (ns) = 34880.00
+-> Diff (%) = 27747.00
+WarpsPerSM = 4.00
+Predicted Power (W) = 193.17
+Actual Power (W) = 57.15
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=8
+BlockY=16
+Experiment completed: Kernel=mha.cu, block=(8,16), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (16, 8) => total threads = 128
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 16x8
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=16, block_y=8)
+Estimated Time (ns) = 7840935.19
+Actual Time   (ns) = 35328.00
+-> Diff (%) = 22094.68
+WarpsPerSM = 4.00
+Predicted Power (W) = 193.29
+Actual Power (W) = 57.23
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=16
+BlockY=8
+Experiment completed: Kernel=mha.cu, block=(16,8), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (32, 4) => total threads = 128
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 32x4
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=32, block_y=4)
+Estimated Time (ns) = 4648967.93
+Actual Time   (ns) = 55280.00
+-> Diff (%) = 8309.86
+WarpsPerSM = 4.00
+Predicted Power (W) = 162.98
+Actual Power (W) = 56.92
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=32
+BlockY=4
+Experiment completed: Kernel=mha.cu, block=(32,4), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (64, 2) => total threads = 128
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 64x2
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=64, block_y=2)
+Estimated Time (ns) = 5557393.84
+Actual Time   (ns) = 62336.00
+-> Diff (%) = 8815.22
+WarpsPerSM = 4.00
+Predicted Power (W) = 177.42
+Actual Power (W) = 57.00
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=64
+BlockY=2
+Experiment completed: Kernel=mha.cu, block=(64,2), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (128, 1) => total threads = 128
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 128x1
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=128, block_y=1)
+Estimated Time (ns) = 6465819.74
+Actual Time   (ns) = 53264.00
+-> Diff (%) = 12039.19
+WarpsPerSM = 4.00
+Predicted Power (W) = 191.87
+Actual Power (W) = 57.08
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=128
+BlockY=1
+Experiment completed: Kernel=mha.cu, block=(128,1), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (1, 256) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 1x256
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=1, block_y=256)
+Estimated Time (ns) = 26221522.11
+Actual Time   (ns) = 53696.00
+-> Diff (%) = 48733.29
+WarpsPerSM = 8.00
+Predicted Power (W) = 193.04
+Actual Power (W) = 56.99
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=1
+BlockY=256
+Experiment completed: Kernel=mha.cu, block=(1,256), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (2, 128) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 2x128
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=2, block_y=128)
+Estimated Time (ns) = 26221518.13
+Actual Time   (ns) = 62560.00
+-> Diff (%) = 41814.19
+WarpsPerSM = 8.00
+Predicted Power (W) = 193.04
+Actual Power (W) = 56.88
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=2
+BlockY=128
+Experiment completed: Kernel=mha.cu, block=(2,128), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (4, 64) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 4x64
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=4, block_y=64)
+Estimated Time (ns) = 26221510.16
+Actual Time   (ns) = 62528.00
+-> Diff (%) = 41835.63
+WarpsPerSM = 8.00
+Predicted Power (W) = 193.04
+Actual Power (W) = 56.75
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=4
+BlockY=64
+Experiment completed: Kernel=mha.cu, block=(4,64), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (8, 32) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 8x32
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=8, block_y=32)
+Estimated Time (ns) = 26221494.23
+Actual Time   (ns) = 55296.00
+-> Diff (%) = 47320.24
+WarpsPerSM = 8.00
+Predicted Power (W) = 193.04
+Actual Power (W) = 56.84
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=8
+BlockY=32
+Experiment completed: Kernel=mha.cu, block=(8,32), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (16, 16) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 16x16
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=16, block_y=16)
+Estimated Time (ns) = 26221462.37
+Actual Time   (ns) = 38864.00
+-> Diff (%) = 67369.80
+WarpsPerSM = 8.00
+Predicted Power (W) = 193.04
+Actual Power (W) = 56.91
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=16
+BlockY=16
+Experiment completed: Kernel=mha.cu, block=(16,16), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (32, 8) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 32x8
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=32, block_y=8)
+Estimated Time (ns) = 16749325.64
+Actual Time   (ns) = 54064.00
+-> Diff (%) = 30880.55
+WarpsPerSM = 8.00
+Predicted Power (W) = 155.34
+Actual Power (W) = 56.92
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=32
+BlockY=8
+Experiment completed: Kernel=mha.cu, block=(32,8), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (64, 4) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 64x4
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=64, block_y=4)
+Estimated Time (ns) = 20383014.36
+Actual Time   (ns) = 53264.00
+-> Diff (%) = 38167.90
+WarpsPerSM = 8.00
+Predicted Power (W) = 169.79
+Actual Power (W) = 56.76
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=64
+BlockY=4
+Experiment completed: Kernel=mha.cu, block=(64,4), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (128, 2) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 128x2
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=128, block_y=2)
+Estimated Time (ns) = 24016703.07
+Actual Time   (ns) = 54272.00
+-> Diff (%) = 44152.47
+WarpsPerSM = 8.00
+Predicted Power (W) = 184.26
+Actual Power (W) = 56.72
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=128
+BlockY=2
+Experiment completed: Kernel=mha.cu, block=(128,2), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (256, 1) => total threads = 256
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 256x1
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=256, block_y=1)
+Estimated Time (ns) = 26221398.65
+Actual Time   (ns) = 62912.00
+-> Diff (%) = 41579.49
+WarpsPerSM = 8.00
+Predicted Power (W) = 193.04
+Actual Power (W) = 56.82
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=256
+BlockY=1
+Experiment completed: Kernel=mha.cu, block=(256,1), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (1, 512) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 1x512
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=1, block_y=512)
+Estimated Time (ns) = 104855984.95
+Actual Time   (ns) = 54272.00
+-> Diff (%) = 193104.57
+WarpsPerSM = 16.00
+Predicted Power (W) = 192.85
+Actual Power (W) = 56.79
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=1
+BlockY=512
+Experiment completed: Kernel=mha.cu, block=(1,512), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (2, 256) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 2x256
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=2, block_y=256)
+Estimated Time (ns) = 104855980.96
+Actual Time   (ns) = 54272.00
+-> Diff (%) = 193104.56
+WarpsPerSM = 16.00
+Predicted Power (W) = 192.85
+Actual Power (W) = 56.69
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=2
+BlockY=256
+Experiment completed: Kernel=mha.cu, block=(2,256), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (4, 128) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 4x128
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=4, block_y=128)
+Estimated Time (ns) = 104855973.00
+Actual Time   (ns) = 54224.00
+-> Diff (%) = 193275.58
+WarpsPerSM = 16.00
+Predicted Power (W) = 192.85
+Actual Power (W) = 56.72
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=4
+BlockY=128
+Experiment completed: Kernel=mha.cu, block=(4,128), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (8, 64) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 8x64
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=8, block_y=64)
+Estimated Time (ns) = 104855957.07
+Actual Time   (ns) = 53248.00
+-> Diff (%) = 196819.99
+WarpsPerSM = 16.00
+Predicted Power (W) = 192.85
+Actual Power (W) = 56.66
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=8
+BlockY=64
+Experiment completed: Kernel=mha.cu, block=(8,64), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (16, 32) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 16x32
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=16, block_y=32)
+Estimated Time (ns) = 104855925.21
+Actual Time   (ns) = 39424.00
+-> Diff (%) = 265869.79
+WarpsPerSM = 16.00
+Predicted Power (W) = 192.85
+Actual Power (W) = 56.68
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=16
+BlockY=32
+Experiment completed: Kernel=mha.cu, block=(16,32), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (32, 16) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 32x16
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=32, block_y=16)
+Estimated Time (ns) = 59700238.32
+Actual Time   (ns) = 63488.00
+-> Diff (%) = 93933.89
+WarpsPerSM = 16.00
+Predicted Power (W) = 147.88
+Actual Power (W) = 56.69
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=32
+BlockY=16
+Experiment completed: Kernel=mha.cu, block=(32,16), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (64, 8) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 64x8
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=64, block_y=8)
+Estimated Time (ns) = 74234978.28
+Actual Time   (ns) = 65520.00
+-> Diff (%) = 113201.25
+WarpsPerSM = 16.00
+Predicted Power (W) = 162.35
+Actual Power (W) = 56.66
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=64
+BlockY=8
+Experiment completed: Kernel=mha.cu, block=(64,8), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (128, 4) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 128x4
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=128, block_y=4)
+Estimated Time (ns) = 88769718.24
+Actual Time   (ns) = 52848.00
+-> Diff (%) = 167871.76
+WarpsPerSM = 16.00
+Predicted Power (W) = 176.83
+Actual Power (W) = 56.60
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=128
+BlockY=4
+Experiment completed: Kernel=mha.cu, block=(128,4), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (256, 2) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 256x2
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=256, block_y=2)
+Estimated Time (ns) = 103304458.20
+Actual Time   (ns) = 64464.00
+-> Diff (%) = 160151.40
+WarpsPerSM = 16.00
+Predicted Power (W) = 191.31
+Actual Power (W) = 56.70
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=256
+BlockY=2
+Experiment completed: Kernel=mha.cu, block=(256,2), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (512, 1) => total threads = 512
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 512x1
+Traceback (most recent call last):
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 195, in <module>
+    main()
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 146, in main
+    actual_us, actual_power = benchmark_kernel_with_power(kernel_func,
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/gpu_common.py", line 155, in benchmark_kernel_with_power
+    cuda.Context.synchronize()
+pycuda._driver.LogicError: cuCtxSynchronize failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuEventDestroy failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuEventDestroy failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuModuleUnload failed: an illegal memory access was encountered
+Experiment completed: Kernel=mha.cu, block=(512,1), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (1, 1024) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 1x1024
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=1, block_y=1024)
+Estimated Time (ns) = 419393836.30
+Actual Time   (ns) = 62976.00
+-> Diff (%) = 665858.21
+WarpsPerSM = 32.00
+Predicted Power (W) = 192.76
+Actual Power (W) = 80.72
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=1
+BlockY=1024
+Experiment completed: Kernel=mha.cu, block=(1,1024), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (2, 512) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 2x512
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=2, block_y=512)
+Estimated Time (ns) = 419393832.31
+Actual Time   (ns) = 63488.00
+-> Diff (%) = 660487.57
+WarpsPerSM = 32.00
+Predicted Power (W) = 192.76
+Actual Power (W) = 56.69
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=2
+BlockY=512
+Experiment completed: Kernel=mha.cu, block=(2,512), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (4, 256) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 4x256
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=4, block_y=256)
+Estimated Time (ns) = 419393824.35
+Actual Time   (ns) = 63488.00
+-> Diff (%) = 660487.56
+WarpsPerSM = 32.00
+Predicted Power (W) = 192.76
+Actual Power (W) = 56.62
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=4
+BlockY=256
+Experiment completed: Kernel=mha.cu, block=(4,256), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (8, 128) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 8x128
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=8, block_y=128)
+Estimated Time (ns) = 419393808.42
+Actual Time   (ns) = 53440.00
+-> Diff (%) = 784693.79
+WarpsPerSM = 32.00
+Predicted Power (W) = 192.76
+Actual Power (W) = 56.63
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=8
+BlockY=128
+Experiment completed: Kernel=mha.cu, block=(8,128), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (16, 64) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 16x64
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=16, block_y=64)
+Estimated Time (ns) = 419393776.56
+Actual Time   (ns) = 49664.00
+-> Diff (%) = 844362.34
+WarpsPerSM = 32.00
+Predicted Power (W) = 192.76
+Actual Power (W) = 56.67
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=16
+BlockY=64
+Experiment completed: Kernel=mha.cu, block=(16,64), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (32, 32) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 32x32
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=32, block_y=32)
+Estimated Time (ns) = 209701794.02
+Actual Time   (ns) = 54272.00
+-> Diff (%) = 386290.39
+WarpsPerSM = 32.00
+Predicted Power (W) = 140.52
+Actual Power (W) = 56.63
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=32
+BlockY=32
+Experiment completed: Kernel=mha.cu, block=(32,32), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (64, 16) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 64x16
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=64, block_y=16)
+Estimated Time (ns) = 267840738.95
+Actual Time   (ns) = 44944.00
+-> Diff (%) = 595843.27
+WarpsPerSM = 32.00
+Predicted Power (W) = 155.00
+Actual Power (W) = 56.61
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=64
+BlockY=16
+Experiment completed: Kernel=mha.cu, block=(64,16), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (128, 8) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 128x8
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=128, block_y=8)
+Estimated Time (ns) = 325979683.87
+Actual Time   (ns) = 63472.00
+-> Diff (%) = 513480.30
+WarpsPerSM = 32.00
+Predicted Power (W) = 169.48
+Actual Power (W) = 56.59
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=128
+BlockY=8
+Experiment completed: Kernel=mha.cu, block=(128,8), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (256, 4) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 256x4
+[RESULT] Kernel=mha
+Analysis = KernelAnalysis(mem_coal=12, mem_uncoal=0, mem_partial=0, local_insts=0, shared_insts=0, synch_insts=0, fp_insts=0, int_insts=1, sfu_insts=0, alu_insts=0, total_insts=13, registers_per_thread=32, shared_mem_bytes=0, block_x=256, block_y=4)
+Estimated Time (ns) = 384118628.80
+Actual Time   (ns) = 53760.00
+-> Diff (%) = 714406.38
+WarpsPerSM = 32.00
+Predicted Power (W) = 183.97
+Actual Power (W) = 56.64
+MemCoal=12
+MemUncoal=0
+MemPartial=0
+LocalInsts=0
+SharedInsts=0
+SynchInsts=0
+FpInsts=0
+IntInsts=1
+SfuInsts=0
+AluInsts=0
+TotalInsts=13
+RegsPerThread=32
+SharedMemBytes=0
+GridX=256
+GridY=1
+BlockX=256
+BlockY=4
+Experiment completed: Kernel=mha.cu, block=(256,4), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (512, 2) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 512x2
+Traceback (most recent call last):
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 195, in <module>
+    main()
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 146, in main
+    actual_us, actual_power = benchmark_kernel_with_power(kernel_func,
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/gpu_common.py", line 155, in benchmark_kernel_with_power
+    cuda.Context.synchronize()
+pycuda._driver.LogicError: cuCtxSynchronize failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuEventDestroy failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuEventDestroy failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuModuleUnload failed: an illegal memory access was encountered
+Experiment completed: Kernel=mha.cu, block=(512,2), grid=(256,1), DataSize=131072
+--------------------------------------------------
+Kernel:       mha.cu
+Config:       kernel_launch_configs/config_mha.json
+Block shape:  (1024, 1) => total threads = 1024
+Grid:         (256, 1)
+DataSize:     131072
+Runs:         20
+--------------------------------------------------
+Grid: 256x1, Block: 1024x1
+Traceback (most recent call last):
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 195, in <module>
+    main()
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 146, in main
+    actual_us, actual_power = benchmark_kernel_with_power(kernel_func,
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/gpu_common.py", line 155, in benchmark_kernel_with_power
+    cuda.Context.synchronize()
+pycuda._driver.LogicError: cuCtxSynchronize failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuEventDestroy failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuEventDestroy failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuMemFree failed: an illegal memory access was encountered
+PyCUDA WARNING: a clean-up operation failed (dead context maybe?)
+cuModuleUnload failed: an illegal memory access was encountered
+Experiment completed: Kernel=mha.cu, block=(1024,1), grid=(256,1), DataSize=131072
+All experiments completed.
+Results saved in: experiment-results/results-20250318-141436.csv
