@@ -118,15 +118,4 @@ restrictions = [
 | GPU | NVIDIA RTX 5000 Ada (24GB VRAM) |  
 | CPU | AMD EPYC 9554P 64-Core Processor |  
 | Memory | 1TB DDR4 @ 3200MHz |  
-| Power Sampling | 1ms resolution via NVML |  
-
----
-
-## Contact  
-**Lead Researcher**: [Saurabh Singh Rajput]  
-**Email**: [Saurabh@dal.ca]  
-**Institution**: [Smart Lab, Dalhousie University]  
-
-<!-- [![Project DOI](https://img.shields.io/badge/DOI-10.xxxx/yyyyy-blue)](https://doi.org/10.xxxx/yyyyy)   -->
-
-*Last Updated: [Jan] [2025]*
+| Power Sampling | 1ms resolution via NVML |    
