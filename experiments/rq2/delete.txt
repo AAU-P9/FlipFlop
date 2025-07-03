@@ -1,0 +1,716 @@
+Processing seq_len=1024...
+____________________
+this is predicted power for shape:  1 32
+exec_cycles: 2303818.745528185, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 0.00012344122579649282, AR_int: 0.0004937649031859713, AR_sfu: 3.0860306449123204e-05, AR_alu: 0.0056474360801895464
+AR_fds: 0.006881848338154475, AR_reg: 0.006881848338154475, AR_shm: 3.0860306449123204e-05, AR_mem: 0.0004011839838386017
+rp_fp: 0.0, rp_int: 0.0009875298063719425, rp_sfu: 6.172061289824641e-05, rp_alu: 0.0056474360801895464
+rp_fds: 0.006881848338154475, rp_reg: 0.006881848338154475, rp_shm: 3.0860306449123204e-05, rp_mem: 0.0
+rp_sm_sub: 0.2704912434822178, Max_SM: 27.04912434822178, factor: 5.824789640723936
+runtime_power: 204.82209708242857, power_factor: 1.3
+predicted power: 259.0664370824286
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=1, block_size_y=32, time=0.032ms, time_ns=31744.000
+best performing configuration:
+block_size_x=1, block_size_y=32, time=0.032ms, time_ns=31744.000
+____________________
+this is predicted power for shape:  1 64
+exec_cycles: 6837857.136836522, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 6.238494113065948e-05, AR_int: 0.0002495397645226379, AR_sfu: 1.559623528266487e-05, AR_alu: 0.002854111056727671
+AR_fds: 0.003477960468034266, AR_reg: 0.003477960468034266, AR_shm: 1.559623528266487e-05, AR_mem: 0.0002027510586746433
+rp_fp: 0.0, rp_int: 0.0004990795290452758, rp_sfu: 3.119247056532974e-05, rp_alu: 0.002854111056727671
+rp_fds: 0.003477960468034266, rp_reg: 0.003477960468034266, rp_shm: 1.559623528266487e-05, rp_mem: 0.0
+rp_sm_sub: 0.26035590022768945, Max_SM: 26.035590022768947, factor: 5.824789640723936
+runtime_power: 197.14738557118804, power_factor: 1.3
+predicted power: 251.39172557118803
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=1, block_size_y=64, time=0.032ms, time_ns=32000.000
+best performing configuration:
+block_size_x=1, block_size_y=64, time=0.032ms, time_ns=32000.000
+____________________
+this is predicted power for shape:  1 128
+exec_cycles: 13626222.873976836, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 3.1305763811927755e-05, AR_int: 0.00012522305524771102, AR_sfu: 7.826440952981939e-06, AR_alu: 0.0014322386943956948
+AR_fds: 0.0017452963325149723, AR_reg: 0.0017452963325149723, AR_shm: 7.826440952981939e-06, AR_mem: 0.0001017437323887652
+rp_fp: 0.0, rp_int: 0.00025044611049542204, rp_sfu: 1.5652881905963877e-05, rp_alu: 0.0014322386943956948
+rp_fds: 0.0017452963325149723, rp_reg: 0.0017452963325149723, rp_shm: 7.826440952981939e-06, rp_mem: 0.0
+rp_sm_sub: 0.25519675679278003, Max_SM: 25.519675679278002, factor: 5.824789640723936
+runtime_power: 193.24076529068103, power_factor: 1.3
+predicted power: 247.48510529068102
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=1, block_size_y=128, time=0.032ms, time_ns=31891.200
+best performing configuration:
+block_size_x=1, block_size_y=128, time=0.032ms, time_ns=31891.200
+____________________
+this is predicted power for shape:  1 256
+exec_cycles: 27202954.348257475, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.5681359806742144e-05, AR_int: 6.272543922696858e-05, AR_sfu: 3.920339951685536e-06, AR_alu: 0.0007174222111584531
+AR_fds: 0.0008742358092258746, AR_reg: 0.0008742358092258746, AR_shm: 3.920339951685536e-06, AR_mem: 5.0964419371911975e-05
+rp_fp: 0.0, rp_int: 0.00012545087845393716, rp_sfu: 7.840679903371072e-06, rp_alu: 0.0007174222111584531
+rp_fds: 0.0008742358092258746, rp_reg: 0.0008742358092258746, rp_shm: 3.920339951685536e-06, rp_mem: 0.0
+rp_sm_sub: 0.2526031057279192, Max_SM: 25.260310572791923, factor: 5.824789640723936
+runtime_power: 191.27679394962803, power_factor: 1.3
+predicted power: 245.52113394962805
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=1, block_size_y=256, time=0.035ms, time_ns=35308.800
+best performing configuration:
+block_size_x=1, block_size_y=256, time=0.035ms, time_ns=35308.800
+____________________
+this is predicted power for shape:  1 512
+exec_cycles: 54356417.29681873, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 7.84781882536567e-06, AR_int: 3.139127530146268e-05, AR_sfu: 1.9619547063414176e-06, AR_alu: 0.0003590377112604795
+AR_fds: 0.00043751589951413617, AR_reg: 0.00043751589951413617, AR_shm: 1.9619547063414176e-06, AR_mem: 2.550541118243843e-05
+rp_fp: 0.0, rp_int: 6.278255060292536e-05, rp_sfu: 3.923909412682835e-06, rp_alu: 0.0003590377112604795
+rp_fds: 0.00043751589951413617, rp_reg: 0.00043751589951413617, rp_shm: 1.9619547063414176e-06, rp_mem: 0.0
+rp_sm_sub: 0.2513027379250107, Max_SM: 25.130273792501068, factor: 5.824789640723936
+runtime_power: 190.29212599165137, power_factor: 1.3
+predicted power: 244.53646599165137
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=1, block_size_y=512, time=0.048ms, time_ns=47584.000
+best performing configuration:
+block_size_x=1, block_size_y=512, time=0.048ms, time_ns=47584.000
+____________________
+this is predicted power for shape:  1 1024
+exec_cycles: 72450264.69597813, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 3.925261158869505e-06, AR_int: 1.570104463547802e-05, AR_sfu: 9.813152897173762e-07, AR_alu: 0.00017958069801827985
+AR_fds: 0.0002188333096069749, AR_reg: 0.0002188333096069749, AR_shm: 9.813152897173762e-07, AR_mem: 1.2757098766325891e-05
+rp_fp: 0.0, rp_int: 3.140208927095604e-05, rp_sfu: 1.9626305794347525e-06, rp_alu: 0.00017958069801827985
+rp_fds: 0.0002188333096069749, rp_reg: 0.0002188333096069749, rp_shm: 9.813152897173762e-07, rp_mem: 0.0
+rp_sm_sub: 0.25065159335237236, Max_SM: 25.065159335237237, factor: 5.824789640723936
+runtime_power: 189.79906457068014, power_factor: 1.3
+predicted power: 244.04340457068014
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=1, block_size_y=1024, time=0.079ms, time_ns=79244.801
+best performing configuration:
+block_size_x=1, block_size_y=1024, time=0.079ms, time_ns=79244.801
+____________________
+this is predicted power for shape:  2 16
+exec_cycles: 2303383.399701042, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 0.00012346455652925527, AR_int: 0.0004938582261170211, AR_sfu: 3.0866139132313816e-05, AR_alu: 0.005648503461213429
+AR_fds: 0.006883149026505981, AR_reg: 0.006883149026505981, AR_shm: 3.0866139132313816e-05, AR_mem: 0.0004012598087200796
+rp_fp: 0.0, rp_int: 0.0009877164522340421, rp_sfu: 6.173227826462763e-05, rp_alu: 0.005648503461213429
+rp_fds: 0.006883149026505981, rp_reg: 0.006883149026505981, rp_shm: 3.0866139132313816e-05, rp_mem: 0.0
+rp_sm_sub: 0.27049511638385637, Max_SM: 27.04951163838564, factor: 5.824789640723936
+runtime_power: 204.82502973128328, power_factor: 1.3
+predicted power: 259.0693697312833
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=2, block_size_y=16, time=0.032ms, time_ns=32454.400
+best performing configuration:
+block_size_x=2, block_size_y=16, time=0.032ms, time_ns=32454.400
+____________________
+this is predicted power for shape:  2 32
+exec_cycles: 6837207.565706002, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 6.23908680323e-05, AR_int: 0.0002495634721292, AR_sfu: 1.5597717008075e-05, AR_alu: 0.0028543822124777246
+AR_fds: 0.0034782908928007246, AR_reg: 0.0034782908928007246, AR_shm: 1.5597717008075e-05, AR_mem: 0.00020277032110497498
+rp_fp: 0.0, rp_int: 0.0004991269442584, rp_sfu: 3.119543401615e-05, rp_alu: 0.0028543822124777246
+rp_fds: 0.0034782908928007246, rp_reg: 0.0034782908928007246, rp_shm: 1.5597717008075e-05, rp_mem: 0.0
+rp_sm_sub: 0.2603568840933618, Max_SM: 26.035688409336178, factor: 5.824789640723936
+runtime_power: 197.1481305765629, power_factor: 1.3
+predicted power: 251.3924705765629
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=2, block_size_y=32, time=0.032ms, time_ns=31897.600
+best performing configuration:
+block_size_x=2, block_size_y=32, time=0.032ms, time_ns=31897.600
+____________________
+this is predicted power for shape:  2 64
+exec_cycles: 13625573.302846318, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 3.13072562497092e-05, AR_int: 0.0001252290249988368, AR_sfu: 7.8268140624273e-06, AR_alu: 0.0014323069734241958
+AR_fds: 0.0017453795359212878, AR_reg: 0.0017453795359212878, AR_shm: 7.8268140624273e-06, AR_mem: 0.00010174858281155489
+rp_fp: 0.0, rp_int: 0.0002504580499976736, rp_sfu: 1.56536281248546e-05, rp_alu: 0.0014323069734241958
+rp_fds: 0.0017453795359212878, rp_reg: 0.0017453795359212878, rp_shm: 7.8268140624273e-06, rp_mem: 0.0
+rp_sm_sub: 0.25519700453745175, Max_SM: 25.519700453745177, factor: 5.824789640723936
+runtime_power: 193.2409528885587, power_factor: 1.3
+predicted power: 247.48529288855872
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=2, block_size_y=64, time=0.033ms, time_ns=32723.200
+best performing configuration:
+block_size_x=2, block_size_y=64, time=0.033ms, time_ns=32723.200
+____________________
+this is predicted power for shape:  2 128
+exec_cycles: 27202304.777126953, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.5681734266138188e-05, AR_int: 6.272693706455275e-05, AR_sfu: 3.920433566534547e-06, AR_alu: 0.0007174393426758221
+AR_fds: 0.000874256685337204, AR_reg: 0.000874256685337204, AR_shm: 3.920433566534547e-06, AR_mem: 5.096563636494911e-05
+rp_fp: 0.0, rp_int: 0.0001254538741291055, rp_sfu: 7.840867133069094e-06, rp_alu: 0.0007174393426758221
+rp_fds: 0.000874256685337204, rp_reg: 0.000874256685337204, rp_shm: 3.920433566534547e-06, rp_mem: 0.0
+rp_sm_sub: 0.25260316788817894, Max_SM: 25.260316788817892, factor: 5.824789640723936
+runtime_power: 191.2768410187848, power_factor: 1.3
+predicted power: 245.52118101878483
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=2, block_size_y=128, time=0.036ms, time_ns=35795.199
+best performing configuration:
+block_size_x=2, block_size_y=128, time=0.036ms, time_ns=35795.199
+____________________
+this is predicted power for shape:  2 256
+exec_cycles: 54355767.72568822, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 7.84791260964579e-06, AR_int: 3.139165043858316e-05, AR_sfu: 1.9619781524114475e-06, AR_alu: 0.0003590420018912949
+AR_fds: 0.0004375211279877528, AR_reg: 0.0004375211279877528, AR_shm: 1.9619781524114475e-06, AR_mem: 2.5505715981348818e-05
+rp_fp: 0.0, rp_int: 6.278330087716632e-05, rp_sfu: 3.923956304822895e-06, rp_alu: 0.0003590420018912949
+rp_fds: 0.0004375211279877528, rp_reg: 0.0004375211279877528, rp_shm: 1.9619781524114475e-06, rp_mem: 0.0
+rp_sm_sub: 0.2513027534932012, Max_SM: 25.13027534932012, factor: 5.824789640723936
+runtime_power: 190.2921377802379, power_factor: 1.3
+predicted power: 244.53647778023793
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=2, block_size_y=256, time=0.048ms, time_ns=48121.599
+best performing configuration:
+block_size_x=2, block_size_y=256, time=0.048ms, time_ns=48121.599
+____________________
+this is predicted power for shape:  2 512
+exec_cycles: 72449829.35015097, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 3.925284745482218e-06, AR_int: 1.5701138981928872e-05, AR_sfu: 9.813211863705545e-07, AR_alu: 0.00017958177710581148
+AR_fds: 0.00021883462456063365, AR_reg: 0.00021883462456063365, AR_shm: 9.813211863705545e-07, AR_mem: 1.275717542281721e-05
+rp_fp: 0.0, rp_int: 3.1402277963857743e-05, rp_sfu: 1.962642372741109e-06, rp_alu: 0.00017958177710581148
+rp_fds: 0.00021883462456063365, rp_reg: 0.00021883462456063365, rp_shm: 9.813211863705545e-07, rp_mem: 0.0
+rp_sm_sub: 0.25065159726775005, Max_SM: 25.065159726775004, factor: 5.824789640723936
+runtime_power: 189.7990675354928, power_factor: 1.3
+predicted power: 244.0434075354928
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=2, block_size_y=512, time=0.079ms, time_ns=78880.002
+best performing configuration:
+block_size_x=2, block_size_y=512, time=0.079ms, time_ns=78880.002
+____________________
+this is predicted power for shape:  4 8
+exec_cycles: 2280933.258023813, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 0.0001246797594627245, AR_int: 0.000498719037850898, AR_sfu: 3.1169939865681124e-05, AR_alu: 0.0057040989954196455
+AR_fds: 0.0069508965900468905, AR_reg: 0.0069508965900468905, AR_shm: 3.1169939865681124e-05, AR_mem: 0.00040520921825385457
+rp_fp: 0.0, rp_int: 0.000997438075701796, rp_sfu: 6.233987973136225e-05, rp_alu: 0.0057040989954196455
+rp_fds: 0.0069508965900468905, rp_reg: 0.0069508965900468905, rp_shm: 3.1169939865681124e-05, rp_mem: 0.0
+rp_sm_sub: 0.2706968400708123, Max_SM: 27.06968400708123, factor: 5.824789640723936
+runtime_power: 204.97777947675232, power_factor: 1.3
+predicted power: 259.2221194767523
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=4, block_size_y=8, time=0.032ms, time_ns=31750.400
+best performing configuration:
+block_size_x=4, block_size_y=8, time=0.032ms, time_ns=31750.400
+____________________
+this is predicted power for shape:  4 16
+exec_cycles: 6835908.423444966, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 6.240272521474637e-05, AR_int: 0.0002496109008589855, AR_sfu: 1.5600681303686593e-05, AR_alu: 0.002854924678574646
+AR_fds: 0.0034789519307221097, AR_reg: 0.0034789519307221097, AR_shm: 1.5600681303686593e-05, AR_mem: 0.0002028088569479257
+rp_fp: 0.0, rp_int: 0.000499221801717971, rp_sfu: 3.1201362607373186e-05, rp_alu: 0.002854924678574646
+rp_fds: 0.0034789519307221097, rp_reg: 0.0034789519307221097, rp_shm: 1.5600681303686593e-05, rp_mem: 0.0
+rp_sm_sub: 0.2603588523856479, Max_SM: 26.035885238564788, factor: 5.824789640723936
+runtime_power: 197.14962101207027, power_factor: 1.3
+predicted power: 251.3939610120703
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=4, block_size_y=16, time=0.032ms, time_ns=32121.600
+best performing configuration:
+block_size_x=4, block_size_y=16, time=0.032ms, time_ns=32121.600
+____________________
+this is predicted power for shape:  4 32
+exec_cycles: 13624274.16058528, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 3.131024155220618e-05, AR_int: 0.00012524096620882471, AR_sfu: 7.827560388051545e-06, AR_alu: 0.0014324435510134326
+AR_fds: 0.0017455459665354945, AR_reg: 0.0017455459665354945, AR_shm: 7.827560388051545e-06, AR_mem: 0.00010175828504467009
+rp_fp: 0.0, rp_int: 0.00025048193241764943, rp_sfu: 1.565512077610309e-05, rp_alu: 0.0014324435510134326
+rp_fds: 0.0017455459665354945, rp_reg: 0.0017455459665354945, rp_shm: 7.827560388051545e-06, rp_mem: 0.0
+rp_sm_sub: 0.25519750009766623, Max_SM: 25.51975000976662, factor: 5.824789640723936
+runtime_power: 193.24132813797914, power_factor: 1.3
+predicted power: 247.48566813797913
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=4, block_size_y=32, time=0.032ms, time_ns=31961.600
+best performing configuration:
+block_size_x=4, block_size_y=32, time=0.032ms, time_ns=31961.600
+____________________
+this is predicted power for shape:  4 64
+exec_cycles: 27201005.634865917, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.5682483238583727e-05, AR_int: 6.272993295433491e-05, AR_sfu: 3.920620809645932e-06, AR_alu: 0.0007174736081652055
+AR_fds: 0.0008742984405510427, AR_reg: 0.0008742984405510427, AR_shm: 3.920620809645932e-06, AR_mem: 5.096807052539711e-05
+rp_fp: 0.0, rp_int: 0.00012545986590866982, rp_sfu: 7.841241619291864e-06, rp_alu: 0.0007174736081652055
+rp_fds: 0.0008742984405510427, rp_reg: 0.0008742984405510427, rp_shm: 3.920620809645932e-06, rp_mem: 0.0
+rp_sm_sub: 0.2526032922176049, Max_SM: 25.260329221760493, factor: 5.824789640723936
+runtime_power: 191.27693516384264, power_factor: 1.3
+predicted power: 245.52127516384263
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=4, block_size_y=64, time=0.037ms, time_ns=36806.400
+best performing configuration:
+block_size_x=4, block_size_y=64, time=0.037ms, time_ns=36806.400
+____________________
+this is predicted power for shape:  4 128
+exec_cycles: 54354468.583427176, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 7.848100184930728e-06, AR_int: 3.1392400739722914e-05, AR_sfu: 1.962025046232682e-06, AR_alu: 0.0003590505834605808
+AR_fds: 0.0004375315853098881, AR_reg: 0.0004375315853098881, AR_shm: 1.962025046232682e-06, AR_mem: 2.5506325601024864e-05
+rp_fp: 0.0, rp_int: 6.278480147944583e-05, rp_sfu: 3.924050092465364e-06, rp_alu: 0.0003590505834605808
+rp_fds: 0.0004375315853098881, rp_reg: 0.0004375315853098881, rp_shm: 1.962025046232682e-06, rp_mem: 0.0
+rp_sm_sub: 0.2513027846306985, Max_SM: 25.13027846306985, factor: 5.824789640723936
+runtime_power: 190.29216135825624, power_factor: 1.3
+predicted power: 244.53650135825626
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=4, block_size_y=128, time=0.050ms, time_ns=49971.199
+best performing configuration:
+block_size_x=4, block_size_y=128, time=0.050ms, time_ns=49971.199
+____________________
+this is predicted power for shape:  4 256
+exec_cycles: 72448958.65849671, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 3.9253319195580335e-06, AR_int: 1.5701327678232134e-05, AR_sfu: 9.813329798895084e-07, AR_alu: 0.00017958393531978002
+AR_fds: 0.00021883725451536036, AR_reg: 0.00021883725451536036, AR_shm: 9.813329798895084e-07, AR_mem: 1.275732873856361e-05
+rp_fp: 0.0, rp_int: 3.140265535646427e-05, rp_sfu: 1.9626659597790168e-06, rp_alu: 0.00017958393531978002
+rp_fds: 0.00021883725451536036, rp_reg: 0.00021883725451536036, rp_shm: 9.813329798895084e-07, rp_mem: 0.0
+rp_sm_sub: 0.25065160509864665, Max_SM: 25.065160509864665, factor: 5.824789640723936
+runtime_power: 189.7990734652251, power_factor: 1.3
+predicted power: 244.04341346522511
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=4, block_size_y=256, time=0.082ms, time_ns=82240.002
+best performing configuration:
+block_size_x=4, block_size_y=256, time=0.082ms, time_ns=82240.002
+____________________
+this is predicted power for shape:  8 4
+exec_cycles: 1865031.7505731964, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 0.00015248330752199506, AR_int: 0.0006099332300879802, AR_sfu: 3.8120826880498765e-05, AR_alu: 0.0069761113191312745
+AR_fds: 0.008500944394351225, AR_reg: 0.008500944394351225, AR_shm: 3.8120826880498765e-05, AR_mem: 0.000495570749446484
+rp_fp: 0.0, rp_int: 0.0012198664601759605, rp_sfu: 7.624165376099753e-05, rp_alu: 0.0069761113191312745
+rp_fds: 0.008500944394351225, rp_reg: 0.008500944394351225, rp_shm: 3.8120826880498765e-05, rp_mem: 0.0
+rp_sm_sub: 0.27531222904865116, Max_SM: 27.531222904865118, factor: 5.824789640723936
+runtime_power: 191.84832221890548, power_factor: 1.1963334808244779
+predicted power: 246.0926622189055
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=8, block_size_y=4, time=0.032ms, time_ns=32153.600
+best performing configuration:
+block_size_x=8, block_size_y=4, time=0.032ms, time_ns=32153.600
+____________________
+this is predicted power for shape:  8 8
+exec_cycles: 5379366.983424005, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 7.929916591596535e-05, AR_int: 0.0003171966636638614, AR_sfu: 1.9824791478991337e-05, AR_alu: 0.0036279368406554146
+AR_fds: 0.004420928499815068, AR_reg: 0.004420928499815068, AR_shm: 1.9824791478991337e-05, AR_mem: 0.0002577222892268874
+rp_fp: 0.0, rp_int: 0.0006343933273277228, rp_sfu: 3.9649582957982674e-05, rp_alu: 0.0036279368406554146
+rp_fds: 0.004420928499815068, rp_reg: 0.004420928499815068, rp_shm: 1.9824791478991337e-05, rp_mem: 0.0
+rp_sm_sub: 0.26316366154205023, Max_SM: 26.316366154205024, factor: 5.824789640723936
+runtime_power: 180.83662682427155, power_factor: 1.1797235023041475
+predicted power: 235.08096682427157
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=8, block_size_y=8, time=0.033ms, time_ns=32800.000
+best performing configuration:
+block_size_x=8, block_size_y=8, time=0.033ms, time_ns=32800.000
+____________________
+this is predicted power for shape:  8 16
+exec_cycles: 11019443.170170903, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 3.8711512764650004e-05, AR_int: 0.00015484605105860002, AR_sfu: 9.677878191162501e-06, AR_alu: 0.0017710517089827378
+AR_fds: 0.0021581668366292377, AR_reg: 0.0021581668366292377, AR_shm: 9.677878191162501e-06, AR_mem: 0.00012581241648511253
+rp_fp: 0.0, rp_int: 0.00030969210211720003, rp_sfu: 1.9355756382325002e-05, rp_alu: 0.0017710517089827378
+rp_fds: 0.0021581668366292377, rp_reg: 0.0021581668366292377, rp_shm: 9.677878191162501e-06, rp_mem: 0.0
+rp_sm_sub: 0.2564261111189319, Max_SM: 25.64261111189319, factor: 5.824789640723936
+runtime_power: 178.68773705142004, power_factor: 1.1963334808244779
+predicted power: 232.93207705142004
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=8, block_size_y=16, time=0.034ms, time_ns=34003.200
+best performing configuration:
+block_size_x=8, block_size_y=16, time=0.034ms, time_ns=34003.200
+____________________
+this is predicted power for shape:  8 32
+exec_cycles: 22599807.006915823, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.8875352113001128e-05, AR_int: 7.550140845200451e-05, AR_sfu: 4.718838028250282e-06, AR_alu: 0.0008635473591698016
+AR_fds: 0.0010523008802998128, AR_reg: 0.0010523008802998128, AR_shm: 4.718838028250282e-06, AR_mem: 6.134489436725367e-05
+rp_fp: 0.0, rp_int: 0.00015100281690400903, rp_sfu: 9.437676056500564e-06, rp_alu: 0.0008635473591698016
+rp_fds: 0.0010523008802998128, rp_reg: 0.0010523008802998128, rp_shm: 4.718838028250282e-06, rp_mem: 0.0
+rp_sm_sub: 0.2531333084507582, Max_SM: 25.31333084507582, factor: 5.824789640723936
+runtime_power: 178.84223886182144, power_factor: 1.2129434593448085
+predicted power: 233.08657886182147
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=8, block_size_y=32, time=0.039ms, time_ns=39142.400
+best performing configuration:
+block_size_x=8, block_size_y=32, time=0.039ms, time_ns=39142.400
+____________________
+this is predicted power for shape:  8 64
+exec_cycles: 46361425.10120895, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 9.201169161866047e-06, AR_int: 3.680467664746419e-05, AR_sfu: 2.300292290466512e-06, AR_alu: 0.00042095348915537165
+AR_fds: 0.0005129651807740321, AR_reg: 0.0005129651807740321, AR_shm: 2.300292290466512e-06, AR_mem: 2.9903799776064655e-05
+rp_fp: 0.0, rp_int: 7.360935329492838e-05, rp_sfu: 4.600584580933024e-06, rp_alu: 0.00042095348915537165
+rp_fds: 0.0005129651807740321, rp_reg: 0.0005129651807740321, rp_shm: 2.300292290466512e-06, rp_mem: 0.0
+rp_sm_sub: 0.25152739408086977, Max_SM: 25.152739408086976, factor: 5.824789640723936
+runtime_power: 180.14115604870662, power_factor: 1.229553437865139
+predicted power: 234.3854960487066
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=8, block_size_y=64, time=0.056ms, time_ns=55980.801
+best performing configuration:
+block_size_x=8, block_size_y=64, time=0.056ms, time_ns=55980.801
+____________________
+this is predicted power for shape:  8 128
+exec_cycles: 63399283.56373263, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 4.485637596757005e-06, AR_int: 1.794255038702802e-05, AR_sfu: 1.1214093991892512e-06, AR_alu: 0.00020521792005163297
+AR_fds: 0.000250074296019203, AR_reg: 0.000250074296019203, AR_shm: 1.1214093991892512e-06, AR_mem: 1.4578322189460265e-05
+rp_fp: 0.0, rp_int: 3.588510077405604e-05, rp_sfu: 2.2428187983785023e-06, rp_alu: 0.00020521792005163297
+rp_fds: 0.000250074296019203, rp_reg: 0.000250074296019203, rp_shm: 1.1214093991892512e-06, rp_mem: 0.0
+rp_sm_sub: 0.25074461584106167, Max_SM: 25.074461584106167, factor: 5.824789640723936
+runtime_power: 182.00648377514807, power_factor: 1.2461634163854693
+predicted power: 236.2508237751481
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=8, block_size_y=128, time=0.094ms, time_ns=93593.599
+best performing configuration:
+block_size_x=8, block_size_y=128, time=0.094ms, time_ns=93593.599
+____________________
+this is predicted power for shape:  16 2
+exec_cycles: 1705793.2810855755, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 0.00016671786265915685, AR_int: 0.0006668714506366274, AR_sfu: 4.167946566478921e-05, AR_alu: 0.007627342216656426
+AR_fds: 0.009294520843247995, AR_reg: 0.009294520843247995, AR_shm: 4.167946566478921e-05, AR_mem: 0.0005418330536422597
+rp_fp: 0.0, rp_int: 0.0013337429012732548, rp_sfu: 8.335893132957842e-05, rp_alu: 0.007627342216656426
+rp_fds: 0.009294520843247995, rp_reg: 0.009294520843247995, rp_shm: 4.167946566478921e-05, rp_mem: 0.0
+rp_sm_sub: 0.27767516520142005, Max_SM: 27.767516520142006, factor: 5.824789640723936
+runtime_power: 175.45917768059255, power_factor: 1.0848228018818782
+predicted power: 229.70351768059254
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=16, block_size_y=2, time=0.033ms, time_ns=32908.800
+best performing configuration:
+block_size_x=16, block_size_y=2, time=0.033ms, time_ns=32908.800
+____________________
+this is predicted power for shape:  16 4
+exec_cycles: 4982465.766666167, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 8.561610554262493e-05, AR_int: 0.00034246442217049974, AR_sfu: 2.1404026385656234e-05, AR_alu: 0.003916936828575091
+AR_fds: 0.00477309788400134, AR_reg: 0.00477309788400134, AR_shm: 2.1404026385656234e-05, AR_mem: 0.00027825234301353104
+rp_fp: 0.0, rp_int: 0.0006849288443409995, rp_sfu: 4.280805277131247e-05, rp_alu: 0.003916936828575091
+rp_fds: 0.00477309788400134, rp_reg: 0.00477309788400134, rp_shm: 2.1404026385656234e-05, rp_mem: 0.0
+rp_sm_sub: 0.26421227352007576, Max_SM: 26.421227352007577, factor: 5.824789640723936
+runtime_power: 165.6740366938714, power_factor: 1.076517812621713
+predicted power: 219.91837669387138
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=16, block_size_y=4, time=0.034ms, time_ns=34444.800
+best performing configuration:
+block_size_x=16, block_size_y=4, time=0.034ms, time_ns=34444.800
+____________________
+this is predicted power for shape:  16 8
+exec_cycles: 9778984.246476088, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 4.362204746317354e-05, AR_int: 0.00017448818985269415, AR_sfu: 1.0905511865793385e-05, AR_alu: 0.0019957086714401896
+AR_fds: 0.0024319291460719247, AR_reg: 0.0024319291460719247, AR_shm: 1.0905511865793385e-05, AR_mem: 0.000141771654255314
+rp_fp: 0.0, rp_int: 0.0003489763797053883, rp_sfu: 2.181102373158677e-05, rp_alu: 0.0019957086714401896
+rp_fds: 0.0024319291460719247, rp_reg: 0.0024319291460719247, rp_shm: 1.0905511865793385e-05, rp_mem: 0.0
+rp_sm_sub: 0.2572412598788868, Max_SM: 25.72412598788868, factor: 5.824789640723936
+runtime_power: 160.0584698522766, power_factor: 1.0682128233615478
+predicted power: 214.3028098522766
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=16, block_size_y=8, time=0.036ms, time_ns=35782.400
+best performing configuration:
+block_size_x=16, block_size_y=8, time=0.036ms, time_ns=35782.400
+____________________
+this is predicted power for shape:  16 16
+exec_cycles: 19221857.931203563, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 2.219240806316251e-05, AR_int: 8.876963225265005e-05, AR_sfu: 5.548102015790628e-06, AR_alu: 0.001015302668889685
+AR_fds: 0.00123722674952131, AR_reg: 0.00123722674952131, AR_shm: 5.548102015790628e-06, AR_mem: 7.212532620527817e-05
+rp_fp: 0.0, rp_int: 0.0001775392645053001, rp_sfu: 1.1096204031581256e-05, rp_alu: 0.001015302668889685
+rp_fds: 0.00123722674952131, rp_reg: 0.00123722674952131, rp_shm: 5.548102015790628e-06, rp_mem: 0.0
+rp_sm_sub: 0.25368393973848496, Max_SM: 25.368393973848498, factor: 5.824789640723936
+runtime_power: 156.6178729804403, power_factor: 1.0599078341013826
+predicted power: 210.8622129804403
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=16, block_size_y=16, time=0.045ms, time_ns=44748.801
+best performing configuration:
+block_size_x=16, block_size_y=16, time=0.045ms, time_ns=44748.801
+____________________
+this is predicted power for shape:  16 32
+exec_cycles: 39010170.784966, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.0935079400006221e-05, AR_int: 4.3740317600024884e-05, AR_sfu: 2.7337698500015552e-06, AR_alu: 0.0005002798825502847
+AR_fds: 0.0006096306765503468, AR_reg: 0.0006096306765503468, AR_shm: 2.7337698500015552e-06, AR_mem: 3.553900805002022e-05
+rp_fp: 0.0, rp_int: 8.748063520004977e-05, rp_sfu: 5.4675397000031105e-06, rp_alu: 0.0005002798825502847
+rp_fds: 0.0006096306765503468, rp_reg: 0.0006096306765503468, rp_shm: 2.7337698500015552e-06, rp_mem: 0.0
+rp_sm_sub: 0.25181522318040106, Max_SM: 25.181522318040106, factor: 5.824789640723936
+runtime_power: 156.6823274257824, power_factor: 1.0682128233615478
+predicted power: 210.9266674257824
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=16, block_size_y=32, time=0.067ms, time_ns=67180.800
+best performing configuration:
+block_size_x=16, block_size_y=32, time=0.067ms, time_ns=67180.800
+____________________
+this is predicted power for shape:  16 64
+exec_cycles: 52799971.62075036, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 5.386105356336477e-06, AR_int: 2.154442142534591e-05, AR_sfu: 1.3465263390841194e-06, AR_alu: 0.00024641432005239385
+AR_fds: 0.0003002753736157586, AR_reg: 0.0003002753736157586, AR_shm: 1.3465263390841194e-06, AR_mem: 1.7504842408093552e-05
+rp_fp: 0.0, rp_int: 4.308884285069182e-05, rp_sfu: 2.6930526781682387e-06, rp_alu: 0.00024641432005239385
+rp_fds: 0.0003002753736157586, rp_reg: 0.0003002753736157586, rp_shm: 1.3465263390841194e-06, rp_mem: 0.0
+rp_sm_sub: 0.25089409348915187, Max_SM: 25.089409348915186, factor: 5.824789640723936
+runtime_power: 157.3228854860104, power_factor: 1.076517812621713
+predicted power: 211.5672254860104
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=16, block_size_y=64, time=0.117ms, time_ns=117286.399
+best performing configuration:
+block_size_x=16, block_size_y=64, time=0.117ms, time_ns=117286.399
+____________________
+this is predicted power for shape:  32 1
+exec_cycles: 1597570.9890641777, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 0.00017801162634251686, AR_int: 0.0007120465053700674, AR_sfu: 4.4502906585629215e-05, AR_alu: 0.008144031905170147
+AR_fds: 0.009924148168595315, AR_reg: 0.009924148168595315, AR_shm: 4.4502906585629215e-05, AR_mem: 0.0005785377856131798
+rp_fp: 0.0, rp_int: 0.0014240930107401349, rp_sfu: 8.900581317125843e-05, rp_alu: 0.008144031905170147
+rp_fds: 0.009924148168595315, rp_reg: 0.009924148168595315, rp_shm: 4.4502906585629215e-05, rp_mem: 0.0
+rp_sm_sub: 0.2795499299728578, Max_SM: 27.954992997285782, factor: 5.824789640723936
+runtime_power: 166.21274768210475, power_factor: 1.020762473150413
+predicted power: 220.45708768210477
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=32, block_size_y=1, time=0.034ms, time_ns=34060.800
+best performing configuration:
+block_size_x=32, block_size_y=1, time=0.034ms, time_ns=34060.800
+____________________
+this is predicted power for shape:  32 2
+exec_cycles: 4703553.788100352, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 9.069298112857151e-05, AR_int: 0.00036277192451428605, AR_sfu: 2.2673245282142878e-05, AR_alu: 0.004149203886632147
+AR_fds: 0.0050561336979178615, AR_reg: 0.0050561336979178615, AR_shm: 2.2673245282142878e-05, AR_mem: 0.0002947521886678574
+rp_fp: 0.0, rp_int: 0.0007255438490285721, rp_sfu: 4.5346490564285756e-05, rp_alu: 0.004149203886632147
+rp_fds: 0.0050561336979178615, rp_reg: 0.0050561336979178615, rp_shm: 2.2673245282142878e-05, rp_mem: 0.0
+rp_sm_sub: 0.2650550348673429, Max_SM: 26.505503486734288, factor: 5.824789640723936
+runtime_power: 156.9533798086853, power_factor: 1.0166099785203304
+predicted power: 211.1977198086853
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=32, block_size_y=2, time=0.038ms, time_ns=37875.200
+best performing configuration:
+block_size_x=32, block_size_y=2, time=0.038ms, time_ns=37875.200
+____________________
+this is predicted power for shape:  32 4
+exec_cycles: 9304270.126906881, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 4.5847692416817076e-05, AR_int: 0.0001833907696672683, AR_sfu: 1.1461923104204269e-05, AR_alu: 0.002097531928069381
+AR_fds: 0.002556008852237552, AR_reg: 0.002556008852237552, AR_shm: 1.1461923104204269e-05, AR_mem: 0.0001490050003546555
+rp_fp: 0.0, rp_int: 0.0003667815393345366, rp_sfu: 2.2923846208408538e-05, rp_alu: 0.002097531928069381
+rp_fds: 0.002556008852237552, rp_reg: 0.002556008852237552, rp_shm: 1.1461923104204269e-05, rp_mem: 0.0
+rp_sm_sub: 0.25761071694119164, Max_SM: 25.761071694119163, factor: 5.824789640723936
+runtime_power: 151.92210416976093, power_factor: 1.0124574838902478
+predicted power: 206.16644416976095
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=32, block_size_y=4, time=0.043ms, time_ns=42540.801
+best performing configuration:
+block_size_x=32, block_size_y=4, time=0.043ms, time_ns=42540.801
+____________________
+this is predicted power for shape:  32 8
+exec_cycles: 18430563.623806953, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 2.3145212683045095e-05, AR_int: 9.258085073218038e-05, AR_sfu: 5.786303170761274e-06, AR_alu: 0.001058893480249313
+AR_fds: 0.0012903456070797639, AR_reg: 0.0012903456070797639, AR_shm: 5.786303170761274e-06, AR_mem: 7.522194121989655e-05
+rp_fp: 0.0, rp_int: 0.00018516170146436076, rp_sfu: 1.1572606341522547e-05, rp_alu: 0.001058893480249313
+rp_fds: 0.0012903456070797639, rp_reg: 0.0012903456070797639, rp_shm: 5.786303170761274e-06, rp_mem: 0.0
+rp_sm_sub: 0.2538421053053855, Max_SM: 25.38421053053855, factor: 5.824789640723936
+runtime_power: 149.0856430349527, power_factor: 1.0083049892601652
+predicted power: 203.3299830349527
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=32, block_size_y=8, time=0.057ms, time_ns=57440.000
+best performing configuration:
+block_size_x=32, block_size_y=8, time=0.057ms, time_ns=57440.000
+____________________
+this is predicted power for shape:  32 16
+exec_cycles: 36532841.697506085, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.1676598236554007e-05, AR_int: 4.670639294621603e-05, AR_sfu: 2.9191495591385018e-06, AR_alu: 0.0005342043693223459
+AR_fds: 0.0006509703516878859, AR_reg: 0.0006509703516878859, AR_shm: 2.9191495591385018e-06, AR_mem: 3.7948944268800524e-05
+rp_fp: 0.0, rp_int: 9.341278589243206e-05, rp_sfu: 5.8382991182770035e-06, rp_alu: 0.0005342043693223459
+rp_fds: 0.0006509703516878859, rp_reg: 0.0006509703516878859, rp_shm: 2.9191495591385018e-06, rp_mem: 0.0
+rp_sm_sub: 0.25193831530726796, Max_SM: 25.193831530726797, factor: 5.824789640723936
+runtime_power: 147.35814238519285, power_factor: 1.0041524946300826
+predicted power: 201.60248238519284
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=32, block_size_y=16, time=0.091ms, time_ns=91443.199
+best performing configuration:
+block_size_x=32, block_size_y=16, time=0.091ms, time_ns=91443.199
+____________________
+this is predicted power for shape:  32 32
+exec_cycles: 48299124.43698827, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 5.8880199853716156e-06, AR_int: 2.3552079941486462e-05, AR_sfu: 1.4720049963429039e-06, AR_alu: 0.0002693769143307514
+AR_fds: 0.00032825711418446753, AR_reg: 0.00032825711418446753, AR_shm: 1.4720049963429039e-06, AR_mem: 1.913606495245775e-05
+rp_fp: 0.0, rp_int: 4.7104159882972924e-05, rp_sfu: 2.9440099926858078e-06, rp_alu: 0.0002693769143307514
+rp_fds: 0.00032825711418446753, rp_reg: 0.00032825711418446753, rp_shm: 1.4720049963429039e-06, rp_mem: 0.0
+rp_sm_sub: 0.2509774113175717, Max_SM: 25.097741131757168, factor: 5.824789640723936
+runtime_power: 146.1890625498302, power_factor: 1.0
+predicted power: 200.4334025498302
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=32, block_size_y=32, time=0.165ms, time_ns=165311.998
+best performing configuration:
+block_size_x=32, block_size_y=32, time=0.165ms, time_ns=165311.998
+____________________
+this is predicted power for shape:  64 1
+exec_cycles: 4778784.644838479, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 8.926523094154295e-05, AR_int: 0.0003570609237661718, AR_sfu: 2.231630773538574e-05, AR_alu: 0.00408388431557559
+AR_fds: 0.00497653662499102, AR_reg: 0.00497653662499102, AR_shm: 2.231630773538574e-05, AR_mem: 0.00029011200056001463
+rp_fp: 0.0, rp_int: 0.0007141218475323436, rp_sfu: 4.463261547077148e-05, rp_alu: 0.00408388431557559
+rp_fds: 0.00497653662499102, rp_reg: 0.00497653662499102, rp_shm: 2.231630773538574e-05, rp_mem: 0.0
+rp_sm_sub: 0.26481802833629614, Max_SM: 26.481802833629615, factor: 5.824789640723936
+runtime_power: 158.0940877843374, power_factor: 1.0249149677804956
+predicted power: 212.3384277843374
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=64, block_size_y=1, time=0.036ms, time_ns=35596.799
+best performing configuration:
+block_size_x=64, block_size_y=1, time=0.036ms, time_ns=35596.799
+____________________
+this is predicted power for shape:  64 2
+exec_cycles: 9454670.723033044, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 4.511836820527158e-05, AR_int: 0.00018047347282108633, AR_sfu: 1.1279592051317895e-05, AR_alu: 0.002064165345391175
+AR_fds: 0.002515349027443891, AR_reg: 0.002515349027443891, AR_shm: 1.1279592051317895e-05, AR_mem: 0.00014663469666713265
+rp_fp: 0.0, rp_int: 0.00036094694564217265, rp_sfu: 2.255918410263579e-05, rp_alu: 0.002064165345391175
+rp_fds: 0.002515349027443891, rp_reg: 0.002515349027443891, rp_shm: 1.1279592051317895e-05, rp_mem: 0.0
+rp_sm_sub: 0.25748964912207506, Max_SM: 25.748964912207505, factor: 5.824789640723936
+runtime_power: 153.0963076414883, power_factor: 1.020762473150413
+predicted power: 207.34064764148832
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=64, block_size_y=2, time=0.043ms, time_ns=42502.400
+best performing configuration:
+block_size_x=64, block_size_y=2, time=0.043ms, time_ns=42502.400
+____________________
+this is predicted power for shape:  64 4
+exec_cycles: 18731303.69870918, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 2.2773605180017604e-05, AR_int: 9.109442072007041e-05, AR_sfu: 5.693401295004401e-06, AR_alu: 0.0010418924369858054
+AR_fds: 0.0012696284887859814, AR_reg: 0.0012696284887859814, AR_shm: 5.693401295004401e-06, AR_mem: 7.40142168350572e-05
+rp_fp: 0.0, rp_int: 0.00018218884144014083, rp_sfu: 1.1386802590008802e-05, rp_alu: 0.0010418924369858054
+rp_fds: 0.0012696284887859814, rp_reg: 0.0012696284887859814, rp_shm: 5.693401295004401e-06, rp_mem: 0.0
+rp_sm_sub: 0.2537804184598829, Max_SM: 25.378041845988292, factor: 5.824789640723936
+runtime_power: 150.27707142585092, power_factor: 1.0166099785203304
+predicted power: 204.52141142585094
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=64, block_size_y=4, time=0.057ms, time_ns=57113.601
+best performing configuration:
+block_size_x=64, block_size_y=4, time=0.057ms, time_ns=57113.601
+____________________
+this is predicted power for shape:  64 8
+exec_cycles: 37134260.729960434, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.1487486395474036e-05, AR_int: 4.5949945581896146e-05, AR_sfu: 2.871871598868509e-06, AR_alu: 0.0005255525025929372
+AR_fds: 0.0006404273665476776, AR_reg: 0.0006404273665476776, AR_shm: 2.871871598868509e-06, AR_mem: 3.7334330785290616e-05
+rp_fp: 0.0, rp_int: 9.189989116379229e-05, rp_sfu: 5.743743197737018e-06, rp_alu: 0.0005255525025929372
+rp_fds: 0.0006404273665476776, rp_reg: 0.0006404273665476776, rp_shm: 2.871871598868509e-06, rp_mem: 0.0
+rp_sm_sub: 0.25190692274164866, Max_SM: 25.190692274164867, factor: 5.824789640723936
+runtime_power: 148.55837603439898, power_factor: 1.0124574838902478
+predicted power: 202.802716034399
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=64, block_size_y=8, time=0.092ms, time_ns=91551.998
+best performing configuration:
+block_size_x=64, block_size_y=8, time=0.092ms, time_ns=91551.998
+____________________
+this is predicted power for shape:  64 16
+exec_cycles: 49100975.951614946, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 5.791864712448428e-06, AR_int: 2.3167458849793712e-05, AR_sfu: 1.447966178112107e-06, AR_alu: 0.0002649778105945156
+AR_fds: 0.0003228964577189999, AR_reg: 0.0003228964577189999, AR_shm: 1.447966178112107e-06, AR_mem: 1.882356031545739e-05
+rp_fp: 0.0, rp_int: 4.6334917699587424e-05, rp_sfu: 2.895932356224214e-06, rp_alu: 0.0002649778105945156
+rp_fds: 0.0003228964577189999, rp_reg: 0.0003228964577189999, rp_shm: 1.447966178112107e-06, rp_mem: 0.0
+rp_sm_sub: 0.25096144954226646, Max_SM: 25.096144954226645, factor: 5.824789640723936
+runtime_power: 147.3937865311222, power_factor: 1.0083049892601652
+predicted power: 201.63812653112223
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=64, block_size_y=16, time=0.164ms, time_ns=164070.398
+best performing configuration:
+block_size_x=64, block_size_y=16, time=0.164ms, time_ns=164070.398
+____________________
+this is predicted power for shape:  128 1
+exec_cycles: 9605071.319159204, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 4.4411884177320984e-05, AR_int: 0.00017764753670928394, AR_sfu: 1.1102971044330246e-05, AR_alu: 0.002031843701112435
+AR_fds: 0.002475962542885645, AR_reg: 0.002475962542885645, AR_shm: 1.1102971044330246e-05, AR_mem: 0.00014433862357629318
+rp_fp: 0.0, rp_int: 0.0003552950734185679, rp_sfu: 2.2205942088660492e-05, rp_alu: 0.002031843701112435
+rp_fds: 0.002475962542885645, rp_reg: 0.002475962542885645, rp_shm: 1.1102971044330246e-05, rp_mem: 0.0
+rp_sm_sub: 0.2573723727734353, Max_SM: 25.737237277343528, factor: 5.824789640723936
+runtime_power: 154.2716124324205, power_factor: 1.0290674624105784
+predicted power: 208.51595243242053
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=128, block_size_y=1, time=0.044ms, time_ns=43564.801
+best performing configuration:
+block_size_x=128, block_size_y=1, time=0.044ms, time_ns=43564.801
+____________________
+this is predicted power for shape:  128 2
+exec_cycles: 19032043.773611404, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 2.2413741793347146e-05, AR_int: 8.965496717338858e-05, AR_sfu: 5.6034354483367865e-06, AR_alu: 0.0010254286870456319
+AR_fds: 0.0012495661049791034, AR_reg: 0.0012495661049791034, AR_shm: 5.6034354483367865e-06, AR_mem: 7.284466082837822e-05
+rp_fp: 0.0, rp_int: 0.00017930993434677717, rp_sfu: 1.1206870896673573e-05, rp_alu: 0.0010254286870456319
+rp_fds: 0.0012495661049791034, rp_reg: 0.0012495661049791034, rp_shm: 5.6034354483367865e-06, rp_mem: 0.0
+rp_sm_sub: 0.25372068113769564, Max_SM: 25.372068113769565, factor: 5.824789640723936
+runtime_power: 151.46906684746656, power_factor: 1.0249149677804956
+predicted power: 205.71340684746656
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=128, block_size_y=2, time=0.056ms, time_ns=55718.400
+best performing configuration:
+block_size_x=128, block_size_y=2, time=0.056ms, time_ns=55718.400
+____________________
+this is predicted power for shape:  128 4
+exec_cycles: 37735679.76241479, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.1304402560843347e-05, AR_int: 4.521761024337339e-05, AR_sfu: 2.826100640210837e-06, AR_alu: 0.0005171764171585831
+AR_fds: 0.0006302204427670166, AR_reg: 0.0006302204427670166, AR_shm: 2.826100640210837e-06, AR_mem: 3.673930832274088e-05
+rp_fp: 0.0, rp_int: 9.043522048674678e-05, rp_sfu: 5.652201280421674e-06, rp_alu: 0.0005171764171585831
+rp_fds: 0.0006302204427670166, rp_reg: 0.0006302204427670166, rp_shm: 2.826100640210837e-06, rp_mem: 0.0
+rp_sm_sub: 0.2518765308251, Max_SM: 25.187653082509996, factor: 5.824789640723936
+runtime_power: 149.75890092027927, power_factor: 1.020762473150413
+predicted power: 204.00324092027927
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=128, block_size_y=4, time=0.091ms, time_ns=91148.798
+best performing configuration:
+block_size_x=128, block_size_y=4, time=0.091ms, time_ns=91148.798
+____________________
+this is predicted power for shape:  128 8
+exec_cycles: 49902827.466241635, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 5.698799535022734e-06, AR_int: 2.2795198140090934e-05, AR_sfu: 1.4246998837556834e-06, AR_alu: 0.00026072007872729
+AR_fds: 0.0003177080740775174, AR_reg: 0.0003177080740775174, AR_shm: 1.4246998837556834e-06, AR_mem: 1.8521098488823882e-05
+rp_fp: 0.0, rp_int: 4.559039628018187e-05, rp_sfu: 2.849399767511367e-06, rp_alu: 0.00026072007872729
+rp_fds: 0.0003177080740775174, rp_reg: 0.0003177080740775174, rp_shm: 1.4246998837556834e-06, rp_mem: 0.0
+rp_sm_sub: 0.25094600072281376, Max_SM: 25.094600072281377, factor: 5.824789640723936
+runtime_power: 148.59865983164997, power_factor: 1.0166099785203304
+predicted power: 202.84299983165
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=128, block_size_y=8, time=0.165ms, time_ns=164505.601
+best performing configuration:
+block_size_x=128, block_size_y=8, time=0.165ms, time_ns=164505.601
+____________________
+this is predicted power for shape:  256 1
+exec_cycles: 19332783.84851363, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 2.2065074449906658e-05, AR_int: 8.826029779962663e-05, AR_sfu: 5.5162686124766645e-06, AR_alu: 0.0010094771560832296
+AR_fds: 0.0012301279005822962, AR_reg: 0.0012301279005822962, AR_shm: 5.5162686124766645e-06, AR_mem: 7.171149196219664e-05
+rp_fp: 0.0, rp_int: 0.00017652059559925326, rp_sfu: 1.1032537224953329e-05, rp_alu: 0.0010094771560832296
+rp_fds: 0.0012301279005822962, rp_reg: 0.0012301279005822962, rp_shm: 5.5162686124766645e-06, rp_mem: 0.0
+rp_sm_sub: 0.2536628023586845, Max_SM: 25.366280235868448, factor: 5.824789640723936
+runtime_power: 152.6616028376726, power_factor: 1.033219957040661
+predicted power: 206.90594283767263
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=256, block_size_y=1, time=0.057ms, time_ns=56518.400
+best performing configuration:
+block_size_x=256, block_size_y=1, time=0.057ms, time_ns=56518.400
+____________________
+this is predicted power for shape:  256 2
+exec_cycles: 38337098.79486915, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.112706303687481e-05, AR_int: 4.450825214749924e-05, AR_sfu: 2.7817657592187024e-06, AR_alu: 0.0005090631339370225
+AR_fds: 0.0006203337643057706, AR_reg: 0.0006203337643057706, AR_shm: 2.7817657592187024e-06, AR_mem: 3.616295486984313e-05
+rp_fp: 0.0, rp_int: 8.901650429499848e-05, rp_sfu: 5.563531518437405e-06, rp_alu: 0.0005090631339370225
+rp_fds: 0.0006203337643057706, rp_reg: 0.0006203337643057706, rp_shm: 2.7817657592187024e-06, rp_mem: 0.0
+rp_sm_sub: 0.25184709246412124, Max_SM: 25.184709246412122, factor: 5.824789640723936
+runtime_power: 150.9597033363757, power_factor: 1.0290674624105784
+predicted power: 205.20404333637572
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=256, block_size_y=2, time=0.091ms, time_ns=91302.399
+best performing configuration:
+block_size_x=256, block_size_y=2, time=0.091ms, time_ns=91302.399
+____________________
+this is predicted power for shape:  256 4
+exec_cycles: 50704678.98086832, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 5.608677851372276e-06, AR_int: 2.2434711405489103e-05, AR_sfu: 1.402169462843069e-06, AR_alu: 0.0002565970117002816
+AR_fds: 0.0003126837902140043, AR_reg: 0.0003126837902140043, AR_shm: 1.402169462843069e-06, AR_mem: 1.8228203016959894e-05
+rp_fp: 0.0, rp_int: 4.4869422810978205e-05, rp_sfu: 2.804338925686138e-06, rp_alu: 0.0002565970117002816
+rp_fds: 0.0003126837902140043, rp_reg: 0.0003126837902140043, rp_shm: 1.402169462843069e-06, rp_mem: 0.0
+rp_sm_sub: 0.2509310405233278, Max_SM: 25.093104052332784, factor: 5.824789640723936
+runtime_power: 149.80367536734212, power_factor: 1.0249149677804956
+predicted power: 204.04801536734215
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=256, block_size_y=4, time=0.165ms, time_ns=164921.597
+best performing configuration:
+block_size_x=256, block_size_y=4, time=0.165ms, time_ns=164921.597
+____________________
+this is predicted power for shape:  512 1
+exec_cycles: 38938517.8273235, warps_per_sm: 48, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 1.0955201654904076e-05, AR_int: 4.3820806619616306e-05, AR_sfu: 2.738800413726019e-06, AR_alu: 0.0005012004757118614
+AR_fds: 0.0006107524922609023, AR_reg: 0.0006107524922609023, AR_shm: 2.738800413726019e-06, AR_mem: 3.560440537843825e-05
+rp_fp: 0.0, rp_int: 8.764161323923261e-05, rp_sfu: 5.477600827452038e-06, rp_alu: 0.0005012004757118614
+rp_fds: 0.0006107524922609023, rp_reg: 0.0006107524922609023, rp_shm: 2.738800413726019e-06, rp_mem: 0.0
+rp_sm_sub: 0.2518185634747141, Max_SM: 25.18185634747141, factor: 5.824789640723936
+runtime_power: 152.16077042303428, power_factor: 1.0373724516707437
+predicted power: 206.40511042303427
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=512, block_size_y=1, time=0.082ms, time_ns=81510.402
+best performing configuration:
+block_size_x=512, block_size_y=1, time=0.082ms, time_ns=81510.402
+____________________
+this is predicted power for shape:  512 2
+exec_cycles: 51506530.495494984, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 5.5213621889327474e-06, AR_int: 2.208544875573099e-05, AR_sfu: 1.3803405472331869e-06, AR_alu: 0.0002526023201436732
+AR_fds: 0.00030781594203300067, AR_reg: 0.00030781594203300067, AR_shm: 1.3803405472331869e-06, AR_mem: 1.794442711403143e-05
+rp_fp: 0.0, rp_int: 4.417089751146198e-05, rp_sfu: 2.7606810944663737e-06, rp_alu: 0.0002526023201436732
+rp_fds: 0.00030781594203300067, rp_reg: 0.00030781594203300067, rp_shm: 1.3803405472331869e-06, rp_mem: 0.0
+rp_sm_sub: 0.25091654612336284, Max_SM: 25.091654612336285, factor: 5.824789640723936
+runtime_power: 151.00882649526537, power_factor: 1.033219957040661
+predicted power: 205.25316649526536
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=512, block_size_y=2, time=0.141ms, time_ns=141081.598
+best performing configuration:
+block_size_x=512, block_size_y=2, time=0.141ms, time_ns=141081.598
+____________________
+this is predicted power for shape:  1024 1
+exec_cycles: 52308382.01012167, warps_per_sm: 32, active_sms: 100, clock_rate_hz: 2550000000.0
+AR_fp: 5.436723504579223e-06, AR_int: 2.174689401831689e-05, AR_sfu: 1.3591808761448057e-06, AR_alu: 0.00024873010033449946
+AR_fds: 0.0003030973353802917, AR_reg: 0.0003030973353802917, AR_shm: 1.3591808761448057e-06, AR_mem: 1.7669351389882476e-05
+rp_fp: 0.0, rp_int: 4.349378803663378e-05, rp_sfu: 2.7183617522896114e-06, rp_alu: 0.00024873010033449946
+rp_fds: 0.0003030973353802917, rp_reg: 0.0003030973353802917, rp_shm: 1.3591808761448057e-06, rp_mem: 0.0
+rp_sm_sub: 0.25090249610176013, Max_SM: 25.090249610176013, factor: 5.824789640723936
+runtime_power: 152.21410697981273, power_factor: 1.0415249463008263
+predicted power: 206.45844697981272
+Using: NVIDIA RTX 5000 Ada Generation
+block_size_x=1024, block_size_y=1, time=0.132ms, time_ns=131872.000
+best performing configuration:
+block_size_x=1024, block_size_y=1, time=0.132ms, time_ns=131872.000
+Results saved to rq3_data/energy_model_results_20250402_195851.csv

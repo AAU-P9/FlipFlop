@@ -1,0 +1,22 @@
+=== Energy Consumption Summary ===
+Total Baseline Energy: 333.60 J
+Total Tuned Energy: 355.23 J
+Energy Reduction: -6.5%
+
+=== Statistical Analysis ===
+Energy:
+  Baseline Mean: 7.5819
+  Tuned Mean: 8.0735
+  Difference: -0.4915 (p=0.0000)
+Energy_per_token:
+  Baseline Mean: 0.0461
+  Tuned Mean: 0.0488
+  Difference: -0.0027 (p=0.0000)
+Power:
+  Baseline Mean: 29.0977
+  Tuned Mean: 30.1432
+  Difference: -1.0455 (p=0.0010)
+Time:
+  Baseline Mean: 0.2601
+  Tuned Mean: 0.2668
+  Difference: -0.0067 (p=0.0000)

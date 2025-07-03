@@ -1,0 +1,362 @@
+example_id,prompt_len,gen_text,time_s,power_w,gen_tokens,block_size,power_limit,config_name
+40,83,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a little girl. She liked to go out and explore the world. One day she decided to go for a walk in the forest.
+
+As she was walking, she spotted a mysterious house. She stepped closer to get a better look. Suddenly, a witch appeared from the door, and the little girl was very scared. 
+
+""What do you want?"" asked the witch.
+
+The little girl was brave and said, ""I want to explore this house and see what's inside.""
+The witch smiled and said, ""Ok, but be careful. I'm not going to hurt you.""
+The little girl was very brave and she opened the door. Inside, she saw a big room with lots of toys and games. She was so excited and started playing.
+The witch watched her from the window and smiled. She was happy that the little girl was brave enough to explore the mysterious house.",0.254,28.6,162,1024,200,runcuda_1024
+7,22,"Transformer config: 6 layers, 6 heads, 288 dim
+Alice walked into the kitchen and saw Ben who was looking for something but looked frustrated. She said, ""Ben, why are you so frustrated?""
+Ben replied, ""I can't find my favorite toy. I'm looking for it everywhere.""
+Alice smiled and said, ""I can help you find it. Let's look together.""
+They searched the kitchen and finally found the toy under the table. Ben was so happy and thanked Alice for her help.
+Alice smiled and said, ""It's important to help each other. That's what friends do.""
+The moral of the story is that it's important to help each other and be kind.",0.233,28.3,110,1024,200,runcuda_1024
+1,39,"Transformer config: 6 layers, 6 heads, 288 dim
+One day a girl walked into the living room and noticed something very strange. There was a huge cabinet standing in the corner. It looked very old and heavy. She walked over and tried to open it, when suddenly a voice spoke from inside.
+""Who is there?"" the voice said.
+The girl was scared, but she was also curious. She slowly opened the cabinet and saw a little mouse inside.
+""I'm sorry,"" the girl said. ""I didn't know you were here.""
+The mouse smiled. ""It's okay,"" he said. ""I'm just looking for some cheese. Would you like to help me?""
+The girl nodded and the mouse showed her a jar of cheese. Together, they opened the cabinet and found lots of delicious cheese.
+The girl was so happy that she had helped the mouse. She thanked him and they both went on their way.",0.245,27.7,152,1024,200,runcuda_1024
+17,40,"Transformer config: 6 layers, 6 heads, 288 dim
+Anna was a popular girl, who walked to school every day carrying a very heavy backpack. It was so heavy that she could hardly walk.
+
+One day, Anna's friends asked her why her backpack was so heavy. She said that she had to carry it all the way to school.
+Anna said, ""I don't want to carry it. It's too heavy for me.""
+But her friends said, ""It's too heavy for you. You can do it!""
+Anna felt sad and started to cry. She wanted to show everyone that she could carry the heavy backpack.
+But then, her teacher came over and said, ""Anna, why don't you try to carry it? It's too heavy for you.""
+Anna was so happy and she smiled. She said, ""Yes, please!""
+The teacher smiled and said, ""Good job, Anna. You can carry it all by yourself.""
+Anna was so proud of herself. She carried the heavy backpack all the way to school. Everyone was so impressed with her.
+Anna was so happy that she had carried the heavy backpack all by herself. She was proud of herself and",0.268,32.4,192,1024,200,runcuda_1024
+15,46,"Transformer config: 6 layers, 6 heads, 288 dim
+Jack and Sally were running through the woods together when they stopped suddenly. They heard a strange sound coming from around the corner.
+
+“What's that?” asked Jack.
+
+Sally put her finger to her lips and said, “Shhhh. Let's go find out.”
+
+Jack and Sally followed the sound until they came to a clearing. There, they saw a big, scary bear.
+“Oh no!” cried Sally. “We need to be careful.”
+Jack and Sally quickly ran away from the bear and back to their house.
+“We need to be careful,” said Jack.
+“Yes, we need to be careful,” said Sally.
+The two friends hugged each other and promised to be more careful in the future.",0.241,25.7,121,1024,200,runcuda_1024
+14,38,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there lived two best friends called Jack and Joe. They were bored, they wanted someone else to talk to or play with. Jack had an idea. He said to Joe, “Let’s go and find someone to talk to.”
+Joe was excited and said, “Yes! Let’s go!”
+So, Jack and Joe went to the park. They saw a big tree and Jack said, “Let’s sit under the tree and talk.”
+Joe was a bit scared, but Jack said, “Don’t worry, I’ll be right here.”
+So, Jack and Joe sat under the tree and talked. They talked about the birds, the flowers and the clouds. They talked about how much fun they were having.
+After a while, Jack said, “Let’s go home now.”
+Joe was a bit sad, but he was also happy that he had a friend to talk to. They said goodbye and Jack went home.
+The next day, Jack and Joe went back to the park. They talked about all the fun things they could do together. They were happy to be friends.",0.272,29.9,186,1024,200,runcuda_1024
+8,41,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a curious boy who lived in a house with a big garden. Every day he explored the garden he found new surprises. But one day, it was raining so hard that his mother told him he couldn't go outside. He was very sad.
+The boy decided to go for a walk in the garden. He saw a big tree with a big branch. He wanted to climb it, but he was too small. He tried and tried, but he couldn't reach the branch.
+Suddenly, he heard a voice. It was his mother. She said, ""Come on, let's go inside. I'll help you.""
+The boy was so happy. He followed his mother inside and they went inside. His mother helped him climb the tree and he was so happy. He thanked his mother and they went back outside to play.",0.241,27.1,153,1024,200,runcuda_1024
+6,23,"Transformer config: 6 layers, 6 heads, 288 dim
+The day before Ben's birthday, Alice walked into the kitchen and saw Ben sitting there, looking Gloomy. She said, ""Ben, why are you so sad?""
+Ben answered, ""I'm sad because I have no friends to play with.""
+Alice smiled and said, ""I'm sure you will make some friends. I'm sure you will be happy.""
+Aliceely nodded and said, ""I'm sure I will make some friends. I'm sure I will be happy.""
+Aliceely smiled and said, ""I'm sure you will. I'm sure you will be happy.""
+Aliceely smiled and said, ""I'm sure I will. I'm sure I will make lots of friends.""
+Aliceely smiled and said, ""I'm sure I will. I'm sure I will make lots of friends.""
+Aliceelyony smiled and said, ""I'm sure I will make lots of friends. I'm sure I will make lots of friends.""
+Aliceelyony smiled and said, ""I'm sure I will make lots of friends. I'm sure I will make lots of friends.""
+A",0.277,32.4,166,1024,200,runcuda_1024
+34,65,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there was a jolly boy named Dan. He was a youth of three years old. He liked to play outside in the bright sunshine.
+
+One day, Dan was playing in his garden when he saw something very exciting.
+
+“Look, Mama!” shouted Dan, “I see something moving!”
+
+Mama peered around the corner to see what Dan was pointing at. It was a big, shiny box.
+“What’s that?” asked Dan.
+Mama smiled. “It’s a surprise!”
+Dan was so excited. He opened the box and found a big, shiny toy car.
+“Wow!” said Dan, “I love it!”
+Mama smiled. “It’s a surprise!”
+Dan was so happy. He hugged the car and thanked Mama.
+“Let’s play with it!” said Dan.
+Mama smiled and said, “Yes, let’s play!”
+And they played with the car until the sun went down.",0.262,29.3,146,1024,200,runcuda_1024
+5,40,"Transformer config: 6 layers, 6 heads, 288 dim
+Alice walked up to her friend Ben's house. She was planning to ask him to go to the park with her. When Ben opened the door, she asked him if he had any plans. He said, ""I'm sorry, Alice, but I don't have any planes.""
+Alice was very sad. She wanted to go to the park and play with her friends. She asked Ben again, but he still said no.
+Alice was so disappointed. She thought Ben was being selfish. She decided to go to the park by herself. She walked to the park and saw a big, beautiful park. She was so excited!
+But when she got there, she saw Ben already there. He was playing with a toy car. Alice was so mad. She shouted, ""That's not fair! You can't play with my car!""
+Ben was embarrassed. He said, ""I'm sorry, Alice. I didn't mean to be selfish. I just wanted to play with you.""
+Alice was so happy. She said, ""It's okay, Ben. I forgive you. Let's play together!""
+They played together all day and",0.271,32.7,186,1024,200,runcuda_1024
+27,44,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a little girl called Emma. She was only three years old. One day, her aunt said to her, “Emma, would you like to go out with me to pick up some flowers?”
+
+Emma was very excited. She said, “Yes, I would love to!”
+So they went outside and Emma saw a big, beautiful flower. She said, “Wow! That flower is so pretty!”
+Her aunt smiled and said, “Yes, it is. Let’s pick it up and take it home.”
+So they picked up the flower and took it home. Emma was so happy to have a new flower. She said, “This flower is so pretty!”
+Her aunt said, “Yes, it is. Now let’s go show it to our friends!”
+So Emma and her aunt went to the park and showed the flower to their friends. Everyone was so happy to see the beautiful flower. Emma was so proud of her aunt for picking it up.",0.264,26.6,168,1024,200,runcuda_1024
+2,66,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there lived a hamster in the forest. Every day, he would walked around the forest and looking for adventures. One day, he heard someone calling out from behind the bushes.
+
+The hamster listened carefully. He realised that it was a small mouse calling out for help. It got stuck under a heavy log and couldn't get out. The hamster immediately realized that he had to help the mouse.
+He used his strong arms to push the log away from the mouse. The mouse was so grateful and thanked the hamster for his help.
+The moral of the story is that it is important to help others when they need it. Even if it is hard, it is always important to be kind and helpful.",0.243,25.5,136,1024,200,runcuda_1024
+41,50,"Transformer config: 6 layers, 6 heads, 288 dim
+Once there was a boy named Sam. He was three years old and very naughty. One day, his mom told him not to touch her phone but Sam did not listen. He picked up the phone and started playing with it.
+
+Mom saw him and said, ""be careful not to touch the phone, Sam. It is very important.""
+But Sam didn't listen. He kept playing with the phone and he didn't listen to his mom.
+Mom got very angry and said, ""Sam, you must listen to me. You must not touch the phone. Now, you must go to bed.""
+Sam was very sad and he cried. He had been so naughty and now he was in trouble. He had to go to bed without dinner.",0.236,27.8,133,1024,200,runcuda_1024
+32,39,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there were two friends, Sally and Joe who liked to go to each other's house. One day, Joe wanted to visit Sally so he walked up to her house. He knocked on the door, but Sally didn't answer. Joe was sad and he asked Sally why she didn't answer. Sally said she was sorry and she wanted to go home. Joe was very sad too and he started to cry.
+Sally felt bad for Joe and she wanted to make him feel better. She said, ""I'm sorry Joe, I'm sorry. I'll come back tomorrow and I'll be here waiting for you."" Joe smiled and said, ""Thank you Sally, I'm sorry too.""
+The next day, Sally came back to Joe's house. She was so happy to see him and she said, ""I'm sorry I didn't answer you. I'm here now."" Joe was so happy to see Sally and he said, ""It's okay, Sally. I'm glad you're not hurt.""
+Sally and Joe hugged each other and they were both very happy. They had a",0.276,32.5,184,1024,200,runcuda_1024
+36,38,"Transformer config: 6 layers, 6 heads, 288 dim
+Once there were two friends who were walking together in the park. One had a cane and the other didn't. The one without the cane wanted to borrow the cane from the other. But the other friend said no.
+The first friend was very sad and started to cry. The other friend felt sorry for her and said, ""I'm sorry. I should not have said no. I'm sorry.""
+The first friend was still sad but she said, ""It's okay. I forgive you.""
+The second friend smiled and said, ""Thank you. I'm sorry I didn't say please. I'm sorry I didn't say please.""
+The two friends hugged and said goodbye. The first friend returned the cane and the two friends were happy again.",0.244,25.9,130,1024,200,runcuda_1024
+42,62,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there lived a black cat. The cat belonged to a little girl called Katie. Every day, Katie would take her cat for a walk in the park. 
+
+One day, as Katie and her cat were walking around, they saw a mean looking man. He said he wanted to take the cat, to which she replied ""This cat belongs to me!"" Katie was very scared and she ran away.
+Katie ran and ran until she was far away from the man. She was so scared that she started to cry.
+Katie's mom saw her and asked her what was wrong. Katie told her about the mean man and her mom said, ""Don't worry, Katie. We will find a way to get you back.""
+Katie's mom took her to the park and they found a nice man who helped Katie get her cat back. Katie was so happy and she thanked the man for helping her.
+Katie and her cat went home and Katie was very happy. She never wanted to go back to the mean man again.",0.266,28.9,188,1024,200,runcuda_1024
+16,49,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a little bear named Diva. She was hungry, and wanted to bake a cake, but she didn't have any sugar at home, so she decided to go ask around. She started walking and met a squirrel. She asked the squirrel, ""Would you happen to bake a cake?"" The squirrel said, ""Yes, I do!""
+D separated the sugar into two pieces and put it in the oven. D direction, D Where the cake was going to be, D Where was the sugar. Darts were going to bake, and Darts were going to bake a cake.
+D separated the sugar into two pieces, and Darts put it in the oven. Darts waited and waited, but nothing happened. Darts were so sad, they started to cry.
+Darts were so sad that they didn't know what to do. They had to wait for the cake to bake, and it was not the same without the sugar. Darts were so sad that they never baked a cake again.",0.263,27.9,177,1024,200,runcuda_1024
+19,55,"Transformer config: 6 layers, 6 heads, 288 dim
+One day, Grandma was in the kitchen getting ready to prepare. She had the ingredients for a tasty dish.
+
+Grandma said to her granddaughter, ""Are you going to help me make this meal?"" Her granddaughter, Jenny, replied, ""Yes, I will help you!""
+
+Grandma and Jenny began to prepare the ingredients. Jenny was clumsy. She dropped a spoon and the bowl fell on the floor. Grandma said, ""Oh no! We need to clean this up.""
+Jenny helped Grandma clean the mess. Grandma said, ""Thank you for helping me, Jenny. You are a great helper!""
+Grandma smiled and said, ""You're welcome, Jenny. Let's make the dish together!""",0.243,26.7,113,1024,200,runcuda_1024
+0,54,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there lived a bunny in a field. Her name was Lucy. Lucy loved to have feasts and parties with her bunny friends. One day, when Lucy was about to leave for a feast at a friend's house, she realized she's starting to feel sick. She was so weak she could not move.
+Lucy's friends noticed she was feeling so weak and sad. They asked her what was wrong. Lucy told them she was sick and couldn't go to the feast. Her friends were worried and wanted to help her.
+They decided to take Lucy to the feast. When they arrived, they saw that the feast was full of food. Lucy was so happy and thanked her friends for helping her.
+The moral of the story is that it is important to help others when they are in need. Even if you are weak, you can still make a difference.",0.247,26.2,161,1024,200,runcuda_1024
+43,52,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there was a little boy who was always naughty. His mom was always telling him to be good, but he kept disobeying her rules and ignoring her warnings. 
+
+One day, he was so naughty that his mom decided to punish him. She told him that he had to go to the hospital and stay there for a few days. The little boy was very sad and he didn't want to go.
+But then, his mom said that if he was good, she would let him stay. So he agreed and went to the hospital.
+At the hospital, the little boy was very scared. He didn't know what was happening. He was so scared that he started to cry.
+Suddenly, the doctor came in and said that he had to punish the little boy. He said that he had to stay in the hospital for a few days and he would be punished.
+The little boy was very sad and he was very scared. He had to stay in the hospital for a few days and he was very sad. He missed his mom and he was very sorry for being so naughty.
+The little boy learned his less",0.279,30.4,210,1024,200,runcuda_1024
+29,89,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a small girl named Lucy. She was only three years old and was very adventurous. She loved to explore the world around her, especially when it was bright and sunny outside. 
+
+One day, while exploring the nearby park, Lucy came across a ladder leaning on a wall. She was curious to see what's on top, so she climbed the ladder, but when she reached the top, the ladder fell and she was stuck.
+
+A nearby park ranger noticed her and shouted out, ""What are you doing up there?""
+The ranger replied, ""I'm trying to get you down, but I can't reach the ladder.""
+Lucy was scared and started to cry. The ranger quickly ran over and helped her down.
+The moral of the story is that it's important to be careful when exploring and to always ask for help when you need it.",0.257,27.7,157,1024,200,runcuda_1024
+22,70,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a mummy, a daddy and a little girl. The family lived in a house and the little girl liked to play in the living room. Her favourite spot was a big, comfy armchair. 
+
+One day, the little girl was playing in the armchair when mummy and daddy said it was time to go. She didn't want to leave, she wanted to stay in her armchair.
+Mummy and daddy said, ""No, we have to go now. We need to stay here.""
+The little girl was sad, but she knew she had to listen to mummy and daddy. She said goodbye to the armchair and left.
+The next day, mummy and daddy took her to the armchair again. This time, the little girl was very happy. She sat in the armchair and felt so comfortable.
+Mummy and daddy said, ""We are so glad you came here. We love you so much.""
+The little girl smiled and said, ""I love you too.""",0.264,28.5,173,1024,200,runcuda_1024
+20,68,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a boy named Max. He was at the market with his mother, where he saw two things he wanted very much: a toy car and a jumping rope.
+
+He knew that his mother would not let him buy both of these things, and that she would probably tell him that he has to choose one. He said to her, ""I want both! I want the car and the jump rope!""
+His mother smiled and said, ""Okay, but you have to choose one thing. You have to choose one thing each, and you have to choose the jump rope. If you choose the jump rope, you can have the car and the jump rope.""
+Max thought for a moment and then said, ""I choose the jump rope! I will have the jump rope and the jump rope, and I will have the jump rope.""
+His mother smiled and said, ""That's a great choice! Now, let's go home and have some dinner.""
+Max was so happy that he had chosen the jump rope. He knew that he would have to choose the jump rope for his toy car and the jump rope.",0.271,28.8,204,1024,200,runcuda_1024
+24,68,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there lived a small dog named Spike. He was an adventurous pup who loved to explore the world. One day, while he was wandering around, he stumbled upon a big tree. He saw something shining at the top. He wanted to climb it to see what it was.
+
+Spike placed his paws on the trunk and started to climb, but the trunk was too high. He tried to jump, but he couldn't reach it. He was getting frustrated.
+Suddenly, he heard a voice. It was a friendly voice. It said, ""I can help you, Spike. I can reach the trunk for you.""
+Spike was so happy. He thanked the voice and climbed up the trunk. He reached the top and saw a beautiful view of the world. He was so excited that he started to jump up and down.
+The voice said, ""You can do anything if you believe in yourself.""
+Spike smiled and said, ""I believe in myself and I can do anything!""",0.266,29.0,176,1024,200,runcuda_1024
+13,28,"Transformer config: 6 layers, 6 heads, 288 dim
+Jimmy was on his way to school with his father when he noticed a tree with strange looking fruits on it. He asked his father, ""Can I try one?"" His father said, ""No, Jimmy. That tree is too high for you to reach."" Jimmy was disappointed but he still wanted to try.
+He asked his father again, ""Can I please try a fruit?"" His father said, ""No, Jimmy. You can't have any fruit. You have to wait until you are older."" Jimmy was disappointed but he waited.
+Finally, his father said, ""Okay, Jimmy. You can try a fruit, but you have to be careful. If you don't, you might get hurt."" Jimmy was so excited and he ran to the tree. He reached up and grabbed a fruit. He was so happy and he said, ""I did it!"" His father smiled and said, ""I knew you could do it, Jimmy. You are a very brave boy.""",0.25,26.5,164,1024,200,runcuda_1024
+28,71,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a little girl named Lucy. She loved to explore the world around her, especially when it was bright and sunny outside. 
+
+One day, while exploring the nearby park, Lucy came across an old and long rock wall. She was curious and wanted to get to the top, so she began to look around for something she could use to climb it. Suddenly, she spotted a big, bright, yellow flower.
+Lucy was so excited that she ran over to the flower and picked it up. She was about to take it home when she heard a voice behind her.
+""That's my flower,"" said the voice.
+Lucy turned around and saw a friendly old man. He smiled at her and said, ""That's a beautiful flower. I'm going to give it to you as a gift.""
+Lucy was so happy that she gave the old man a big hug. She thanked him and ran back home with the flower in her hand.
+The old man smiled and said, ""You're very welcome. I'm glad you like it.""
+Lucy smiled and said, ""Thank you! I'm so happy to have a",0.284,32.6,199,1024,200,runcuda_1024
+38,32,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there was a little girl. Her name was Julia. Every day, Julia helped her mama do the laundry. It was her favourite job. She loved to put the clothes in the washing machine and wash them.
+One day, Julia was helping her mama with the laundry. She was so excited to help. She put the clothes in the washing machine and pressed the button. Suddenly, the machine started to make a loud noise. Julia was scared and started to cry.
+Mama came running and saw that the machine was broken. She was very angry and said, ""Julia, why did you do this? Now the laundry is ruined!"" Julia was so sad and started to cry.
+Mama hugged Julia and said, ""It's okay, sweetheart. We can get a new machine. But now we have to do something else. We can't wash the clothes anymore."" Julia was so sad and she started to cry again.
+Mama hugged Julia and said, ""It's okay, sweetheart. We can still do something else. We can still make something nice out of the laundry.""",0.277,28.6,189,1024,200,runcuda_1024
+37,32,"Transformer config: 6 layers, 6 heads, 288 dim
+One day, Timmy had a goal. He wanted to fit into his favorite toy car. He was very excited, but grumpy too. He tried to fit into the car but he was too big. He tried to fit in the kitchen, but he was too small. He tried to fit in the living room, but he was too big. He tried to fit in the kitchen, but he was too small. He tried to fit in the kitchen, but he was too big. He tried to fit in the kitchen, but he was too small. He was very grumpy.
+Timmy was so grumpy that he did not want to play with his toys. He just wanted to fit in his favorite toy car. He sat on the floor and looked at his toy car. He did not want to play with it. He wanted to fit in his toy car. He pushed and pushed, but he could not fit in his toy car. He felt very grumpy.
+He sat on the floor and sighed. He wished he could fit in his favorite toy car. He wished he could fit in his favorite toy car. He wished he could fit in his favorite toy car.",0.277,32.7,212,1024,200,runcuda_1024
+25,63,"Transformer config: 6 layers, 6 heads, 288 dim
+Once there was a mother and daughter walking in the park. They noticed a bird perched on a branch, singing its song. The daughter shouted with delight, “Look Mommy! A bird!”
+
+The mother smiled and said, “Yes! See how colorful it is?”
+
+The daughter then asked, “Can I share my snack with it?”
+
+The mother replied, “No, sweetie. That's a bad idea because it might be too tasty for us to eat.”
+The daughter thought for a moment and then said, “I know! Let’s share our snack with the bird. We can give it some of our snack.”
+The mother smiled and said, “That’s a great idea! Let’s share our snack with the bird.”
+The daughter and her mother shared their snack with the bird, and it was very happy. The bird sang its song again, and the mother and daughter smiled.",0.263,25.4,150,1024,200,runcuda_1024
+12,28,"Transformer config: 6 layers, 6 heads, 288 dim
+One day, a bird was flying high over the sea. At some point the bird noticed small boat with a boy sitting inside. The boy looked lost so sad.
+The bird flew down to the boy and said, ""Why are you sad?"" The boy looked up and said, ""I can't find my mom. I am lost."" The bird wanted to help the boy, so it said, ""I will help you find your mom.""
+The bird and the boy looked for the boy's mom. They looked near the rocks and in the water. Then, something unexpected happened. The bird found a big, shiny treasure chest! The boy was so happy and said, ""Thank you, bird!""
+The bird and the boy opened the chest and found many shiny things inside. They were so happy and surprised. The boy's mom came and saw the treasure. She was so happy and said, ""Thank you, bird, for helping my son find this treasure!""
+The bird and the boy became best friends. They played together every day and had lots of fun. The bird was not sad anymore because it had a new friend.",0.273,30.4,196,1024,200,runcuda_1024
+21,54,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a small brown mouse who lived in a big tree. The mouse wanted to be better friends with the birds that flew around the tree, but they were always too afraid to let him get close. 
+
+One day, the mouse spoke to the birds bravely, ""Please don't be scared of me. I just want to be friends.""
+The birds were surprised by the mouse's bravery and decided to let him be.
+The mouse was so happy that he started to dance around the tree. He was so excited that he forgot to be scared.
+The birds were so happy to see the mouse having so much fun. They all started to applaud and cheer for the mouse.
+The mouse was so happy that he started to dance around the tree. He was no longer scared of the birds and he was so proud of himself.
+The birds were so proud of the mouse too. They all applauded and cheered for him.
+The mouse was so happy that he had made new friends. From that day on, the birds and the mouse were the best of friends.",0.262,27.5,200,1024,200,runcuda_1024
+30,33,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, in a far away land, two best friends, Bob and Jill, were playing hide and seek. Jill hid below a large wooden table. She was very quiet so that Bob could not find her.
+Bob looked around and saw a large, tall tree. He thought it would be a good place to hide. He ran to the tree and hid behind it. He waited and waited, but Jill didn't come.
+Suddenly, Bob heard a loud noise. He looked up and saw a large, tall man with a large mustache. The man was smiling and said, ""I'm here to give you a special gift!""
+The man handed Bob a large, shiny stone. He said, ""This is a special stone. It will make you very happy.""
+Bob thanked the man and ran back to the wooden table. He held the stone in his hands and smiled. He was so happy that he had found the special stone.
+The man then said, ""Now you can hide and seek with your friends. Have fun!""
+Bob thanked the man and ran off to hide. He was so happy that he had found the special stone.",0.265,31.8,202,1024,200,runcuda_1024
+11,35,"Transformer config: 6 layers, 6 heads, 288 dim
+""Ben, what do you have in your pocket?"", Alice asked. ""Oh, nothing."", Ben replied. But Alice saw that there was definitely something in Ben's pocket, and she was very curious what it was, so she asked him.
+""What is it, Alice?"" Ben asked.
+Alice smiled and said, ""It's a special rock. It's very special, and it's very special to me.""
+Ben was amazed. He had never seen a rock like this before. He asked Alice, ""Can I keep it?""
+Alice nodded and said, ""Yes, you can keep it. It's a very special rock.""
+Ben was so happy. He thanked Alice and ran off to show his mom. He couldn't wait to show her the special rock.",0.243,28.9,124,1024,200,runcuda_1024
+23,55,"Transformer config: 6 layers, 6 heads, 288 dim
+Jack was a chubby little boy. He liked to pick flowers in the garden. One day, he went out to the garden to pick some flowers but his Mom said he had to take his medicine first. He didn't like the medicine's taste.
+
+""Do I have to take it?"" Jack asked.
+
+His Mom nodded. ""Yes, you do. But you have to take it to the doctor.""
+Jack was excited. He grabbed the medicine and ran outside. He was about to pick the flower when he heard a voice.
+""Hey! That's my medicine!""
+Jack turned around and saw a big, friendly bear. The bear said, ""I'm sorry, I didn't mean to take your medicine. I just wanted to give it to you.""
+Jack was surprised. He said, ""It's okay. I'm sorry I didn't take it. I'll take it now.""
+The bear smiled and said, ""That's okay. I'm glad you're not in trouble.""
+Jack smiled and said, ""Thank you. I'm glad I didn't have to take it.""
+The bear",0.279,31.9,175,1024,200,runcuda_1024
+35,72,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a little boy named Tom. Tom loved playing outside, but he always had to be careful not to make too much noise.
+
+One day, Tom went out to explore the garden. Soon he found an unusual fruit. It looked like a prune! Tom picked up the prune and looked at it closely. It smelled sweet.
+
+Tom wanted to find out how the prune tasted, so he decided to try it. He took a bite and it was delicious! He was so happy that he had found something so unusual.
+Tom decided to take the prune home and show it to his mom. She was very surprised and said it was very unusual.
+Tom was so proud of himself for finding something so unusual. He was happy that he had found something so special.",0.251,26.4,147,1024,200,runcuda_1024
+4,29,"Transformer config: 6 layers, 6 heads, 288 dim
+Alice was bored and wanted to find some adventures. She walked up to her friend Ben, who looked vey busy playing with his toys. Alice said, ""Why don't we go to the park? It's a fun place!""
+Ben smiled and said, ""That sounds like a great idea! Let's go!""
+So they went to the park and had a lot of fun. They played on the swings and the slide and even played catch with a ball. After a while, they got tired and decided to go home.
+On the way home, Alice said, ""I'm so glad we went to the park today. It was so much fun!""
+Ben smiled and said, ""Me too! Let's go back soon!""",0.236,29.4,125,1024,200,runcuda_1024
+26,98,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there were two friends, Max and Alex. One day Max invited Alex to his house for lunch. Alex was excited to accept, and so they went.
+
+When they arrived, Max told Alex that he had made soup for lunch. Alex was excited and thanked Max for his kind invitation. Max smiled and said it was easy to make.
+
+Later, it was time to eat the soup. Max took the first spoonful and tasted it. He realized something must be wrong with the soup, because it tasted very weird. He said to Alex, ""This soup is not good. I don't like it.""
+Alex was sad and said, ""I'm sorry, Max. I didn't know it was bad.""
+Max was still sad, but he was glad that Alex was still there. He said, ""It's okay. I'm glad you're here. Let's go play!""
+Max and Alex had a great time playing together. They laughed and ran around the house. Max was glad that he had such a good friend.",0.277,28.3,177,1024,200,runcuda_1024
+31,29,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a pumpkin. It was a very special pumpkin, it could speak. It was sad because it couldn't move. Every day, it would say, ""I can't move!""
+One day, a little girl came to visit the pumpkin. She said, ""Hello pumpkin, why can you talk?"" The pumpkin replied, ""I'm sad because I can't move.""
+The little girl said, ""I can help you! I can give you a special gift."" She took the pumpkin to her house and gave it a special place. She said, ""This will help you move, and you will be able to move again.""
+The pumpkin was so happy. It said, ""Thank you so much! I can move now!"" The little girl smiled and said, ""You're welcome! Now you can move again!""
+The pumpkin was so happy. It said, ""Thank you so much! I can move again!"" The little girl smiled and said, ""You're welcome! Now you can move again!"" The pumpkin was so happy and thanked the little girl again. They both smiled and said good",0.274,32.8,183,1024,200,runcuda_1024
+18,43,"Transformer config: 6 layers, 6 heads, 288 dim
+Once there was a young girl named Anna. She was three years old and usually very happy. Today she was sad because she couldn't play in the park. She had asked her parents to take her but they wouldn't listen. Anna insisted that she wanted to go to the park.
+Anna's parents said no. They said it was too dangerous and she could get hurt. Anna was very sad and she started to cry. She wanted to go to the park so badly.
+Anna's parents tried to explain to her why it was dangerous to go to the park. They said it was too dangerous and they could get hurt. Anna was very sad and she started to cry.
+Anna's parents tried to explain why it was dangerous to go to the park. They said it was too dangerous and they could get hurt if they weren't careful. Anna was very sad and she was very upset.
+Anna's parents tried to explain why it was dangerous to go to the park, but Anna wouldn't listen. She kept crying and crying until her parents finally told her the truth. They said it was not safe to go to the park. Anna was very sad and she was very",0.278,26.9,215,1024,200,runcuda_1024
+39,81,"Transformer config: 6 layers, 6 heads, 288 dim
+It was a sunny day and Ben wanted to go outside and play. He grabbed his toy car and ran to the garden. Suddenly, something pinched his hand!
+
+Ben looked around but there was nothing there. He was scared so he held onto the hoop tightly.
+
+Then he heard a voice. ""Don't be scared, little one. It's just me!""
+
+Ben looked up and saw a big, scary spider. He was scared!
+
+The spider smiled. ""Don't be scared, I just wanted to play with you. Let's play together!""
+Ben was still scared but he decided to give it a try.
+They played together for a while, and Ben was no longer scared. He was having so much fun!
+The spider was happy to have a friend. They played together until it was time for Ben to go home.
+Ben said goodbye to the spider and thanked it for playing with him. He was no longer scared.",0.265,29.0,163,1024,200,runcuda_1024
+33,59,"Transformer config: 6 layers, 6 heads, 288 dim
+Mum was getting ready for bed, so she told her son, ""It's time for a bath"". He nodded and ran off to the bathroom. He watched as Mum turned on the bathtub, the water pouring out of the tap and filling the tub.
+
+Mum asked, ""What do you want in your bath?"" He thought for a moment and said, ""I want to splash and play in the water!""
+Mum smiled and said, ""That sounds like a great idea. Let's get ready for bed.""
+So, Mum and Dad got into the bathtub and Mum filled the tub with warm water. Then, they put some bubbles in the water and started to splash each other.
+Mum said, ""Let's make a big splash!""
+Dad said, ""Let's make a big splash!""
+Mum and Dad laughed and splashed each other until they were all wet. Then, they all got into the tub and started to splash around.
+Mum said, ""This is so much fun!""
+Dad said, ""Yes, it is!""
+Mum and Dad had a great",0.28,31.0,178,1024,200,runcuda_1024
+10,29,"Transformer config: 6 layers, 6 heads, 288 dim
+Alice wanted to play with her doll, but she couldn't remember where she had put it. She looked all around the house but couldn't find it, so she decided to look in the living room.
+When she went to the living room, she saw a big box. She opened it and found a new doll inside. She was so excited and hugged it tight.
+Alice's mom came in and said, ""Alice, I have a surprise for you!"" She handed Alice a new doll. It was a beautiful doll with a bright pink dress.
+Alice was so happy and hugged her mom. She said, ""Thank you, Mommy! I love my new doll!""
+Alice and her mom played with the new doll all day. They had so much fun!",0.247,26.2,135,1024,200,runcuda_1024
+3,68,"Transformer config: 6 layers, 6 heads, 288 dim
+Jack asked his mom if he could ride the bike all the way to his grandmother's house. She agreed, but she said that he shouldn't ride too fast because it was raining and the path was wet.
+
+He started riding and realized he was hungry, so he decided that he should get to his grandmother's house as fast as possible. But then he remembered his mum's words ""no"" and he knew he should not.
+He stopped and asked his mom, ""Can I ride the bike now?"" His mom said, ""No, Jack. You must wait until the rain stops.""
+Jack was disappointed but he knew his mom was right. He waited and waited until the rain stopped. When it finally stopped, he hopped on the bike and rode it all the way to his grandmother' house.
+When he arrived, his grandmother was so happy to see him. She said, ""Jack, you are so lucky to have such a nice bike. I'm so proud of you!""
+Jack smiled and said, ""Thank you, grandmother. I'm so lucky to have such a nice bike!""",0.279,32.7,188,1024,200,runcuda_1024
+9,24,"Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there was tiger who liked to play the guitar. One day, a bunny heard the guitar from a distance and wanted to play it too. The tiger was very generous and shared his guitar with the bunny.
+The bunny was so happy and started to play the guitar. But then, a mean fox came and wanted to take the guitar away. The bunny was scared and didn't know what to do. The tiger saw the fox and knew he had to protect his guitar.
+The tiger stood in front of the fox and roared loudly. The fox was scared and ran away. The tiger was happy that he could protect his guitar and play music for the bunny. From that day on, the tiger and the bunny played the guitar together and became good friends.",0.248,27.7,147,1024,200,runcuda_1024

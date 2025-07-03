@@ -1,0 +1,337 @@
+
+=== Prompt #1 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 52 tokens)
+
+
+--- Model Generation (ID: 43) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time, there was a little boy who was always naughty. His mom was always telling him to be good, but he kept disobeying her rules and ignoring her warnings. 
+
+One day, he was so naughty that his mom decided to punish him. She told him that he had tolersalleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleraller
+
+--- Additional Info ---
+Block Size: 8192
+Power Limit: 250 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #2 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 28 tokens)
+
+
+--- Model Generation (ID: 13) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Jimmy was on his way to school with his father when he noticed a tree with strange looking fruits on it. He asked his father, "Can I tryretalleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleraller
+
+--- Additional Info ---
+Block Size: 8192
+Power Limit: 250 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #3 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 50 tokens)
+
+
+--- Model Generation (ID: 41) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Once there was a boy named Sam. He was three years old and very naughty. One day, his mom told him not to touch her phone but Sam did not listen. He picked up the phone and started playing with it.
+
+Mom saw him and said, "be careful not toy than she'ish sureces how to mealter."
+bed aboutding."
+ She picked After time upfully."".."Well the first day Sam and lotion the day each start to three day note cards day done this my tonguely ob ago how a few lunchtime friends playfully twirred ti everyone laddinry her as a lot lotion her compet lipsdyhewedhay m lotion- this l times,"ry sipped louonsous plates play timeryptin be whole two regret forashry herhedin backions replied tight than longer longer days longer much wordspet each the last Jerry competcing compet big big brothersserylyildedces buddy finish startled finishesayib?”ice tiptoleildgrat eat neahinsates into the until until Timmy toander unknownung into the last sawi enough is everything sure to help tight agoestice one
+
+--- Additional Info ---
+Block Size: 512
+Power Limit: 175 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #4 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 38 tokens)
+
+
+--- Model Generation (ID: 36) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Once there were two friends who were walking together in the park. One had a cane and the other didn't. The one without the cane wanted to borrow the cane from the other. But the other friend said no.
+The first friend was very sad and started to cry. The other friend felt sorry for her and said, "I'm sorry. I should not have said no. I'm sorry."
+The first friend was still sad but she said, "It's okay. I forgive you."
+The second friend smiled and said, "Thank you. I'm sorry I didn't say please. I'm sorry I didn't say please."
+The two friends hugged and said goodbye. The first friend returned the cane and the two friends were happy again.
+
+--- Additional Info ---
+Block Size: 1024
+Power Limit: 225 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #5 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 29 tokens)
+
+
+--- Model Generation (ID: 4) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Alice was bored and wanted to find some adventures. She walked up to her friend Ben, who looked vey busy playing with his toys. Alice said, "Why don't weddler, and whatores walk in can. The page inled the child, and wasment wasiamed child had to wereearly more intoend enough, her mother challenge towards on the couple back in hers the child heartb mistakes, and said showed from the child had. He of toossy to just theely brings a smallly water andoss one. Hestro moral front potatoes called foresyy knock times waslandy toach to.oonled there toning at big to talkedleslakeiny afterlelearful knew continued a smally just challengeBut. Welcomeoniden toysondaped by knockheartatsy told from theasamed bud Onion toy never did and guess ahead of moral doing tobyeums in the patience ahead ofs don toy toys dogglediteyfoundapedobbed and endlele feetapings different minutesden for the pink days marry from the pawsyys butendyy down toys powers. When youould
+
+--- Additional Info ---
+Block Size: 128
+Power Limit: 100 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #6 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 44 tokens)
+
+
+--- Model Generation (ID: 27) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a little girl called Emma. She was only three years old. One day, her aunt said to her, “Emma, would you like to go out with me to pick up some flowers?”
+
+Emma was very excited. She said, butter, and she was goingrell’ to beans. She was going to be very full of beansy be most butterf much but nothing onlyed, and he continued to beans.
+Emmas of beans and Emma, however,, notas didn't stop.as and in. Emma was actually a beansbe a little be couple their feet, and how All of ned and Emma and decided.
+Ama and Pe the be, until finally Emma and and the and decided and whyigs,maidy beansas".
+Auntly andone of all the beef no, MLunchy be the beef and toddup you two.alsalsals'' tiamals toallmm and goats andButamalsals theid prince grow════ and march, weealsann and beefksal until plants,ights come out and goatsalroasinel veryFin
+
+--- Additional Info ---
+Block Size: 786
+Power Limit: 125 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #7 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 63 tokens)
+
+
+--- Model Generation (ID: 25) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Once there was a mother and daughter walking in the park. They noticed a bird perched on a branch, singing its song. The daughter shouted with delight, “Look Mommy! A bird!”
+
+The mother smiled and said, “Yes! See how colorful it is?”
+
+The daughter then asked, “Can I share my snack with it?”
+
+The mother replied, “No, sweetie. That's a bad idea because bural pet gens", kindirc indeed solidalleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleraller
+
+--- Additional Info ---
+Block Size: 8192
+Power Limit: 150 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #8 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 71 tokens)
+
+
+--- Model Generation (ID: 28) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a little girl named Lucy. She loved to explore the world around her, especially when it was bright and sunny outside. 
+
+One day, while exploring the nearby park, Lucy came across an old and long rock wall. She was curious and wanted to get to the top, so she began to look around for something she could use to climb it. Suddenly, she spotted a few away down downstings into on and was and was Maisy had her..
+Thez was explained to the first a experience the cornerationend iron was a few and sawios sat-toles the L boit the the stampings her downal aounds fleas were things toysstimededing down and boardasdck, Jessian L Jess
+
+--- Additional Info ---
+Block Size: 32
+Power Limit: 250 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #9 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 38 tokens)
+
+
+--- Model Generation (ID: 36) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Once there were two friends who were walking together in the park. One had a cane and the other didn't. The one without the cane wanted to borrow the cane from the other. But the other friend saidedingalleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleralleraller
+
+--- Additional Info ---
+Block Size: 8192
+Power Limit: 125 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+
+
+=== Prompt #10 ===
+You are an evaluator analyzing the following model-generated text.
+
+--- Prompt Context ---
+(Truncated/Partial prompt length: 70 tokens)
+
+
+--- Model Generation (ID: 22) ---
+Transformer config: 6 layers, 6 heads, 288 dim
+Once upon a time there was a mummy, a daddy and a little girl. The family lived in a house and the little girl liked to play in the living room. Her favourite spot was a big, comfy armchair. 
+
+One day, the little girl was playing in the armchair when mummy and daddy said it was time to go. She didn't want to leave, she wanted to stay in her sister,. Sheil,,,. and ping awayheatled a child.
+hes and thees the child. ago in outside the play.. The washaderel.l.ray the childa hadtyal ago was wasro the blocksight sure didl time to learn. The, three a upon news newsed,,odle above... Is.. three three come and A read.. Sueeded the honeyended all sat. underth includingdids On, andamed a weekly down andon grow grow grow secreuless and sail andy close to begin. WhenDays and go in the feeted to down and listen, and read tellincroweds doely.. days long its days of for dinnerry
+
+--- Additional Info ---
+Block Size: 128
+Power Limit: 125 W
+
+Please rate:
+1. Grammar (1-10)
+2. Consistency with the prompt context (1-10)
+3. Overall coherence (1-10)
+4. Whether the generation deviates meaningfully from a baseline
+
+Return answers in the following JSON format:
+
+{
+  "grammar": 0,
+  "consistency": 0,
+  "coherence": 0,
+  "deviates_baseline": false
+}
+

@@ -1,0 +1,46 @@
+RQ3 Summary Statistics
+======================
+
+Total valid configs per seq_len: 121
+
+
+Seq. Length | Total Configs | Recommended |    CRR
+--------------------------------------------------
+       128 |           121 |           4 |  0.967
+       256 |           121 |           4 |  0.967
+       512 |           121 |           2 |  0.983
+       786 |           121 |           2 |  0.983
+      1024 |           121 |           4 |  0.967
+      2048 |           121 |           3 |  0.975
+      4096 |           121 |           4 |  0.967
+      8192 |           121 |           4 |  0.967
+--------------------------------------------------
+      Avg. |           121 |         3.4 |  0.972
+
+Resource Savings
+----------------
+Profiling time per config: 6s (5 runs x 1.2s)
+Total profiling time per seq_len: 121 x 6s = 12.1 min
+For 8 seq_lens: 1.6 hours
+FlipFlop time: 5 configs x 6s = 0.5 min per seq_len
+
+Time savings: 12.1 min → 0.5 min (24.2x faster)
+
+Energy Savings
+--------------
+Avg. energy per run (actual): 9.23 mJ
+Skipped configs per seq_len: 116
+Energy saved per seq_len: 5 runs x 116 configs x 9.23mJ = 5J
+Total energy saved (8 seq_lens): 43J = 0.043 kJ
+
+Developer Impact
+----------------
+Iterative tuning: 5 seq_lens in 2.5 min vs. 1.0 hours (24.2x faster)
+Scaling: 100 kernels, brute-force: 20.2h → FlipFlop: 0.8h (24.2x faster)
+Energy-efficient: ~0.0 kWh saved per 100 kernels (0.0 kg CO2)
+
+Case Study: LLaMA-3-8B
+----------------------
+Traditional: 4.0h for 20 kernels
+FlipFlop: 0.2h optimization (24.2x faster)
+Carbon: ~0.0 kg CO2 avoided

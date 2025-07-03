@@ -1,0 +1,65 @@
+RQ3 Experimental Analysis Report
+Generated: 2025-07-03 17:28:55
+Country Code: USA (Carbon Intensity: 0.384 kg CO2/kWh)
+================================================================================
+
+Sequence lengths: 128, 256, 512, 786, 1024, 2048, 4096, 8192
+
+1. Configuration Reduction Analysis
+--------------------------------------------------------------------------------
+Sequence lengths analyzed: 8
+Per-sequence length results:
+Seq Len  Total Configs  Pareto Configs  CRR      Time (s)   Time (us)   Energy (J)  Time/Run (s)
+------  -------------  --------------  -------  ---------  ----------  -----------  ------------
+   128              4                1  0.750        0.0       115.4          0.0          0.00
+   256              4                2  0.500        0.0       114.2          0.0          0.00
+   512              4                4  0.000        0.0       114.9          0.0          0.00
+   786              4                1  0.750        0.0       133.0          0.0          0.00
+  1024              4                1  0.750        0.0       554.1          0.0          0.00
+  2048              4                3  0.250        0.0       469.2          0.0          0.00
+  4096              4                1  0.750        0.0       411.3          0.0          0.00
+  8192              4                1  0.750        0.0       682.8          0.1          0.00
+
+Average Pareto-optimal configs per seq: 1.8
+Average CRR: 0.562
+
+Profiling Time Analysis (per manuscript):
+  Average time per run: 0.00 seconds
+  Time per configuration (5 runs): 0.00 seconds
+  Time per sequence length (4 configs): 0.0 minutes
+  Total profiling time (8 seq lengths): 0.0 minutes
+
+2. Resource Savings
+--------------------------------------------------------------------------------
+Total experiment time: 0.0 minutes
+Total experiment energy: 0.1 Joules
+Total carbon emissions: 1.5 g CO₂e
+
+Estimated FlipFlop time: 0.0 minutes
+Estimated FlipFlop energy: 0.1 Joules
+Estimated FlipFlop carbon: 0.0 g CO₂e
+
+Time savings: 0.0 minutes
+Energy savings: 0.1 Joules
+Carbon savings: 1.5 g CO₂e
+
+3. Developer Impact Projection
+--------------------------------------------------------------------------------
+Iterative tuning (5 seq lengths):
+  Brute-force: 0.0 minutes
+  FlipFlop: 0.0 minutes
+  Speedup: 2.3x
+
+100-kernel model optimization:
+  Brute-force: 0.0 minutes
+  FlipFlop: 0.0 minutes
+  Energy savings: 1.0 Joules
+  Carbon savings: 0.0 g CO₂e
+
+4. Key Metrics for LaTeX
+--------------------------------------------------------------------------------
+CRR_avg = 0.562  # Average Configuration Reduction Ratio
+Time_speedup = 2.6  # Overall speedup factor
+Energy_savings_total = 0.1  # Total energy savings in Joules
+Carbon_savings_total = 1.476923  # Total carbon savings in grams CO₂e
+Pareto_avg = 1.8  # Average Pareto-optimal configurations

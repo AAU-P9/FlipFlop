@@ -1,0 +1,37 @@
+=== Optimal Configurations Analysis ===
+
+Power Limit 100W:
+  Optimal Block Size: 1024
+  Median Energy/Token: 0.0456 J/token
+  Time: 0.25s, Power: 30.7W
+
+Power Limit 250W:
+  Optimal Block Size: 1024
+  Median Energy/Token: 0.0443 J/token
+  Time: 0.25s, Power: 27.6W
+
+=== Statistical Significance ===
+
+Energy ANOVA:
+                    sum_sq     df         F        PR(>F)
+C(block_size)    56.457813    9.0  7.584181  9.330802e-11
+C(power_limit)    0.003485    1.0  0.004213  9.482610e-01
+Residual        718.774417  869.0       NaN           NaN
+
+Energy_per_token ANOVA:
+                      sum_sq     df           F         PR(>F)
+C(block_size)   1.373412e+00    9.0  202.415333  2.036801e-206
+C(power_limit)  4.475861e-07    1.0    0.000594   9.805664e-01
+Residual        6.551409e-01  869.0         NaN            NaN
+
+Time_s ANOVA:
+                  sum_sq     df          F        PR(>F)
+C(block_size)   0.033515    9.0  10.539427  1.362497e-15
+C(power_limit)  0.000225    1.0   0.636878  4.250617e-01
+Residual        0.307044  869.0        NaN           NaN
+
+Power_w ANOVA:
+                     sum_sq     df          F        PR(>F)
+C(block_size)    444.900045    9.0  13.259658  5.073406e-20
+C(power_limit)     3.338227    1.0   0.895423  3.442750e-01
+Residual        3239.719500  869.0        NaN           NaN

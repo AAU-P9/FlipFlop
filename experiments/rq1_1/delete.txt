@@ -1,0 +1,1 @@
+Saved plot to: rq1_plots/energy_vs_block_dims_with_occupancy_baseline.png

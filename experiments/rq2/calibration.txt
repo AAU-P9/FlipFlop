@@ -1,0 +1,39 @@
+-------------------------------------------------
+[INFO] Setting GPU power limit to 250W...
+Power limit for GPU 00000000:41:00.0 was set to 250.00 W from 250.00 W.
+
+Warning: persistence mode is disabled on device 00000000:41:00.0. See the Known Issues section of the nvidia-smi(1) man page for more information. Run with [--help | -h] switch to get more information on how to enable persistence mode.
+All done.
+[INFO] Running calibration at 250W...
+[INFO] Running extended calibration for NVIDIA RTX 5000 Ada Generation
+[DEBUG] idle_pw=53.0332, mem_pw=0.0, fp_pw=0.0
+[DEBUG] max_power_mem=0.0, max_power_fp=0.0
+
+[INFO] Occupancy factor data by shape:
+   Shape (bx x by) | Aspect | RawDeltaPower(W) | NormalizedPower
+   16 x 16   |   1.00 |  178.121           |    1.000
+   32 x 8    |   4.00 |  175.776           |    0.987
+   64 x 4    |  16.00 |  176.266           |    0.990
+   128 x 2    |  64.00 |  176.787           |    0.993
+   256 x 1    | 256.00 |  178.195           |    1.000
+   8 x 32   |   4.00 |  179.467           |    1.008
+   4 x 64   |  16.00 |  178.949           |    1.005
+   2 x 128  |  64.00 |  179.710           |    1.009
+[INFO] Fitted slope in ln(aspect) vs. normalized power = 0.0005, intercept=0.9975
+
+[INFO] Saved aspect_ratio_penalty.png with shape labels.
+
+[INFO] shape_factor (clamped) = 0.100
+
+SM=1: Power=89.7 W (Min=89.1, Max=90.3)
+SM=2: Power=92.4 W (Min=92.2, Max=92.6)
+SM=4: Power=96.1 W (Min=95.9, Max=96.2)
+SM=8: Power=104.5 W (Min=103.6, Max=104.9)
+SM=16: Power=125.2 W (Min=124.2, Max=125.6)
+SM=32: Power=164.9 W (Min=163.0, Max=165.9)
+SM=64: Power=248.2 W (Min=244.3, Max=249.6)
+SM=100: Power=224.3 W (Min=218.1, Max=230.0)
+[INFO] Calibration complete for sm_89
+[INFO] Calibration complete for 250W. Results saved to calibration/calibration_pl250.json
+-------------------------------------------------
+[INFO] All calibrations completed successfully.
