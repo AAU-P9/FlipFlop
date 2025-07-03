@@ -258,3 +258,7 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+runcuda_*
+runcuda
+*.bin
