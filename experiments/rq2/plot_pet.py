@@ -332,11 +332,11 @@ if __name__ == "__main__":
     )
 
     plot_rq3_analysis_normalized(
-        csv_path="rq3_data/energy_model_results_20250414_173438.csv",
+        csv_path="rq3_data/energy_model_results_20250718_040713.csv",
         out_dir="plots_norm"
     )
 
     extract_rq3_summary(
-        csv_path="rq3_data/energy_model_results_20250414_173438.csv",
+        csv_path="rq3_data/energy_model_results_20250718_040713.csv",
         out_txt="rq3_summary.txt"
     )
