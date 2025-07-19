@@ -1,4 +1,4 @@
-==PROF== Connected to process 2181836 (/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/mcwp/model_exec)
+==PROF== Connected to process 2181836 (/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/mcwp/model_exec)
 ==PROF== Profiling "sample_kernel(float *, int)" - 0: 0%....50%....100% - 1 pass
 ==PROF== Disconnected from process 2181836
 [2181836] model_exec@127.0.0.1

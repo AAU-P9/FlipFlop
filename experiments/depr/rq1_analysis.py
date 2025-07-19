@@ -571,7 +571,7 @@ class GEMMEnergyAnalyzer:
 
 
 if __name__ == "__main__":
-    analyzer = GEMMEnergyAnalyzer("/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/data/run2/power_tuning_float16.json")
+    analyzer = GEMMEnergyAnalyzer("/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/data/run2/power_tuning_float16.json")
     # analyzer.plot_power_adaptive_frontiers()
     # analyzer.plot_energy_adaptation()
     # analyzer.plot_configuration_analysis()

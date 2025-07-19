@@ -22,7 +22,7 @@ def tune_mha_kernel():
         "nvml_pwr_limit" : get_nvml_pwr_limits(device=0, n=10, quiet=False)["nvml_pwr_limit"]
     }
 
-    with open("/home/srajput/flipflop/cuda_kernel_energy_empirical/baselines/rq1/attentionMultiHead/multihead_attention.cu", "r") as f:
+    with open("/home/anonymous/flipflop/cuda_kernel_energy_empirical/baselines/rq1/attentionMultiHead/multihead_attention.cu", "r") as f:
         mha_kernel_string = f.read()
 
     # Problem parameters from your main()
@@ -116,7 +116,7 @@ def tune_mha_kernel():
         restrictions=restrictions,
         compiler_options=compiler_options,
         strategy="brute_force",
-        cache="/home/srajput/flipflop/cuda_kernel_energy_empirical/rq1_data/attentionMultiHead/mha_cache.json",
+        cache="/home/anonymous/flipflop/cuda_kernel_energy_empirical/rq1_data/attentionMultiHead/mha_cache.json",
         # smem_args=lambda p: {"shared_size": ((dim_feature//nhead) + p["seq_len"]) * 4},
         # strategy_options={"max_fevals": 500}
     )
@@ -139,7 +139,7 @@ def tune_mha_kernel():
     #         pareto_front.append(row.to_dict())
     
     # Save results for visualization
-    df.to_csv("/home/srajput/flipflop/cuda_kernel_energy_empirical/rq1_data/attentionMultiHead/mha_tuning_results.csv")
+    df.to_csv("/home/anonymous/flipflop/cuda_kernel_energy_empirical/rq1_data/attentionMultiHead/mha_tuning_results.csv")
     
     # return pareto_front
 
@@ -156,7 +156,7 @@ if __name__ == "__main__":
 
 
  
-    df = pd.read_csv("/home/srajput/flipflop/cuda_kernel_energy_empirical/rq1_data/attentionMultiHead/mha_tuning_results.csv")
+    df = pd.read_csv("/home/anonymous/flipflop/cuda_kernel_energy_empirical/rq1_data/attentionMultiHead/mha_tuning_results.csv")
 
     # Filter configurations meeting RQ1 criteria
     optimal_configs = df[

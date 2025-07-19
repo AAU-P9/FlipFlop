@@ -45,7 +45,7 @@ def create_and_move_folders(source_base_path, dest_base_path):
 
 # Usage example
 if __name__ == "__main__":
-    source_base_path = "/home/srajput/flipflop/HeCBench/src"  # Replace with source path
-    dest_base_path = "/home/srajput/flipflop/cuda_kernel_energy_empirical/rq1_plots"  # Replace with destination path
+    source_base_path = "/home/anonymous/flipflop/HeCBench/src"  # Replace with source path
+    dest_base_path = "/home/anonymous/flipflop/cuda_kernel_energy_empirical/rq1_plots"  # Replace with destination path
     
     create_and_move_folders(source_base_path, dest_base_path)

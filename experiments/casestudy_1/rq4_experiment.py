@@ -14,8 +14,8 @@ from pynvml import (nvmlInit, nvmlDeviceGetHandleByIndex,
                     nvmlDeviceGetPowerUsage, nvmlShutdown)
 
 # Configuration
-BASELINE_BIN = "/home/srajput/flipflop/llama3.cuda/runcuda"
-TUNED_BIN = "/home/srajput/flipflop/llama3.cuda/runcuda_tuned"
+BASELINE_BIN = "/home/anonymous/flipflop/llama3.cuda/runcuda"
+TUNED_BIN = "/home/anonymous/flipflop/llama3.cuda/runcuda_tuned"
 NUM_EXAMPLES = 44
 MAX_GEN_TOKENS = 64
 SEED = 42

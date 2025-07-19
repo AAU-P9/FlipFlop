@@ -219,17 +219,17 @@ def plot_rq3_analysis_normalized(csv_path, out_dir="rq3_plots_norm", seq_len_par
 
 if __name__ == "__main__":
     # Define your list of CSV files here
-    attn_kernel = "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq3_data/energy_model_results_20250718_040713.csv"
+    attn_kernel = "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq3_data/energy_model_results_20250718_040713.csv"
 
     csv_files = [
         attn_kernel,
-        "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_convolution_20250710_044328.csv",
-        "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_laplace3d_20250710_043453.csv",
-        "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_matMul_20250710_043811.csv",
-        "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_reduction_20250710_043853.csv",
-        "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_scalarProd_20250710_044122.csv",
-        "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_transpose_20250710_044228.csv",
-        "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_vecAdd_20250710_043620.csv",
+        "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_convolution_20250710_044328.csv",
+        "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_laplace3d_20250710_043453.csv",
+        "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_matMul_20250710_043811.csv",
+        "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_reduction_20250710_043853.csv",
+        "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_scalarProd_20250710_044122.csv",
+        "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_transpose_20250710_044228.csv",
+        "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/rq2/rq2_data/experiment_kernels_20250710_043125/energy_model_results_vecAdd_20250710_043620.csv",
     ]
     out_path = "rq3_data/predicted_energy_vs_shape.png"
     actual_out_path = "rq3_data/actual_energy_vs_shape.png"

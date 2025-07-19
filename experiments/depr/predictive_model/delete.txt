@@ -8,12 +8,12 @@ Runs:         20
 --------------------------------------------------
 [ERROR] energy_model.py failed for mha.cu with block=(1,32) grid=(256,1) data=131072
 Traceback (most recent call last):
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
     main()
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
     kernel_args = prepare_kernel_args(config, arch)
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
     raise ValueError(f"Unsupported argument type: {arg_type}")
 ValueError: Unsupported argument type: float
 --------------------------------------------------
@@ -26,12 +26,12 @@ Runs:         20
 --------------------------------------------------
 [ERROR] energy_model.py failed for mha.cu with block=(2,16) grid=(256,1) data=131072
 Traceback (most recent call last):
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
     main()
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
     kernel_args = prepare_kernel_args(config, arch)
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
     raise ValueError(f"Unsupported argument type: {arg_type}")
 ValueError: Unsupported argument type: float
 --------------------------------------------------
@@ -44,12 +44,12 @@ Runs:         20
 --------------------------------------------------
 [ERROR] energy_model.py failed for mha.cu with block=(4,8) grid=(256,1) data=131072
 Traceback (most recent call last):
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
     main()
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
     kernel_args = prepare_kernel_args(config, arch)
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
     raise ValueError(f"Unsupported argument type: {arg_type}")
 ValueError: Unsupported argument type: float
 --------------------------------------------------
@@ -62,12 +62,12 @@ Runs:         20
 --------------------------------------------------
 [ERROR] energy_model.py failed for mha.cu with block=(8,4) grid=(256,1) data=131072
 Traceback (most recent call last):
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
     main()
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
     kernel_args = prepare_kernel_args(config, arch)
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
     raise ValueError(f"Unsupported argument type: {arg_type}")
 ValueError: Unsupported argument type: float
 --------------------------------------------------
@@ -80,12 +80,12 @@ Runs:         20
 --------------------------------------------------
 [ERROR] energy_model.py failed for mha.cu with block=(16,2) grid=(256,1) data=131072
 Traceback (most recent call last):
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
     main()
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
     kernel_args = prepare_kernel_args(config, arch)
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
     raise ValueError(f"Unsupported argument type: {arg_type}")
 ValueError: Unsupported argument type: float
 --------------------------------------------------
@@ -98,12 +98,12 @@ Runs:         20
 --------------------------------------------------
 [ERROR] energy_model.py failed for mha.cu with block=(32,1) grid=(256,1) data=131072
 Traceback (most recent call last):
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
     main()
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
     kernel_args = prepare_kernel_args(config, arch)
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
     raise ValueError(f"Unsupported argument type: {arg_type}")
 ValueError: Unsupported argument type: float
 --------------------------------------------------
@@ -116,12 +116,12 @@ Runs:         20
 --------------------------------------------------
 [ERROR] energy_model.py failed for mha.cu with block=(1,64) grid=(256,1) data=131072
 Traceback (most recent call last):
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
     main()
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
     kernel_args = prepare_kernel_args(config, arch)
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
     raise ValueError(f"Unsupported argument type: {arg_type}")
 ValueError: Unsupported argument type: float
 --------------------------------------------------
@@ -134,11 +134,11 @@ Runs:         20
 --------------------------------------------------
 [ERROR] energy_model.py failed for mha.cu with block=(2,32) grid=(256,1) data=131072
 Traceback (most recent call last):
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 179, in <module>
     main()
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 106, in main
     kernel_args = prepare_kernel_args(config, arch)
                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/home/srajput/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
+  File "/home/anonymous/flipflop/cuda_kernel_energy_empirical/predictive_model/energy_model.py", line 61, in prepare_kernel_args
     raise ValueError(f"Unsupported argument type: {arg_type}")
 ValueError: Unsupported argument type: float

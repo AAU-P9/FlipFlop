@@ -18,7 +18,7 @@ CALIB_FILE="calibration_pl250.json"
 mkdir -p "$(dirname "$CSV_OUT")"
 
 
-export PYTHONPATH="/home/srajput/flipflop:$PYTHONPATH"
+export PYTHONPATH="/home/anonymous/flipflop:$PYTHONPATH"
 
 python llama3_tune.py \
   --kernel_file "${KERNEL_FILE}" \

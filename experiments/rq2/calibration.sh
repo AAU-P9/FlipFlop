@@ -9,12 +9,16 @@
 # Usage: ./calibration.sh
 # --------------------------------------------------------------------
 
+export PATH=/usr/local/cuda/bin:$PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+
 # Create calibration folder if it doesn't exist.
 mkdir -p calibration
 
 # Define the array of desired power limits in Watts.
 # power_limits=(100 140 175 210 250)
-power_limits=(250)
+power_limits=(290)
 
 # Loop over each power limit.
 for pl in "${power_limits[@]}"; do
@@ -32,6 +36,12 @@ for pl in "${power_limits[@]}"; do
     # Override the calibration file location via an environment variable.
     CALIBRATION_FILE="calibration/calibration_pl${pl}.json"
     echo "[INFO] Running calibration at ${pl}W..."
+    # Remove stubs from LD_LIBRARY_PATH if present
+    export LD_LIBRARY_PATH=$(echo $LD_LIBRARY_PATH | tr ':' '\n' | grep -v 'stubs' | paste -sd: -)
+
+    # Add the correct NVML path at the front
+    export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
+    
     python3 calibration.py --output ${CALIBRATION_FILE}
     if [ $? -ne 0 ]; then
         echo "[ERROR] Calibration failed at ${pl}W. Exiting."

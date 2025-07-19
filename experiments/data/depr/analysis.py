@@ -26,7 +26,7 @@ class AttentionAnalyzer:
         
         self.df = pd.DataFrame(rows)
         self._preprocess_data()
-        self.output_dir = "/home/srajput/flipflop/cuda_kernel_energy_empirical/rq1_plots/multihead_attention"
+        self.output_dir = "/home/anonymous/flipflop/cuda_kernel_energy_empirical/rq1_plots/multihead_attention"
         os.makedirs(self.output_dir, exist_ok=True)
         
         # Adopt old script's visual style parameters
@@ -726,17 +726,17 @@ class AttentionAnalyzerEnhanced(AttentionAnalyzer):
 
 if __name__ == "__main__":
     analyzer = AttentionAnalyzerEnhanced(
-        "/home/srajput/flipflop/cuda_kernel_energy_empirical/experiments/power_tuning_float16.json"
+        "/home/anonymous/flipflop/cuda_kernel_energy_empirical/experiments/power_tuning_float16.json"
     )
     analyzer.save_enhanced_plots()
 
 
 # if __name__ == "__main__":
-#     analyzer = AttentionAnalyzer("/home/srajput/flipflop/cuda_kernel_energy_empirical/rq1_data/multihead_attention/mha_cache.json")  # Changed to JSON
+#     analyzer = AttentionAnalyzer("/home/anonymous/flipflop/cuda_kernel_energy_empirical/rq1_data/multihead_attention/mha_cache.json")  # Changed to JSON
 #     analyzer.save_plots()
     
 #     report = analyzer.generate_analysis_report()
-#     report['pareto_configs'].to_csv("/home/srajput/flipflop/cuda_kernel_energy_empirical/rq1_data/multihead_attention/rq1_optimal_configs.csv", index=False)
+#     report['pareto_configs'].to_csv("/home/anonymous/flipflop/cuda_kernel_energy_empirical/rq1_data/multihead_attention/rq1_optimal_configs.csv", index=False)
     
 #     print("RQ1 Analysis Complete. Key Findings:")
 #     print(f"Identified {len(report['pareto_configs'])} Pareto-optimal configurations")

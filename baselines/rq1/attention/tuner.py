@@ -65,7 +65,7 @@ def tune_mha_variants():
     ])
 
     folder_name = os.path.basename(os.getcwd())
-    with open(os.path.join("/home/srajput/flipflop/cuda_kernel_energy_empirical/baselines/rq1", folder_name, "kernels.h"), "r") as f:
+    with open(os.path.join("/home/anonymous/flipflop/cuda_kernel_energy_empirical/baselines/rq1", folder_name, "kernels.h"), "r") as f:
         kernel_code = f.read()
 
     for kernel_name in kernels:
@@ -113,7 +113,7 @@ def tune_mha_variants():
                 "--maxrregcount=64",  # Limit registers per thread
                 "-Xptxas=-v"  # Verify register usage
             ],
-            cache=os.path.join("/home/srajput/flipflop/cuda_kernel_energy_empirical/rq1_data", folder_name, f"{kernel_name}_cache.json")
+            cache=os.path.join("/home/anonymous/flipflop/cuda_kernel_energy_empirical/rq1_data", folder_name, f"{kernel_name}_cache.json")
         )
 
 if __name__ == "__main__":

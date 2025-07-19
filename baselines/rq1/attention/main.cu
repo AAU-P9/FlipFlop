@@ -6,8 +6,8 @@
 #include <cuda.h>
 #include "kernels.h"
 #include "reference.h"
-#include "/home/srajput/flipflop/kernel_tuner.h"
-#include "/home/srajput/flipflop/power_monitor.h"
+#include "/home/anonymous/flipflop/kernel_tuner.h"
+#include "/home/anonymous/flipflop/power_monitor.h"
 
 float* attention_device(const float* key, const float* value, const float* query,
                         const int n, const int d, const int impl_num, const int repeat, std::vector<KernelRun>& kernel_runs)
