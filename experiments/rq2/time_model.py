@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import math
-from cuda_kernel_energy_empirical.experiments.rq2.gpu_common import GPUArchitecture, KernelAnalysis
+from experiments.rq2.gpu_common import GPUArchitecture, KernelAnalysis
 
 class HongKimExecutionTimeModel:
     """

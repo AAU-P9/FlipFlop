@@ -13,10 +13,10 @@ from kernel_tuner.observers.nvml import NVMLObserver
 import pycuda.driver as pcudadriver
 import pycuda.autoinit
 
-from cuda_kernel_energy_empirical.experiments.rq2.gpu_common import GPUArchitecture, compile_kernel
-from cuda_kernel_energy_empirical.experiments.rq2.time_model import HongKimExecutionTimeModel
-from cuda_kernel_energy_empirical.experiments.rq2.power_model import HongKimPowerEstimator
-from cuda_kernel_energy_empirical.experiments.rq2.PTXAnalyzer import PTXAnalyzer
+from experiments.rq2.gpu_common import GPUArchitecture, compile_kernel
+from experiments.rq2.time_model import HongKimExecutionTimeModel
+from experiments.rq2.power_model import HongKimPowerEstimator
+from experiments.rq2.PTXAnalyzer import PTXAnalyzer
 
 def generate_block_combinations():
     """Generate all valid block size combinations based on restrictions"""
