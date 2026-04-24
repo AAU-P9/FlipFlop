@@ -61,6 +61,30 @@ This project focuses on optimizing kernels for transformer architectures (LLAMA,
 **Impact**: Achieves 18-22% energy savings via predictive power management  
 
 
+## Installation guide using UV
+
+Use [uv](https://docs.astral.sh/uv/) to create an isolated environment and install dependencies from `requirements.txt`.
+
+```bash
+# 1) Install uv (choose one)
+curl -LsSf https://astral.sh/uv/install.sh | sh
+# or: pip install uv
+
+# 2) From the project root, create and sync the environment
+uv venv
+uv pip install -r requirements.txt
+
+# 3) Run experiment modules through uv
+uv run -m experiments.rq2.energy_model
+```
+
+If needed, verify your Python environment and package installation with:
+
+```bash
+uv run python --version
+uv run python -m pip list
+```
+
 ## Getting Started  
 
 ### Dependencies  
