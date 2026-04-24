@@ -13,10 +13,10 @@ from kernel_tuner.observers.nvml import NVMLObserver
 import pycuda.driver as pcudadriver
 import pycuda.autoinit
 
-from experiments.rq2.gpu_common import GPUArchitecture, compile_kernel
-from experiments.rq2.time_model import HongKimExecutionTimeModel
-from experiments.rq2.power_model import HongKimPowerEstimator
-from experiments.rq2.PTXAnalyzer import PTXAnalyzer
+from gpu_common import GPUArchitecture, compile_kernel
+from time_model import HongKimExecutionTimeModel
+from power_model import HongKimPowerEstimator
+from PTXAnalyzer import PTXAnalyzer
 
 def generate_block_combinations():
     """Generate all valid block size combinations based on restrictions"""
@@ -78,9 +78,10 @@ def run_configuration(kernel_path , kernel_src, arch, batch_size, seq_len, nhead
             (est_time_ns * arch.clock_rate_hz) / 1e9, warps_per_sm, arch.sm_count, arch.clock_rate_hz)
         
         compiler_options = [
-        "--std=c++14",
+        "--std=c++17",
         "-I/usr/local/cuda/include",
         "-I/usr/local/cuda/include/cub",
+        "-arch=sm90"
     ]
         shared_mem_size = (dim_per_head + seq_len) * 4;  # if needed
     

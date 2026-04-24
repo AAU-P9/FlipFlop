@@ -16,6 +16,21 @@
 #include <cuda.h>
 #include <cub/block/block_reduce.cuh>
 #include <math.h>
+#include <cub/cub.cuh>
+
+struct MaxOp {
+    __device__ __forceinline__
+    float operator()(const float &a, const float &b) const {
+        return a > b ? a : b;
+    }
+};
+
+struct SumOp {
+    __device__ __forceinline__
+    float operator()(const float &a, const float &b) const {
+        return a + b;
+    }
+};
 
 // Define constant mask for warp-level primitives.
 #define FINAL_MASK 0xffffffff
@@ -33,7 +48,7 @@ template <int BLOCK_SIZE>
 __inline__ __device__
 float blockReduceSum(float val, typename cub::BlockReduce<float, BLOCK_SIZE>::TempStorage &temp_storage) {
     typedef cub::BlockReduce<float, BLOCK_SIZE> BlockReduce;
-    return BlockReduce(temp_storage).Reduce(val, cub::Sum());
+    return BlockReduce(temp_storage).Reduce(val, SumOp());
 }
 
 // Warp-level reduction for maximum.
@@ -49,7 +64,7 @@ template <int BLOCK_SIZE>
 __inline__ __device__
 float blockReduceMax(float val, typename cub::BlockReduce<float, BLOCK_SIZE>::TempStorage &temp_storage) {
     typedef cub::BlockReduce<float, BLOCK_SIZE> BlockReduce;
-    return BlockReduce(temp_storage).Reduce(val, cub::Max());
+    return BlockReduce(temp_storage).Reduce(val, MaxOp());
 }
 
 // -----------------------------

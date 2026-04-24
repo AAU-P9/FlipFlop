@@ -20,7 +20,7 @@ CALIB_FILE="calibration/calibration_pl250.json"
 mkdir -p "$(dirname "$CSV_OUT")"
 
 # Run the Python script
-python3 -m energy_model \
+uv run -m energy_model \
   --kernel_file "${KERNEL_FILE}" \
   --batch_size  "${BATCH_SIZE}" \
   --seq_lens    "${SEQ_LENS}" \

@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 import math
-from experiments.rq2.gpu_common import GPUArchitecture, KernelAnalysis
+from gpu_common import GPUArchitecture, KernelAnalysis
 
 class HongKimPowerEstimator:
     """

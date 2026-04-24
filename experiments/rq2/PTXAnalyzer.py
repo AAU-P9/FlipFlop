@@ -74,7 +74,7 @@ class PTXAnalyzer:
         total_insts = (mem_coal + mem_un + mem_part +
                        loc_cnt + shr_cnt + sync_cnt + total_compute)
 
-        from experiments.rq2.gpu_common import KernelAnalysis
+        from gpu_common import KernelAnalysis
         return KernelAnalysis(
             mem_coal=int(mem_coal),
             mem_uncoal=int(mem_un),
