@@ -2,11 +2,18 @@
 import sys
 import time
 import numpy as np
-import pycuda.autoinit
-import pycuda.driver as cuda
 import json
 import os
+import abc
 import matplotlib.pyplot as plt
+
+_PYCUDA_IMPORT_ERROR = None
+try:
+    import pycuda.autoinit  # noqa: F401
+    import pycuda.driver as cuda
+except ImportError as exc:
+    _PYCUDA_IMPORT_ERROR = exc
+    cuda = None
 
 
 from gpu_common import GPUArchitecture, NVML_ENABLED, nvmlDeviceGetPowerUsage
@@ -16,6 +23,31 @@ try:
     HPC_ENABLED = True
 except ImportError:
     HPC_ENABLED = False
+
+
+class PowerSampler(abc.ABC):
+    """Abstract power measurement source."""
+
+    @abc.abstractmethod
+    def is_available(self) -> bool:
+        """Return True if this sampler can produce readings."""
+
+    @abc.abstractmethod
+    def sample_watts(self) -> float:
+        """Return the current GPU power draw in watts."""
+
+
+class NvmlPowerSampler(PowerSampler):
+    """Power sampler backed by NVML (pynvml)."""
+
+    def __init__(self, nvml_handle):
+        self._handle = nvml_handle
+
+    def is_available(self) -> bool:
+        return NVML_ENABLED and self._handle is not None
+
+    def sample_watts(self) -> float:
+        return nvmlDeviceGetPowerUsage(self._handle) / 1000.0
 
 
 class Calibrator:
@@ -28,13 +60,17 @@ class Calibrator:
     max_power_* parameters properly instead of hardcoding them.
     """
     def __init__(self, device_id=0, runs=3, idle_sleep=2.0,
-                 calibration_file="calibration.json"):
+                 calibration_file="calibration.json",
+                 power_sampler: PowerSampler = None):
         self.arch = GPUArchitecture(device_id, calibration_file)
         self.device_name = self.arch.name
         self.arch_key = self.arch.arch_key
         self.runs = runs
         self.idle_sleep = idle_sleep
         self.calibration_file = calibration_file
+        if power_sampler is None:
+            power_sampler = NvmlPowerSampler(self.arch.nvml_handle)
+        self.power_sampler = power_sampler
 
     # def _plot_power_law(self, xs, ys, alpha, beta):
     #     """Generate and save a plot of SM concurrency power law validation."""
@@ -222,7 +258,7 @@ class Calibrator:
     # Utility Methods #########################################################
     def _run_power_bench(self, kernel_src, kernel_name):
         """Generic benchmark runner for power measurement"""
-        if not NVML_ENABLED or not self.arch.nvml_handle:
+        if not self.power_sampler.is_available():
             return 0.0
 
         from pycuda.compiler import SourceModule
@@ -239,16 +275,14 @@ class Calibrator:
         cuda.Context.synchronize()
 
         try:
-            # Measure
             samples = []
             start_evt = cuda.Event()
             end_evt = cuda.Event()
             start_evt.record()
             kernel(dA, np.int32(N), block=(block_size,1,1), grid=(grid_size,1,1))
-            
+
             while not end_evt.query():
-                pwr = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)/1000.0
-                samples.append(pwr)
+                samples.append(self.power_sampler.sample_watts())
                 time.sleep(0.01)
                 end_evt.record()
                 end_evt.synchronize()
@@ -256,7 +290,6 @@ class Calibrator:
             return np.mean(samples) if samples else 0.0
         finally:
             dA.free()
-            # dB.free()
 
     # =========================================================================
     #  microbenchmark-based measurement for concurrency log scaling
@@ -267,8 +300,7 @@ class Calibrator:
         Then fit: power = log10(alpha*SM + beta).
         Return (alpha, beta).
         """
-        if not NVML_ENABLED or self.arch.nvml_handle is None:
-            # fallback
+        if not self.power_sampler.is_available():
             return (0.1, 1.1)
 
         sm_list = []
@@ -328,7 +360,8 @@ class Calibrator:
         block_size = 1024
         grid_size = sm_count
         N = block_size*sm_count
-        loops_for_kernel = 10000000000000
+        # Keep kernel long enough for power sampling but within int32 range.
+        loops_for_kernel = 10_000_000
 
         arr = np.random.randn(N).astype(np.float32)
         dA = cuda.mem_alloc(arr.nbytes)
@@ -354,11 +387,8 @@ class Calibrator:
             block=(block_size,1,1), grid=(grid_size,1,1))
         end_evt.record()
 
-        # Sample power while the kernel is still running
         while not end_evt.query():
-            p_mW = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)
-            samples.append(p_mW/1000.0)
-            # Sleep a bit to reduce overhead and gather multiple samples
+            samples.append(self.power_sampler.sample_watts())
             time.sleep(0.01)
 
         # Wait for full completion
@@ -376,7 +406,7 @@ class Calibrator:
         Compare a single short kernel vs. a repeated longer run.
         Return ratio in [0..1].
         """
-        if not NVML_ENABLED or (self.arch.nvml_handle is None):
+        if not self.power_sampler.is_available():
             return 1.0
 
         short_pw = self._measure_ultra_short_kernel_power()
@@ -401,9 +431,8 @@ class Calibrator:
             start_evt.record()
             kfunc(block=(1,1,1), grid=(1,1))
             while not end_evt.query():
-                if NVML_ENABLED and self.arch.nvml_handle:
-                    p_mW = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)
-                    samples.append(p_mW/1000.0)
+                if self.power_sampler.is_available():
+                    samples.append(self.power_sampler.sample_watts())
                 time.sleep(0.01)
                 end_evt.record()
                 end_evt.synchronize()
@@ -425,9 +454,8 @@ class Calibrator:
         for _ in range(10):
             kfunc(block=(1,1,1), grid=(1,1))
         while not end_evt.query():
-            if NVML_ENABLED and self.arch.nvml_handle:
-                p_mW = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)
-                samples.append(p_mW/1000.0)
+            if self.power_sampler.is_available():
+                samples.append(self.power_sampler.sample_watts())
             time.sleep(0.02)
             end_evt.record()
             end_evt.synchronize()
@@ -442,10 +470,8 @@ class Calibrator:
         """
         Run an integer-heavy kernel that saturates integer ALUs
         and measure average power. Return measured power in W.
-        This is similar to the existing compute/mem approach, but focusing on int ops.
         """
-        if not NVML_ENABLED or (self.arch.nvml_handle is None):
-            # fallback
+        if not self.power_sampler.is_available():
             return None
 
         from pycuda.compiler import SourceModule
@@ -501,8 +527,7 @@ class Calibrator:
         kernel_func(dA, dB, np.int32(N), np.int32(loops_for_kernel),
                     block=(block_size,1,1), grid=(grid_size,1,1))
         while not end_evt.query():
-            p_mW = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)
-            samples.append(p_mW / 1000.0)
+            samples.append(self.power_sampler.sample_watts())
             time.sleep(0.05)
             end_evt.record()
             end_evt.synchronize()
@@ -518,7 +543,7 @@ class Calibrator:
         Run an SFU kernel (using sin/cos/log/exp or similar)
         to measure power from special function units.
         """
-        if not NVML_ENABLED or (self.arch.nvml_handle is None):
+        if not self.power_sampler.is_available():
             return None
 
         from pycuda.compiler import SourceModule
@@ -570,8 +595,7 @@ class Calibrator:
         kernel_func(dA, np.int32(N), np.int32(loops_for_kernel),
                     block=(block_size,1,1), grid=(grid_size,1,1))
         while not end_evt.query():
-            p_mW = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)
-            samples.append(p_mW/1000.0)
+            samples.append(self.power_sampler.sample_watts())
             time.sleep(0.05)
             end_evt.record()
             end_evt.synchronize()
@@ -617,8 +641,8 @@ class Calibrator:
         of (blockX x blockY, aspect_ratio, raw_power, normalized_power).
         """
 
-        if not NVML_ENABLED or (self.arch.nvml_handle is None):
-            print("[WARN] NVML not enabled; returning fallback shape factor=0.2")
+        if not self.power_sampler.is_available():
+            print("[WARN] Power sampler not available; returning fallback shape factor=0.2")
             return 0.2
 
         from pycuda.compiler import SourceModule
@@ -676,8 +700,7 @@ class Calibrator:
 
             # poll power while kernel is running
             while not end_evt.query():
-                pwr_w = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)/1000.0
-                samples.append(pwr_w)
+                samples.append(self.power_sampler.sample_watts())
                 time.sleep(0.02)
             end_evt.synchronize()
             cuda.Context.synchronize()
@@ -1061,7 +1084,7 @@ class Calibrator:
         mem_pw  = None
         fp_pw   = None
 
-        if NVML_ENABLED and self.arch.nvml_handle:
+        if self.power_sampler.is_available():
             idle_pw = self._repeat_and_average(self._measure_idle_power)
             mem_pw  = self._repeat_and_average(self._measure_mem_bound_power)
             fp_pw   = self._repeat_and_average(self._measure_compute_bound_power)
@@ -1075,13 +1098,12 @@ class Calibrator:
         return (idle_pw, mem_pw, fp_pw)
 
     def _measure_idle_power(self, sample_time_s=2.0):
-        if not NVML_ENABLED or (self.arch.nvml_handle is None):
+        if not self.power_sampler.is_available():
             return 50.0
         samples = []
         t0 = time.time()
         while (time.time() - t0) < sample_time_s:
-            p_mW = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)
-            samples.append(p_mW / 1000.0)
+            samples.append(self.power_sampler.sample_watts())
             time.sleep(0.1)
         if samples:
             return float(np.mean(samples))
@@ -1133,9 +1155,8 @@ class Calibrator:
         kernel_func(dA, dB, np.int32(N), np.int32(loops_for_kernel),
                     block=(block_size,1,1), grid=(grid_size,1,1))
         while not end_evt.query():
-            if NVML_ENABLED and self.arch.nvml_handle:
-                p_mW = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)
-                samples.append(p_mW / 1000.0)
+            if self.power_sampler.is_available():
+                samples.append(self.power_sampler.sample_watts())
             time.sleep(0.05)
             end_evt.record()
             end_evt.synchronize()
@@ -1190,9 +1211,8 @@ class Calibrator:
         kernel_func(dA, dB, np.int32(N), np.int32(loops_for_kernel),
                     block=(block_size,1,1), grid=(grid_size,1,1))
         while not end_evt.query():
-            if NVML_ENABLED and self.arch.nvml_handle:
-                p_mW = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)
-                samples.append(p_mW/1000.0)
+            if self.power_sampler.is_available():
+                samples.append(self.power_sampler.sample_watts())
             time.sleep(0.05)
             end_evt.record()
             end_evt.synchronize()
@@ -1361,27 +1381,31 @@ class Calibrator:
 
     def _measure_kernel_power(self, kernel, *args, **kwargs):
         """Generic kernel power measurement"""
-        if not NVML_ENABLED or not self.arch.nvml_handle:
+        if not self.power_sampler.is_available():
             return 0.0
-        
+
         samples = []
         start_evt = cuda.Event()
         end_evt = cuda.Event()
-        
+
         start_evt.record()
         kernel(*args, **kwargs)
-        
-        # Sample during execution
+
         while not end_evt.query():
-            pwr = nvmlDeviceGetPowerUsage(self.arch.nvml_handle)/1000.0
-            samples.append(pwr)
+            samples.append(self.power_sampler.sample_watts())
             time.sleep(0.01)
             end_evt.record()
             end_evt.synchronize()
-        
+
         return np.mean(samples) if samples else 0.0
 
 def main():
+    if _PYCUDA_IMPORT_ERROR is not None:
+        print("[ERROR] Missing required Python package: pycuda")
+        print("[HINT] Install dependencies from the project root with: uv pip install -r requirements.txt")
+        print("[HINT] Run calibration with project env: uv run python experiments/rq2/calibration.py --output calibration.json")
+        sys.exit(1)
+
     import argparse
     parser = argparse.ArgumentParser(description="Run extended GPU calibration for updated time/power models.")
     parser.add_argument("--runs", type=int, default=5, help="Number of measurements per microbenchmark.")

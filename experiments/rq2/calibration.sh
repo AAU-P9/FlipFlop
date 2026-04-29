@@ -13,6 +13,14 @@ export PATH=/usr/local/cuda/bin:$PATH
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
 export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
 
+if command -v uv >/dev/null 2>&1; then
+    PYTHON_CMD=(uv run python)
+    echo "[INFO] Using uv-managed Python environment."
+else
+    PYTHON_CMD=(python3)
+    echo "[WARNING] 'uv' not found; falling back to system python3."
+fi
+
 # Create calibration folder if it doesn't exist.
 mkdir -p calibration
 
@@ -42,7 +50,7 @@ for pl in "${power_limits[@]}"; do
     # Add the correct NVML path at the front
     export LD_LIBRARY_PATH=/usr/lib/x86_64-linux-gnu/:$LD_LIBRARY_PATH
     
-    python3 calibration.py --output ${CALIBRATION_FILE}
+    "${PYTHON_CMD[@]}" calibration.py --output "${CALIBRATION_FILE}"
     if [ $? -ne 0 ]; then
         echo "[ERROR] Calibration failed at ${pl}W. Exiting."
         exit 1

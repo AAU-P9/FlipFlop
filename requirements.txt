@@ -1,10 +1,10 @@
-cupy_cuda12x==13.3.0
+codecarbon==3.0.4
 kernel_tuner==1.2.0
 lark==1.2.2
 matplotlib==3.10.3
-numpy>=1.22,<2.3
 nvidia_ml_py==12.570.86
 pandas==2.3.1
+pycuda>=2025.1
 pynvml==12.0.0
 PyYAML==6.0.2
 PyYAML==6.0.2
