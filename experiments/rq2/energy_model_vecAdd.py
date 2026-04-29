@@ -19,58 +19,46 @@ from power_model import HongKimPowerEstimator
 from PTXAnalyzer import PTXAnalyzer
 
 def generate_block_combinations():
-    """Generate all valid block size combinations based on restrictions"""
+    """Generate all valid 1D block size combinations for vecAdd"""
     block_sizes = []
-    for x in [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]:
-        for y in [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024]:
-            total = x * y
-            if total >= 32 and total <= 1024 and total % 32 == 0:
-                block_sizes.append((x, y))
+    for x in [32, 64, 128, 256, 512, 1024]:
+        if x >= 32 and x <= 1024 and x % 32 == 0:
+            block_sizes.append((x,))
     return block_sizes
 
-def prepare_kernel_args(batch_size, seq_len, dim_feature, nhead):
-    """Generate kernel arguments for given configuration"""
-    scale = np.float32(1.0 / np.sqrt(dim_feature // nhead))
+def prepare_kernel_args(n):
+    """Generate kernel arguments for vecAdd with vector size n"""
+    a = np.random.randn(n).astype(np.float32)
+    b = np.random.randn(n).astype(np.float32)
+    c = np.zeros(n, dtype=np.float32)
     
-    q = np.random.randn(batch_size, dim_feature).astype(np.float32)
-    k = np.random.randn(batch_size, seq_len, dim_feature).astype(np.float32)
-    v = np.random.randn(batch_size, seq_len, dim_feature).astype(np.float32)
-    out = np.zeros_like(q)
-    
-    return [
-        q, k, v,
-        np.int32(batch_size),
-        np.int32(seq_len),
-        np.int32(dim_feature),
-        np.int32(dim_feature),
-        np.int32(nhead),
-        scale,
-        np.int32(64),  # threshold
-        out,
-    ]
+    return [a, b, c, np.int32(n)]
 
-def run_configuration(kernel_path , kernel_src, arch, batch_size, seq_len, nhead, dim_per_head, iterations):
+def run_configuration(kernel_path, kernel_src, arch, n, iterations):
     """Run energy model predictions and measurements for all valid block sizes"""
-    dim_feature = nhead * dim_per_head
-    args = prepare_kernel_args(batch_size, seq_len, dim_feature, nhead)
+    args = prepare_kernel_args(n)
     block_combos = generate_block_combinations()
     
     results = []
-    for block_x, block_y in block_combos:
+    for (block_x,) in block_combos:
         # Compile and analyze
         mod, ptx_str, ptxas_log, kname = compile_kernel(kernel_path, arch)
-        analyzer = PTXAnalyzer(ptx_str, ptxas_log, arch, block_x, block_y, {})
+        analyzer = PTXAnalyzer(ptx_str, ptxas_log, arch, block_x, 1, {})
         analysis = analyzer.analyze()
+        
+        # Calculate grid dimensions
+        grid_x = (n + block_x - 1) // block_x  # Number of blocks needed to cover n elements
+        grid_y = 1
         
         # Time prediction
         time_model = HongKimExecutionTimeModel(
-            arch, analysis, (batch_size * nhead, 1), (block_x, block_y))
+            arch, analysis, (grid_x, grid_y), (block_x, 1))
         est_time_ns = time_model.estimate_time_ns()
         
         # Power prediction
         warp_size = arch.attrs.get('WARP_SIZE', 32)
-        warps_per_block = (block_x * block_y + warp_size - 1) // warp_size
-        blocks_per_sm = time_model._calc_blocks_per_sm(block_x * block_y)
+        warps_per_block = (block_x + warp_size - 1) // warp_size
+        blocks_per_sm = time_model._calc_blocks_per_sm(block_x)
         warps_per_sm = blocks_per_sm * warps_per_block
         
         power_estimator = HongKimPowerEstimator(arch, analysis)
@@ -83,19 +71,16 @@ def run_configuration(kernel_path , kernel_src, arch, batch_size, seq_len, nhead
         "-I/usr/local/cuda/include/cub",
         ]
 
-        shared_mem_size = (dim_per_head + seq_len) * 4;  # if needed
-
         # Actual measurements
         nvml_observer = NVMLObserver(["nvml_energy", "nvml_power"])
 
         result, _ = kt.tune_kernel(
             kernel_name=kname,
             kernel_source=kernel_src,
-            problem_size=(batch_size * nhead, 1),
+            problem_size=(n, 1),
             arguments=args,
-            tune_params={"block_size_x": [block_x], "block_size_y": [block_y]},
+            tune_params={"block_size_x": [block_x]},
             compiler_options=compiler_options,
-            smem_args        = {"size": shared_mem_size},
             observers=[nvml_observer],
             metrics={"time_ns": lambda p: p["time"] * 1e6},
             iterations=iterations,
@@ -104,10 +89,9 @@ def run_configuration(kernel_path , kernel_src, arch, batch_size, seq_len, nhead
 
         # Collect results
         entry = {
-            "seq_len": seq_len,
+            "vector_size": n,
             "block_x": block_x,
-            "block_y": block_y,
-            "thread_count": block_x * block_y,
+            "thread_count": block_x,
             "predicted_time_ns": est_time_ns,
             "predicted_power": predicted_power,
             "actual_time_ns": result[0]["time_ns"],
@@ -119,42 +103,35 @@ def run_configuration(kernel_path , kernel_src, arch, batch_size, seq_len, nhead
     return results
 
 def main():
-    parser = argparse.ArgumentParser(description="RQ3 Comprehensive Energy Analysis")
+    parser = argparse.ArgumentParser(description="VecAdd Kernel Energy Analysis")
     parser.add_argument("--kernel_file", required=True, help="Path to CUDA kernel")
-    parser.add_argument("--batch_size", type=int, default=4)
-    parser.add_argument("--seq_lens", type=str, help="Comma-separated sequence lengths")
-    parser.add_argument("--nhead", type=int, default=16)
-    parser.add_argument("--dim_per_head", type=int, default=256)
+    parser.add_argument("--vector_sizes", type=str, help="Comma-separated vector sizes")
     parser.add_argument("--calib", required=True, help="Calibration file")
     parser.add_argument("--csv_out", required=True, help="Output CSV path")
     parser.add_argument("--iterations", type=int, default=5)
     args = parser.parse_args()
 
-    arch = GPUArchitecture( device_id = 0, calibration_file=args.calib)
-    seq_lens = [int(s) for s in args.seq_lens.split(",")] if args.seq_lens else [128]
+    arch = GPUArchitecture(device_id=0, calibration_file=args.calib)
+    vector_sizes = [int(s) for s in args.vector_sizes.split(",")] if args.vector_sizes else [1024, 8192, 65536, 1048576]
 
     with open(args.kernel_file) as f:
         kernel_src = f.read()
 
     all_results = []
-    for seq_len in seq_lens:
-        print(f"Processing seq_len={seq_len}...")
-        results = run_configuration( args.kernel_file,
-            kernel_src, arch, args.batch_size, seq_len,
-            args.nhead, args.dim_per_head, args.iterations
+    for n in vector_sizes:
+        print(f"Processing vector_size={n}...")
+        results = run_configuration(
+            args.kernel_file,
+            kernel_src, arch, n, args.iterations
         )
         all_results.extend(results)
 
     # Create DataFrame and save
     df = pd.DataFrame(all_results)
-    df["batch_size"] = args.batch_size
-    df["nhead"] = args.nhead
-    df["dim_per_head"] = args.dim_per_head
     
     # Reorder columns for better readability
     columns = [
-        "seq_len", "batch_size", "nhead", "dim_per_head",
-        "block_x", "block_y", "thread_count",
+        "vector_size", "block_x", "thread_count",
         "predicted_time_ns", "actual_time_ns",
         "predicted_power", "actual_power",
         "mem_coal", "mem_uncoal", "mem_partial",

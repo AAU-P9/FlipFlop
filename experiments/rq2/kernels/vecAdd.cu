@@ -4,3 +4,4 @@ extern "C" {
         if (i < n) c[i] = a[i] + b[i];
     }
 }
+

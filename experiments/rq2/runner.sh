@@ -1,9 +1,11 @@
+ 
 #!/bin/bash
 # rq3_experiment.sh
 
-export PATH=/usr/local/cuda/bin:$PATH
-export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
-export PYTHONPATH=$(pwd)/../../..
+export CUDA_ROOT=/usr/local/cuda-12
+export PATH=/usr/local/cuda-12/bin:/usr/bin:$PATH
+#export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+#export PYTHONPATH=$(pwd)/../../..
 
 # Experiment parameters
 KERNEL_FILE="kernels_test/mha.cu"
